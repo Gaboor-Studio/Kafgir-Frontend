@@ -1,0 +1,19 @@
+.weekSelector{
+    display: flex;
+    justify-content: center;
+    margin: 30px 30px 30px 30px ;
+}
+
+.weekSelector p{
+    padding: 0;
+    margin: 0;
+    width: 30vw;
+    height: 30px;
+    text-align: center;
+
+}
+
+.arrow{
+    margin: 0vw 10vw 0vw 10vw;
+}
+
