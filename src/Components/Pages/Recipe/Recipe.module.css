@@ -1,0 +1,9 @@
+body{
+    text-align: center;
+    align-items: center;
+    background-color: #FFEEEC;
+}
+.card{
+    width: 100%;
+    padding-top: 20px;
+}

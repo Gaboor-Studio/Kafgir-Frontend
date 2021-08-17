@@ -1,0 +1,33 @@
+.image {
+  position: relative;
+  text-align: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0%;
+}
+img {
+  border-radius: 15px;
+  width: 90%;
+  z-index: -1;
+  margin-bottom: 0;
+  bottom: 2%;
+}
+.text {
+  position:absolute;
+  bottom: 0%;
+  width: 90%;
+  height: 30%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  background-color: rgba(255, 197, 186, 0.9);
+  font-family: IRANSans;
+  font-size:24px;
+  color: #3b1913;
+  border-radius: 0px 0px 15px 15px ;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
