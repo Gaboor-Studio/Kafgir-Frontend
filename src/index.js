@@ -8,7 +8,9 @@ import './FontsFree-Net-ir_sans.ttf';
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <Layout>
+      <App />
+    </Layout>
   </BrowserRouter>,
   document.getElementById("root")
 );
