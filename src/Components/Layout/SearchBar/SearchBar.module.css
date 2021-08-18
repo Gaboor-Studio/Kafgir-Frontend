@@ -13,6 +13,12 @@
     margin-right: 5px;
 }
 
+.SearchBar input:active,
+.SearchBar input:focus {
+    outline: none;
+    border-bottom: 1px #FFA79C solid;
+}
+
 .SearchBar img {
     box-shadow: 0px 3px 10px 1px #E33F1B;
     border-radius: 5px;
@@ -20,7 +26,7 @@
     width: 10%;
 }
 
-@media (max-width: 625px){
+@media (max-width: 640px){
     .SearchBar {
         background-color: #FF8877;
         border-radius: 10px;
