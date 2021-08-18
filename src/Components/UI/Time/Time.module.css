@@ -1,0 +1,11 @@
+.clock{
+    float: left;
+    width: 20px;
+}
+.tot{
+    float: right;
+    font-size: 14px;
+}
+.divv{
+    padding-top: 8.5px;
+}
