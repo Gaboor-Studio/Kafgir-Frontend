@@ -1,0 +1,40 @@
+.SearchBar {
+    background-color: #FF8877;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding: 8px;
+}
+
+.SearchBar input {
+    border: none;
+    background-color: #FF8877;
+    /* border-radius: 2px; */
+    margin-right: 5px;
+}
+
+.SearchBar img {
+    box-shadow: 0px 3px 10px 1px #E33F1B;
+    border-radius: 5px;
+    padding: 5px;
+    width: 10%;
+}
+
+@media (max-width: 625px){
+    .SearchBar {
+        background-color: #FF8877;
+        border-radius: 10px;
+        padding: 3px;
+    }
+
+    .SearchBar input {
+        display: none;
+    }
+
+    .SearchBar img {
+        box-shadow: 0px 3px 10px 1px #E33F1B;
+        border-radius: 5px;
+        padding: 5px;
+        width: auto;
+    }
+}
