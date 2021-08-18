@@ -23,8 +23,6 @@ const Rating = (props) => {
       <img className={classes.rateimage} src={stars[2]} alt="star" />
       <img className={classes.rateimage} src={stars[3]} alt="star" />
       <img className={classes.rateimage} src={stars[4]} alt="star" />
-
-      <p>{rate}</p>
     </div>
   );
 };
