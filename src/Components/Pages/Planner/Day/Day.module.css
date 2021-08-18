@@ -3,7 +3,7 @@
     background-color: #FF8877;
     box-sizing: border-box;
     width: 80%;
-    height: 10vw;
+    height: 4.7vh;
     padding: 0px 10px;
     margin: auto;
     margin-top: 10px;
@@ -21,17 +21,39 @@
     background-color: #FFC5BA;
     box-sizing: border-box;
     width: 80%;
-    height: 2vw;
+    height: 1vh;
     margin: auto;
     border-radius: 0px 0px 4px 4px;
     align-items: center;
     font-weight: bold;
+    transition: height 0.4s;
 }
 
 .close{
-    height: 2vw;
+    height: 1vh;
 }
 
 .open{
-    height: 50vw;
+    height: 23vh;
+}
+
+@media (min-width: 480px){
+    .outerBar{
+        height: 6vh;
+        width: 60vw;
+    }
+    .innerBar{
+        height: 1.5vh;
+        width: 60vw;
+    }
+    .open{
+        height: 50vh;
+    }
+    .close{
+        height: 1.5vh;
+    }
+    .extendButton{
+        height: 4vh;
+        width: auto;
+    }
 }

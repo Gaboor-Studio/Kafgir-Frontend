@@ -9,7 +9,7 @@ const Day = (props) => {
     const [innerBarClasses, setInnerBarClasses] = useState(classes.innerBar);
     const [extendImage,setExtendImage]=useState(add);
     const toggleOpen = () => {
-        if (isOpen == false) {
+        if (isOpen === false) {
             setInnerBarClasses(classes.innerBar + ' ' + classes.open);
             setExtendImage(remove);
             setIsOpen(true);
