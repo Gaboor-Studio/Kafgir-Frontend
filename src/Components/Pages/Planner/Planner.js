@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import classes from "./Planner.module.css"
 import WeekSelector from "./WeekSelector"
 import Week from "./Week.js"
+import omelete from "../../../assets/omelete.jpg"
+import ghormesabzi from "../../../assets/ghorme.jpg"
 const Planner = (props) => {
     const weeksArray = [
         {
@@ -10,87 +12,143 @@ const Planner = (props) => {
             days: [
                 {
                     name: "شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "یکشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "دوشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "سه شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "چهارشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "پنج شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "جمعه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
             ]
         },
@@ -99,87 +157,143 @@ const Planner = (props) => {
             days: [
                 {
                     name: "شنبه",
-                    breakfastName: "املت",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "قرمه سبزی",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "املت",
+                        imageUrl: omelete,
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "قرمه سبزی",
+                    imageUrl: ghormesabzi,
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "یکشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "دوشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "سه شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "چهارشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "پنج شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "جمعه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
             ]
 
@@ -189,87 +303,143 @@ const Planner = (props) => {
             days: [
                 {
                     name: "شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "یکشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "دوشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "سه شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "چهارشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "پنج شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "جمعه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
             ]
 
@@ -279,87 +449,143 @@ const Planner = (props) => {
             days: [
                 {
                     name: "شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "یکشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "دوشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "سه شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "چهارشنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "پنج شنبه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
                 {
                     name: "جمعه",
-                    breakfastName: "",
-                    breakfastImageUrl: "",
-                    breakfastlink: "",
-                    lunchName: "",
-                    lunchImageUrl: "",
-                    lunchlink: "",
-                    dinnerName: "",
-                    dinnerImageUrl: "",
-                    dinnerfastlink: "",
+                    breakfast: {
+                        name: "",
+                        imageUrl: "",
+                        link: "",
+                    },
+
+                    lunch:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    },
+                    
+                    dinner:{
+                    name: "",
+                    imageUrl: "",
+                    link: "",
+                    }
                 },
             ]
 
