@@ -9,6 +9,11 @@ const Day = (props) => {
     const [innerBarClasses, setInnerBarClasses] = useState(classes.innerBar);
     const [extendImage, setExtendImage] = useState(add);
     const [appearingChildren, setAppearingChildren] = useState();
+    useEffect(()=>{
+        if(isOpen===true){
+            setAppearingChildren(props.children)
+        }
+    },[props.weekNo,isOpen,props.children]);
     const toggleOpen = () => {
         if (isOpen === false) {
             setInnerBarClasses(classes.innerBar + ' ' + classes.open);

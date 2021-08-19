@@ -4,19 +4,15 @@ import classes from "./Week.module.css"
 import Plancard from "./Day/Plancard.js"
 
 const Week = (props) => {
+    const daysArray=[0,1,2,3,4,5,6];
     return (
         <div className={classes.daysContainer}>
-            <Day dayData={props.weekData.days[0]}>
-                <Plancard meal="صبحانه" foodData={props.weekData.days[0].breakfast}></Plancard>
-                <Plancard meal="نهار" foodData={props.weekData.days[0].lunch}></Plancard>
-                <Plancard meal="شام" foodData={props.weekData.days[0].dinner}></Plancard>
-            </Day>
-            <Day dayData={props.weekData.days[1]}></Day>
-            <Day dayData={props.weekData.days[2]}></Day>
-            <Day dayData={props.weekData.days[3]}></Day>
-            <Day dayData={props.weekData.days[4]}></Day>
-            <Day dayData={props.weekData.days[5]}></Day>
-            <Day dayData={props.weekData.days[6]}></Day>
+        {daysArray.map(dayNo=>
+            <Day weekNo={props.weekNo} dayData={props.weekData.days[dayNo]}>
+                <Plancard sendRemoveRequest={props.sendRemoveRequest} weekNo={props.weekNo} dayNo={dayNo} meal="breakfast" foodData={props.weekData.days[dayNo].breakfast}></Plancard>
+                <Plancard sendRemoveRequest={props.sendRemoveRequest} weekNo={props.weekNo} dayNo={dayNo} meal="lunch" foodData={props.weekData.days[dayNo].lunch}></Plancard>
+                <Plancard sendRemoveRequest={props.sendRemoveRequest} weekNo={props.weekNo} dayNo={dayNo} meal="dinner" foodData={props.weekData.days[dayNo].dinner}></Plancard>
+            </Day>)}
         </div>
     );
 }

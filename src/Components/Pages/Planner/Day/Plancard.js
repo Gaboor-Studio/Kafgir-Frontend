@@ -1,19 +1,24 @@
 import React from "react"
 import classes from "./Plancard.module.css"
 import addbutton from "../../../../assets/planner-addfood.png"
+import removeButton from "../../../../assets/remove-button.png"
 
 const Plancard = (props) => {
-    const image=(props.foodData.imageUrl===""?addbutton:props.foodData.imageUrl);
+    const mealName=props.meal==="breakfast"?"صبحانه":props.meal==="lunch"?"نهار":"شام";
+    const removeItem = () => {
+        props.sendRemoveRequest(props.meal, props.dayNo, props.weekNo);
+    }
+    const image = (props.foodData.imageUrl === "" ? addbutton : props.foodData.imageUrl);
     return (
         <div dir="rtl" className={classes.item}>
-            <p>{props.meal}</p>
+            <p>{mealName}</p>
             <div className={classes.imageContainer}>
                 <img src={image} className={classes.image} alt="foodimage"></img>
-                <div className={props.foodData.name===""?[]:classes.textContainer}>
+                {image===addbutton?[]:[<img src={removeButton} alt="remove button" className={classes.removeButton} onClick={removeItem}></img>]}
+                <div className={props.foodData.name === "" ? [] : classes.textContainer}>
                     {props.foodData.name}
                 </div>
             </div>
-
         </div>
     );
 }
