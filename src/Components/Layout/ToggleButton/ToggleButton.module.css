@@ -3,19 +3,22 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    height: 60%;
-    margin: auto 5px;
+    float: right;
+    height: 70%;
+    margin: auto 3px;
     width: 3rem;
 }
 
-.ToggleButton div {
+.di {
     width: 70%;
     margin: 0;
     height: 3px;
-    border-radius: 1px;
-    background-color: #C0817A;
+    border-radius: 20px;
+    background-color: #FF8877;
 }
-
+.des{
+    margin: 4px;
+}
 @media (min-width: 480px){
     .ToggleButton {
         display: none;
