@@ -1,9 +1,25 @@
-body{
-    text-align: center;
-    align-items: center;
-    background-color: #FFEEEC;
+body {
+  text-align: center;
+  align-items: center;
+  background-color: #ffeeec;
 }
-.card{
-    width: 100%;
+.card {
+  width: 100%;
+  padding-top: 20px;
+}
+.RecipeCard {
+  width: 100%;
+  padding-top: 20px;
+}
+@media (min-width: 480px) {
+  .card {
+    width: 40%;
     padding-top: 20px;
+    float: right;
+  }
+  .RecipeCard {
+    width: 55%;
+    float: left;
+    padding-top: 20px;
+  }
 }

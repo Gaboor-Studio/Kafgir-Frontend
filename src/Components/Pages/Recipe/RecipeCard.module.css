@@ -1,0 +1,85 @@
+.outerBar{
+    display: flex;
+    background-color: #3B1913;
+    color: #FFEEEC;
+    box-sizing: border-box;
+    width: 90%;
+    height: 20px;
+    padding: 0px 10px;
+    margin: auto;
+    border-radius: 10px 10px 0px 0px;
+    align-items: center;
+    font-size: 70%;
+    font-weight: bold;
+    min-height: 35px;
+}
+.extendButton{
+    margin-right: auto;
+    width: 6vw;
+}
+.innerBar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: space-evenly;
+    background-color: #3B1913;
+    color: #FFEEEC;
+    box-sizing: border-box;
+    width: 90%;
+    height: 1vh;
+    margin: auto;
+    border-radius: 0px 0px 10px 10px;
+    font-weight: bold;
+    transition: height 0.4s;
+}
+
+.close{
+    height: 5px;
+}
+
+.open{
+    height: 40vw;
+}
+
+@media (min-width: 480px){
+    .outerBar{
+        display: flex;
+        background-color: #3B1913;
+        color: #FFEEEC;
+        box-sizing: border-box;
+        width: 100%;
+        height: 4.7vh;
+        padding: 0px 10px;
+        margin: auto;
+        border-radius: 10px 10px 0px 0px;
+        align-items: center;
+        font-size: 70%;
+        font-weight: bold;
+        min-height: 35px;
+    }
+    .extendButton{
+        display: none;
+    }
+    .innerBar{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-content: space-evenly;
+        background-color: #3B1913;
+        color: #FFEEEC;
+        box-sizing: border-box;
+        width: 100%;
+        height: 40vw;
+        margin: auto;
+        border-radius: 0px 0px 10px 10px;
+        font-weight: bold;
+        transition: height 0.4s;
+        display:block;
+    }
+    
+    .close{
+        height: 40vw;
+    }
+    
+    .open{
+        height: 40vw;
+    }  
+}
