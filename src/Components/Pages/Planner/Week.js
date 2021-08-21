@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
 import Day from "./Day/Day.js"
 import classes from "./Week.module.css"
 import Plancard from "./Day/Plancard.js"
@@ -8,7 +8,7 @@ const Week = (props) => {
     return (
         <div className={classes.daysContainer}>
         {daysArray.map(dayNo=>
-            <Day weekNo={props.weekNo} dayData={props.weekData.days[dayNo]}>
+            <Day weekNo={props.weekNo} dayData={props.weekData.days[dayNo]} key={`day ${dayNo}`}>
                 <Plancard sendRemoveRequest={props.sendRemoveRequest} weekNo={props.weekNo} dayNo={dayNo} meal="breakfast" foodData={props.weekData.days[dayNo].breakfast}></Plancard>
                 <Plancard sendRemoveRequest={props.sendRemoveRequest} weekNo={props.weekNo} dayNo={dayNo} meal="lunch" foodData={props.weekData.days[dayNo].lunch}></Plancard>
                 <Plancard sendRemoveRequest={props.sendRemoveRequest} weekNo={props.weekNo} dayNo={dayNo} meal="dinner" foodData={props.weekData.days[dayNo].dinner}></Plancard>

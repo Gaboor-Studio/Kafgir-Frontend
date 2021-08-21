@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useState } from "react";
-import classes from "./Planner.module.css"
 import WeekSelector from "./WeekSelector"
 import Week from "./Week.js"
 import omelete from "../../../assets/omelete.jpg"

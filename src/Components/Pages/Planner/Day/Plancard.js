@@ -14,7 +14,7 @@ const Plancard = (props) => {
             <p>{mealName}</p>
             <div className={classes.imageContainer}>
                 <img src={image} className={classes.image} alt="foodimage"></img>
-                {image===addbutton?[]:[<img src={removeButton} alt="remove button" className={classes.removeButton} onClick={removeItem}></img>]}
+                {image===addbutton?[]:<img src={removeButton} alt="remove button" className={classes.removeButton} onClick={removeItem}></img>}
                 <div className={props.foodData.name === "" ? [] : classes.textContainer}>
                     {props.foodData.name}
                 </div>
