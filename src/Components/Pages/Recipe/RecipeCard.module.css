@@ -1,85 +1,99 @@
-.outerBar{
+.outerBar {
+  display: flex;
+  background-color: #3b1913;
+  color: #ffeeec;
+  box-sizing: border-box;
+  width: 90%;
+  height: 20px;
+  padding: 0px 10px;
+  margin: auto;
+  border-radius: 10px 10px 0px 0px;
+  font-family: IranSans;
+  align-items: center;
+  font-size: 70%;
+  font-weight: bold;
+  min-height: 35px;
+}
+.extendButton {
+  margin-right: auto;
+  width: 6vw;
+}
+.innerBar {
+  display: grid;
+  background-color: #3b1913;
+  color: #ffeeec;
+  font-family: IranSans;
+  box-sizing: border-box;
+  padding-right: 15px;
+  padding-left: 10px;
+  text-align: right;
+  padding-bottom: 10px;
+  width: 90%;
+  margin: auto;
+  height: 10px;
+  border-radius: 0px 0px 10px 10px;
+  transition: height 0.4s;
+}
+
+.close {
+  height: 10px;
+}
+
+.open {
+  height: auto;
+}
+.ingr {
+}
+.amou {
+  text-align: left;
+  padding-left: 10px;
+}
+.line {
+  height: 1px;
+  width: 70%;
+  margin-bottom: 5px;
+  background-color: #ffeeec;
+}
+@media (min-width: 480px) {
+  .outerBar {
     display: flex;
-    background-color: #3B1913;
-    color: #FFEEEC;
+    background-color: #3b1913;
+    color: #ffeeec;
     box-sizing: border-box;
-    width: 90%;
-    height: 20px;
-    padding: 0px 10px;
+    font-family: IranSans;
+    width: 100%;
+    height: 30px;
+    padding: 0px 20px;
     margin: auto;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 15px 15px 0px 0px;
     align-items: center;
     font-size: 70%;
     font-weight: bold;
-    min-height: 35px;
-}
-.extendButton{
-    margin-right: auto;
-    width: 6vw;
-}
-.innerBar{
+  }
+  .extendButton {
+    display: none;
+  }
+  .innerBar {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
-    background-color: #3B1913;
-    color: #FFEEEC;
+    background-color: #3b1913;
+    color: #ffeeec;
     box-sizing: border-box;
-    width: 90%;
-    height: 1vh;
+    width: 100%;
     margin: auto;
-    border-radius: 0px 0px 10px 10px;
-    font-weight: bold;
+    font-family: IranSans;
+    text-align: right;
+    height: auto;
+    padding-top: 20px;
+    border-radius: 0px 0px 15px 15px;
     transition: height 0.4s;
-}
+    display: block;
+  }
 
-.close{
-    height: 5px;
-}
-
-.open{
-    height: 40vw;
-}
-
-@media (min-width: 480px){
-    .outerBar{
-        display: flex;
-        background-color: #3B1913;
-        color: #FFEEEC;
-        box-sizing: border-box;
-        width: 100%;
-        height: 4.7vh;
-        padding: 0px 10px;
-        margin: auto;
-        border-radius: 10px 10px 0px 0px;
-        align-items: center;
-        font-size: 70%;
-        font-weight: bold;
-        min-height: 35px;
-    }
-    .extendButton{
-        display: none;
-    }
-    .innerBar{
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        justify-content: space-evenly;
-        background-color: #3B1913;
-        color: #FFEEEC;
-        box-sizing: border-box;
-        width: 100%;
-        height: 40vw;
-        margin: auto;
-        border-radius: 0px 0px 10px 10px;
-        font-weight: bold;
-        transition: height 0.4s;
-        display:block;
-    }
-    
-    .close{
-        height: 40vw;
-    }
-    
-    .open{
-        height: 40vw;
-    }  
+  .close {
+  }
+  .open {
+    height: 600px;
+  }
 }

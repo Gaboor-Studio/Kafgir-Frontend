@@ -5,24 +5,34 @@ import add from "../../../assets/recipe-open.svg";
 import remove from "../../../assets/recipe-close.svg";
 
 const RecipeCard = (props) => {
+  const displayIngredients = React.useCallback(() => {
+    return props.ingredients.map((reptile) => (
+      <p>
+        <div className={classes.line}></div>
+        {reptile[0]} 
+        <div className={classes.amou}>{reptile[1]}</div>
+      </p>
+    ));
+  }, [props]);
+
   const [isOpen, setIsOpen] = useState(false);
   const [innerBarClasses, setInnerBarClasses] = useState(classes.innerBar);
   const [extendImage, setExtendImage] = useState(add);
   const [appearingChildren, setAppearingChildren] = useState();
   useEffect(() => {
     if (isOpen === true) {
-      setAppearingChildren(props.ingredients);
+      setAppearingChildren(displayIngredients);
     }
     if (window.innerWidth >= 480) {
       setIsOpen(true);
-      setAppearingChildren(props.ingredients)
-    }  
-  }, [isOpen, props.ingredients]);
+      setAppearingChildren(displayIngredients);
+    }
+  }, [isOpen, displayIngredients]);
   const toggleOpen = () => {
     if (isOpen === false) {
       setInnerBarClasses(classes.innerBar + " " + classes.open);
       setExtendImage(remove);
-      setTimeout(() => setAppearingChildren(props.ingredients), 250);
+      setTimeout(() => setAppearingChildren(displayIngredients), 250);
       setIsOpen(true);
     } else {
       if (window.innerWidth <= 480) {
@@ -44,7 +54,7 @@ const RecipeCard = (props) => {
         />
       </div>
       <div dir="rtl" className={innerBarClasses}>
-        {isOpen ? appearingChildren : []}
+        <div>{isOpen ? appearingChildren : []}</div>
       </div>
     </div>
   );

@@ -3,6 +3,14 @@ import classes from "./Recipe.module.css";
 import Card from "./Card.js";
 import RecipeCard from "./RecipeCard";
 import ghorme from "..//..//..//assets/ghorme.jpg";
+
+let tuple = [
+  ["گوشت خورشتی", "۳۰۰ گرم"],
+  ["گوشت خورشتی", "۳۰۰ گرم"],
+  ["گوشت خورشتی", "۳۰۰ گرم"],
+  ["گوشت خورشتی", "۳۰۰ گرم"],
+  ["گوشت خورشتی", "۳۰۰ گرم"],
+]
 const recipe = (props) => {
   return (
     <div>
@@ -15,7 +23,7 @@ const recipe = (props) => {
           time="۱ ساعت و ۲۰ دقیقه"
         />
       </div>
-      <div className={classes.RecipeCard}><RecipeCard ingredients="گوشت لوبیا فلان" />
+      <div className={classes.RecipeCard}><RecipeCard ingredients={tuple}/>
       </div>
     </div>
   );
