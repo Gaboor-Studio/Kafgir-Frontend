@@ -1,9 +1,9 @@
 .clock{
-    float: left;
     width: 20px;
+    float: left;
 }
 .tot{
-    float: right;
+    float: left;
     font-size: 14px;
 }
 .divv{

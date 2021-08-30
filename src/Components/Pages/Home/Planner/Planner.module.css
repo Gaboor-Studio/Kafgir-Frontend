@@ -1,0 +1,31 @@
+.header{
+    margin-left: 25%;
+    color: #47231D;
+    background-color: #FFC5BA;
+    border-radius: 10px 10px 0 0;
+    width: 50%;
+    height: 30px;
+
+}
+.main{
+    display: grid;
+    margin-top: 0px;
+    color: #47231D;
+    background-color:#FFC5BA;
+    border-radius: 10px;
+    width: 80%;
+    margin-left: 10%;
+    padding-left: 10px;
+}
+
+.foodico{
+    float: right;
+    width: 45px;
+    margin: 10px;
+}
+.adder{
+    width: 25px;
+    float: left;
+    margin-top: 60px;
+    padding-bottom: 40px;
+}
