@@ -1,0 +1,15 @@
+.PublicInlineLink {
+    color: #FF8877;
+    font-size: small;
+    margin: 2px 4px;
+    /* padding: auto 2px; */
+    /* top: 50%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: IranSans;
+}
+
+.PublicInlineLink:hover {
+    color: #DE5C4B;
+}

@@ -42,8 +42,8 @@
 .open {
   height: auto;
 }
-.ingr {
-}
+/* .ingr {
+} */
 .amou {
   text-align: left;
   padding-left: 10px;
@@ -91,8 +91,8 @@
     display: block;
   }
 
-  .close {
-  }
+  /* .close {
+  } */
   .open {
     height: 600px;
   }
