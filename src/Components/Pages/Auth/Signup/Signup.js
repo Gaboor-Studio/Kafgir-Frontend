@@ -60,7 +60,7 @@ const Signup = (props) => {
           small
           id="phone_number"
           required
-          type="number"
+          type="tel"
           placeholder="شماره همراه"
           value={credentials.phone_number}
           onType={onInputChangeHandler}

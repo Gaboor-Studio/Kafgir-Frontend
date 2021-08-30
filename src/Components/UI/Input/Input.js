@@ -9,6 +9,10 @@ const Input = (props) => {
         styles.push(classes.SmallInput)
     }
 
+    if (props.center){
+      styles.push(classes.Centered)
+    }
+
   return (
     <input
       className={styles.join(' ')}

@@ -8,6 +8,7 @@ import Home from "./Components/Pages/Home/Home";
 import Layout from "./Components/Layout/Layout";
 import AuthLayout from "./Components/Layout/AuthLayout";
 import Signup from "./Components/Pages/Auth/Signup/Signup";
+import ConfirmEmail from "./Components/Pages/Auth/ConfirmEmail/ConfirmEmail";
 
 function App() {
   return (
@@ -19,8 +20,11 @@ function App() {
               <Route path="/auth/signup">
                 <Signup />
               </Route>
+              <Route path="/auth/confirmation">
+                <ConfirmEmail />
+              </Route>
             </Switch>
-            <Redirect to="/auth/signup"/>
+            {/* <Redirect to="/auth/signup"/> */}
           </AuthLayout>
         </Route>
         <Route path="/">
