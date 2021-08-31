@@ -1,0 +1,39 @@
+.Login {
+  display: block;
+  width: 312px;
+  margin: 0 auto;
+  font-family: IranSans;
+}
+
+.LoginTitle {
+  color: #ff8877;
+  margin-bottom: 3rem;
+}
+
+.LoginUpForm {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.LoginFormOptions {
+    padding: 10px 30px;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (min-width: 480px) {
+  .Login {
+    width: 65%;
+  }
+}
+
+@media (min-width: 800px) {
+  .Login {
+    width: 520px;
+  }
+}
