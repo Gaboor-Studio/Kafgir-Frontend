@@ -2,24 +2,24 @@ import React from "react";
 import classes from "./Input.module.css";
 
 const Input = (props) => {
+  let styles = [classes.PublicInput];
 
-    let styles = [classes.PublicInput]
+  if (props.small) {
+    styles.push(classes.SmallInput);
+  }
 
-    if (props.small){
-        styles.push(classes.SmallInput)
-    }
+  if (props.center) {
+    styles.push(classes.Centered);
+  }
 
-    if (props.center){
-      styles.push(classes.Centered)
-    }
-
-    if (props.ltr){
-      styles.push(classes.LeftToRight)
-    }
+  if (props.ltr) {
+    styles.push(classes.LeftToRight);
+  }
 
   return (
     <input
-      className={styles.join(' ')}
+      disabled={props.disabled}
+      className={styles.join(" ")}
       id={props.id}
       required={props.required}
       type={props.type}

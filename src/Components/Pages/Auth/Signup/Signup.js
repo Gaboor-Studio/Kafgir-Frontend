@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
+
 import Input from "../../../UI/Input/Input";
 import Button from "../../../UI/Button/Button";
 import InlineLink from "../../../UI/InlineLink/InlineLink";
@@ -16,6 +18,8 @@ const Signup = (props) => {
     password_rep: "",
   });
 
+  const history = useHistory()
+
   const onInputChangeHandler = (event) => {
     event.persist();
     setCredentials((prevUserInfo) => {
@@ -30,6 +34,10 @@ const Signup = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
     console.log("request sent");
+    history.push({
+      pathname: '/auth/confirmation',
+      state: { email: credentials.email, phone_number: credentials.phone_number }
+    })
   };
 
   return (

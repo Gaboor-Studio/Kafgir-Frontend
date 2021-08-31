@@ -6,7 +6,7 @@ import Backdrop from "../Backdrop/Backdrop";
 const Modal = React.memo((props) => {
   return (
     <React.Fragment>
-      <Backdrop show={props.show} onClose={props.modalClosed} />
+      <Backdrop show={props.show} onClose={props.backClickOff ? () => {} : props.modalClosed} />
       <div
         className={classes.Modal}
         style={{
