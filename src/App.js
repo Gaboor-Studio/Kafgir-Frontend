@@ -9,6 +9,10 @@ import Layout from "./Components/Layout/Layout";
 import AuthLayout from "./Components/Layout/AuthLayout";
 import Signup from "./Components/Pages/Auth/Signup/Signup";
 import ConfirmEmail from "./Components/Pages/Auth/ConfirmEmail/ConfirmEmail";
+import Login from "./Components/Pages/Auth/Login/Login";
+import ChangePassword from "./Components/Pages/Auth/ChangePassword/ChangePassword";
+import ChooseNewPassword from "./Components/Pages/Auth/ChooseNewPassword/ChooseNewPassword";
+import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
 
 function App() {
   return (
@@ -22,6 +26,18 @@ function App() {
               </Route>
               <Route path="/auth/confirmation">
                 <ConfirmEmail />
+              </Route>
+              <Route path="/auth/login">
+                <Login />
+              </Route>
+              <Route path="/auth/change-password">
+                <ChangePassword />
+              </Route>
+              <Route path="/auth/choose-new-password">
+                <ChooseNewPassword />
+              </Route>
+              <Route path="/auth/forgot-password">
+                <ForgotPassword />
               </Route>
             </Switch>
             {/* <Redirect to="/auth/signup"/> */}

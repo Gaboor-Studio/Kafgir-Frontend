@@ -99,7 +99,7 @@ const Signup = (props) => {
           onType={onInputChangeHandler}
         />
         <div className={classes.AlreadySignedUp}>
-          <InlineLink link="" text="وارد شوید" />
+          <InlineLink link="/auth/login" text="وارد شوید" />
           <p>از قبل اکانت دارید ؟</p>
         </div>
         <Button>ثبت نام</Button>
