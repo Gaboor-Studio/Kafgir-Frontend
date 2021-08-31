@@ -10,7 +10,9 @@ const Profile=()=>{
             <div className={classes.upperPart}>
                 <div className={classes.profilePicContainer}>
                     <img src={pictureBackground} alt="profile avatar background" className={classes.profilePicBackground}></img>
-                    <img src={defaultProfilePic} alt="avatar" className={classes.profilePic}></img>
+                    <div className={classes.profilePic}>
+                        <img src={defaultProfilePic} alt="avatar" className={classes.image}></img>
+                    </div>
                 </div>
                 <div className={classes.editPhoto}>
                     <img src={deletePhoto} alt="delete avatar"></img>
