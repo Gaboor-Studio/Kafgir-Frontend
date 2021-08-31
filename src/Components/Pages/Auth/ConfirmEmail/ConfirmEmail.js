@@ -24,6 +24,7 @@ const ConfirmEmail = (props) => {
       </div>
       <form className={classes.ConfirmEmailForm} onSubmit={onSubmit}>
         <Input
+          ltr={code ? true : false}
           small
           center
           id="code"
@@ -35,7 +36,7 @@ const ConfirmEmail = (props) => {
         />
         <InlineButton
           type="button"
-          clicked={() => console.log('dobare ersal konid ;)')}
+          clicked={() => console.log("dobare ersal konid ;)")}
           text="ارسال دوباره کد"
         />
         <Button>تایید</Button>

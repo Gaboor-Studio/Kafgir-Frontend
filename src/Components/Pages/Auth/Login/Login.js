@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import Button from "../../../UI/Button/Button";
 import InlineLink from "../../../UI/InlineLink/InlineLink";
 import Input from "../../../UI/Input/Input";
@@ -6,7 +6,7 @@ import Input from "../../../UI/Input/Input";
 import classes from "./Login.module.css";
 
 const Login = (props) => {
-    const [loginInfo, setLoginInfo] = useState({email: "", password: ""})
+  const [loginInfo, setLoginInfo] = useState({ email: "", password: "" });
 
   const onSubmit = (event) => {
     event.preventDefault();
@@ -14,15 +14,15 @@ const Login = (props) => {
   };
 
   const onInputChangeHandler = (event) => {
-      event.persist();
-      setLoginInfo(prevInfo => {
-          const newInfo = {
-              ...prevInfo,
-              [event.target.id]: event.target.value
-          }
-          return newInfo
-      })
-  }
+    event.persist();
+    setLoginInfo((prevInfo) => {
+      const newInfo = {
+        ...prevInfo,
+        [event.target.id]: event.target.value,
+      };
+      return newInfo;
+    });
+  };
 
   return (
     <div className={classes.Login}>
@@ -31,6 +31,7 @@ const Login = (props) => {
       </div>
       <form className={classes.LoginForm} onSubmit={onSubmit}>
         <Input
+          ltr={loginInfo.email ? true : false}
           id="email"
           required
           type="email"
@@ -39,6 +40,7 @@ const Login = (props) => {
           onType={onInputChangeHandler}
         />
         <Input
+          ltr={loginInfo.password ? true : false}
           id="password"
           required
           type="password"
@@ -47,8 +49,8 @@ const Login = (props) => {
           onType={onInputChangeHandler}
         />
         <div className={classes.LoginFormOptions}>
-            <InlineLink link="/auth/forgot-password" text="فراموشی رمز عبور"/>
-            <InlineLink link="/auth/signup" text="ثبت نام"/>
+          <InlineLink link="/auth/forgot-password" text="فراموشی رمز عبور" />
+          <InlineLink link="/auth/signup" text="ثبت نام" />
         </div>
         <Button>ورود به حساب کاربری</Button>
       </form>

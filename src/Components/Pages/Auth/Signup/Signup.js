@@ -58,6 +58,7 @@ const Signup = (props) => {
         />
         <Input
           small
+          ltr={credentials.phone_number ? true : false}
           id="phone_number"
           required
           type="tel"
@@ -67,6 +68,7 @@ const Signup = (props) => {
         />
         <Input
           small
+          ltr={credentials.username ? true : false}
           id="username"
           required
           type="text"
@@ -75,6 +77,7 @@ const Signup = (props) => {
           onType={onInputChangeHandler}
         />
         <Input
+          ltr={credentials.email ? true : false}
           id="email"
           required
           type="email"
@@ -83,6 +86,7 @@ const Signup = (props) => {
           onType={onInputChangeHandler}
         />
         <Input
+          ltr={credentials.password ? true : false}
           id="password"
           required
           type="password"
@@ -91,6 +95,7 @@ const Signup = (props) => {
           onType={onInputChangeHandler}
         />
         <Input
+          ltr={credentials.password_rep ? true : false}
           id="password_rep"
           required
           type="password"
