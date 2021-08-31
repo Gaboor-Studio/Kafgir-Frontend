@@ -1,0 +1,30 @@
+.upperPart{
+    display: flex;
+}
+
+.profilePicContainer{
+    margin-left: auto;
+    position: relative;
+}
+
+.profilePicBackground{
+    width: 38vh;
+}
+
+.profilePic{
+    position: absolute;
+    left: 22%;
+    bottom: 24.5%;
+    border-radius: 50%;
+    width:21vh ;
+}
+
+.editPhoto{
+    background-color: #3C1913;
+    display:grid;
+    margin: 4vh 1vw;
+    padding: 2vh 1vw 1.5vh 2vw;
+    border-radius: 7px;
+    margin-left: auto;
+    height: 10vh;
+}

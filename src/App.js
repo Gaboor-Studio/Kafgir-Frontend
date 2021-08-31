@@ -5,6 +5,7 @@ import Categories from "./Components/Pages/Categories/Categories";
 import Planner from "./Components/Pages/Planner/Planner";
 import Recipe from "./Components/Pages/Recipe/Recipe";
 import Home from "./Components/Pages/Home/Home";
+import Profile from "./Components/Pages/Profile/Profile"
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route path="/recipe">
           <Recipe />
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/">
           <Home />
