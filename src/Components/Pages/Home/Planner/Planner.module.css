@@ -29,3 +29,12 @@
     margin-top: 60px;
     padding-bottom: 40px;
 }
+.leftarrow{
+    float: left;
+    padding-top: 150px;
+}
+
+.rightarrow{
+    float:right;
+    padding-top: 150px;
+}
