@@ -10,6 +10,11 @@
     font-family: IranSans;
 }
 
+.PublicInput:focus {
+    outline: none;
+}
+
+
 .SmallInput {
     width: 144px;
 }
@@ -18,8 +23,8 @@
     text-align: center;
 }
 
-.PublicInput:focus {
-    outline: none;
+.LeftToRight {
+    direction: ltr;
 }
 
 @media (min-width: 480px){

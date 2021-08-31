@@ -13,6 +13,10 @@ const Input = (props) => {
       styles.push(classes.Centered)
     }
 
+    if (props.ltr){
+      styles.push(classes.LeftToRight)
+    }
+
   return (
     <input
       className={styles.join(' ')}
