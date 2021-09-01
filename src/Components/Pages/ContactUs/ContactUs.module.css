@@ -1,11 +1,14 @@
 .ContactUs{
     font-family: IranSans;
+    padding-top: 100px;
 }
 
 .TopBar{
+    position: absolute;
     text-align: center;
+    left: 0;
     width: 100%;
-    top: 0%;
+    top: 56px;
     padding-bottom: 4px;
     margin-bottom: 20px;
     background-color: #FFEEEC;
