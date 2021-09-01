@@ -1,0 +1,97 @@
+.upperPart{
+    display: grid;
+    grid-template-columns: 13% 67% 20%;
+    justify-content: center;
+}
+
+.profilePicContainer{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+
+.profilePicBackground{
+    width: 34vh;
+}
+
+.profilePic{
+    position: absolute;
+    left: 19%;
+    bottom: 21%;
+    width:21vh ;
+}
+
+.image{
+    width:19vh ;
+    height: 19vh;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.editPhoto{
+    background-color: #3C1913;
+    display:grid;
+    margin: 6vh 1vw 0vw 0vw;
+    padding: 10px 2px 0px 7px ;
+    border-radius: 7px;
+    margin-left: auto;
+    height: 85px;
+}
+
+.more{
+    height: 3vh;
+    margin-top: 10px;
+    justify-self: end;
+}
+
+.editName{
+    height: 6vw;
+}
+
+.nameComponent{
+    align-self: center;
+    border: 10px;
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+
+.nameLine{
+    display: block;
+    margin: auto;
+    width: 80%;
+    margin-top: 2vh;
+}
+
+.username{
+    font-weight: bold;
+    display: inline;
+    margin: 0px 3.5vw;
+    font-size: 4vw;
+}
+
+@media (min-width: 750px){
+    .username{
+        font-size: 2vw;
+    }
+    .nameLine{ 
+        margin-top: 4vh;
+    }
+    .editName{
+        height: 3vw;
+    }
+    .nameComponent{
+        grid-column-start: auto;
+        grid-column-end: auto;
+    }
+    .profilePicContainer{
+        margin-left: auto;
+    }
+
+    .upperPart{
+        display: grid;
+        grid-template-columns: 5vw 30vh 3vw 65vw;
+    }
+    
+
+}
