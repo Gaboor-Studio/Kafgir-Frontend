@@ -46,7 +46,7 @@ const ContactUs = (props) => {
           </div>
           <CommentBox value={feedback} onChange={onTextChangeHandler} />
           <div className={classes.AlignButtonLeft}>
-            <Button type="button" clicked={onClickHandler}>
+            <Button type="button" clicked={onClickHandler} disabled={!feedback}>
               ثبت
             </Button>
           </div>
