@@ -13,7 +13,7 @@ import Login from "./Components/Pages/Auth/Login/Login";
 import ChangePassword from "./Components/Pages/Auth/ChangePassword/ChangePassword";
 import ChooseNewPassword from "./Components/Pages/Auth/ChooseNewPassword/ChooseNewPassword";
 import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
-import Profile from "./Components/Pages/Profile/Profile"
+import Profile from "./Components/Pages/Profile/Profile";
 
 function App() {
   return (
@@ -40,15 +40,18 @@ function App() {
               <Route path="/auth/forgot-password">
                 <ForgotPassword />
               </Route>
+              <Route path="/auth">
+                <Signup />
+              </Route>
             </Switch>
           </AuthLayout>
-        </Route>
-        <Route path="/profile">
-          <Profile />
         </Route>
         <Route path="/">
           <Layout>
             <Switch>
+              <Route path="/profile">
+                <Profile />
+              </Route>
               <Route path="/categories">
                 <Categories />
               </Route>
