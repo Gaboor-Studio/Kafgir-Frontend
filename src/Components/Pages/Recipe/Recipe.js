@@ -13,15 +13,16 @@ let tuple = [
 ]
 const recipe = (props) => {
   return (
-    <div>
+    <div className={classes.Recipe}>
       <div className={classes.card}>
-        <Card
+      <Card
           image={ghorme}
           name="قرمه سبزی"
           rate={4.5}
           hardness={2}
           time="۱ ساعت و ۲۰ دقیقه"
         />
+        {/* <div style={{backgroundColor: "blue", height: "100%"}}>.</div> */}
       </div>
       <div className={classes.RecipeCard}><RecipeCard ingredients={tuple}/>
       </div>

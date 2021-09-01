@@ -3,6 +3,7 @@ body {
   align-items: center;
   background-color: #ffeeec;
 }
+
 .card {
   width: 100%;
   padding-top: 20px;
@@ -11,15 +12,26 @@ body {
   width: 100%;
   padding-top: 20px;
 }
+
 @media (min-width: 480px) {
-  .card {
-    width: 40%;
-    padding-top: 20px;
-    float: right;
+  .Recipe{
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
   }
+
+  .card {
+    width: auto;
+    grid-row: 1/2;
+    grid-column: 2/3;
+    padding-top: 20px;
+  }
+
   .RecipeCard {
-    width: 55%;
-    float: left;
+    width: auto;
+    grid-column: 1/2;
+    grid-row: 1/2;
     padding-top: 20px;
   }
 }

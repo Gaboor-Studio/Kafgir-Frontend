@@ -1,0 +1,17 @@
+.ConfirmEmail {
+    background-color: inherit;
+    font-family: IranSans;
+}
+
+.ConfirmEmailTitle {
+    color: #FF8877;
+    margin-bottom: 7rem;
+}
+
+.ConfirmEmailForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}

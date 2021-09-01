@@ -44,7 +44,7 @@ const RecipeCard = (props) => {
     }
   };
   return (
-    <div>
+    <div >
       <div className={classes.outerBar} dir="rtl" onClick={toggleOpen}>
         <h1>مواد مورد نیاز</h1>
         <img

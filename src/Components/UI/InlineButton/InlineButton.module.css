@@ -1,0 +1,14 @@
+.InlineButton{
+    outline: none;
+    border: none;
+    text-decoration: underline;
+    margin: 0 8px;
+    background-color: inherit;
+    font-family: IranSans;
+    color: #FF8877;
+}
+
+.InlineButton:active,
+.InlineButton:focus {
+    outline: none;
+}

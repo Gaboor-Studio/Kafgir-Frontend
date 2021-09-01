@@ -1,0 +1,32 @@
+.PublicButton {
+    background-color: #FF8877;
+    color: white;
+    padding: 8px;
+    width: 120px;
+    border-radius: 0.3rem;
+    margin: 8px auto;
+    font-family: IranSans;
+    border: none;
+}
+
+.PublicButton:hover {
+    background-color: #FFA79C;
+    /* border: #FFA79C 2px solid; */
+}
+
+.ButtonDisabled,
+.ButtonDisabled:hover {
+    background-color: #7A8082;
+}
+
+@media (min-width: 480px){
+    .PublicButton {
+        width: 25vw;
+    }
+}
+
+@media (min-width: 800px){
+    .PublicButton {
+        width: 200px;
+    }
+}

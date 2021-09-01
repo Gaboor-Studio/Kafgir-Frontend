@@ -1,0 +1,12 @@
+.ConfirmCodeInput {
+    box-sizing: border-box;
+    background-color: #FFC5BA;
+    padding: 12px 24px;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}

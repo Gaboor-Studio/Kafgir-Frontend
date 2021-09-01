@@ -1,0 +1,48 @@
+.PublicInput {
+    color: #8E807F;
+    background-color: rgba(255, 197, 186, 0.6);
+    border-radius: 0.2rem;
+    margin: 10px auto;
+    border: none;
+    width: 300px;
+    padding: 5px;
+    direction: rtl;
+    font-family: IranSans;
+}
+
+.PublicInput:focus {
+    outline: none;
+}
+
+
+.SmallInput {
+    width: 144px;
+}
+
+.Centered {
+    text-align: center;
+}
+
+.LeftToRight {
+    direction: ltr;
+}
+
+@media (min-width: 480px){
+    .PublicInput {
+        width: 62.5vw;
+    }
+
+    .SmallInput {
+        width: 30vw;
+    }
+}
+
+@media (min-width: 800px){
+    .PublicInput {
+        width: 500px;
+    }
+
+    .SmallInput {
+        width: 240px;
+    }
+}

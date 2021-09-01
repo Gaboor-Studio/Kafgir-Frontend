@@ -5,7 +5,7 @@ import Hardness from "..//..//UI/Hardness/Hardness.js";
 import Time from "..//..//UI/Time/Time.js";
 const Card = (props) => {
   return (
-    <div class={classes.image}>
+    <div className={classes.image}>
       <img className={classes.ima} src={props.image} alt={props.name} />
       <div className={classes.text}>
         <p>{props.name}</p>
