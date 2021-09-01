@@ -1,15 +1,21 @@
 .ContactUs{
     font-family: IranSans;
-    padding: 0;
 }
 
 .TopBar{
-    text-align: right;
+    text-align: center;
     width: 100%;
-    padding: 0 8px;
+    top: 0%;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
     background-color: #FFEEEC;
     color: #FF8877;
-    box-shadow: 0 10px 8px #888888;
+    box-shadow: 0 8px 8px #adacac;
+}
+
+.TopBar h2 {
+    margin: 10px 0 0 0;
+    padding-right: 10px;
 }
 
 .ContactUsBody {
@@ -61,6 +67,10 @@
 }
 
 @media (min-width: 700px){
+    .TopBar{
+        text-align: right;
+    }
+
     .ContactUsBody {
         display: flex;
         flex-direction: row;
