@@ -10,7 +10,7 @@ import Meal from "./Meal.js";
 import { useState } from "react";
 
 const Planner = (props) => {
-  const [daysArray, setdaysArray] = useState([
+  const daysArray=[
     {
       day: "یکشنبه - ۷ شهریور",
       meal: [
@@ -82,7 +82,7 @@ const Planner = (props) => {
         },
       ],
     },
-  ]);
+  ];
   const [displayingDay, setDisplayingDay] = useState(0);
   const rightArrowHandler = () => {
     if (displayingDay > 0) {
