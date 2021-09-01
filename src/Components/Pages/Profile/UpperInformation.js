@@ -7,8 +7,8 @@ import more from "../../../assets/profile/more.png"
 import editName from "../../../assets/profile/edit_name.png"
 import nameLine from "../../../assets/profile/name-line.png"
 import classes from "./UpperInformation.module.css";
-const UpperInformation=()=>{
-    return(
+const UpperInformation = () => {
+    return (
         <div>
             <div className={classes.upperPart} dir="rtl">
                 <div className={classes.editPhoto}>
@@ -22,11 +22,11 @@ const UpperInformation=()=>{
                     </div>
                 </div>
                 <img src={more} alt="more" className={classes.more}></img>
-            <div className={classes.nameComponent}>
-                <p className={classes.username}>نام نام خانوادگی</p>
-                <img src={editName} alt="edit name" className={classes.editName}></img>
-                <img src={nameLine} alt="line under name" className={classes.nameLine}></img>
-            </div>
+                <div className={classes.nameComponent}>
+                    <p className={classes.username}>نام نام خانوادگی</p>
+                    <img src={editName} alt="edit name" className={classes.editName}></img>
+                    <img src={nameLine} alt="line under name" className={classes.nameLine}></img>
+                </div>
             </div>
         </div>
     );
