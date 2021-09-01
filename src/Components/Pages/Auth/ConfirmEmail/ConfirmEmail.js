@@ -1,23 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { useLocation } from "react-router-dom";
 
 import Button from "../../../UI/Button/Button";
+import ConfirmCodeInput from "../../../UI/ConfirmCodeInput/ConfirmCodeInput";
 import InlineButton from "../../../UI/InlineButton/InlineButton";
-import Input from "../../../UI/Input/Input";
 import Modal from "../../../UI/Modal/Modal";
 
 import classes from "./ConfirmEmail.module.css";
 import EmailForm from "./EmailForm/EmailForm";
 
+
 const ConfirmEmail = (props) => {
-  const [code, setCode] = useState("");
+  const [code, setCode] = useState([]);
   const [modalOpen, setModalOpen] = useState(true);
   const [email, setEmail] = useState("");
   const [phone_number, setPhoneNumber] = useState("");
 
+  const codeSize = 3
+
   const location = useLocation();
 
   useEffect(() => {
+
+    const codeArray = Array.from({ length: codeSize }, (element, index) => "")
+  
+    setCode(codeArray)
+
     if (location.state) {
       setEmail(location.state.email);
       setPhoneNumber(location.state.phone_number)
@@ -26,6 +34,7 @@ const ConfirmEmail = (props) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
+    console.log(code)
     console.log("request sent [Confirm Email]");
   };
 
@@ -35,9 +44,13 @@ const ConfirmEmail = (props) => {
     console.log(email)
   }
 
-  const onInputChangeHandler = (event) => {
-    setCode(event.target.value);
-  };
+  const onInputChangeHandler = useCallback((index, value) => {
+    setCode(prevCode => {
+      const newCode = [...prevCode]
+      newCode[index] = value
+      return newCode
+    })
+  },[]);
 
   const onSendAgainClick = () => {
     console.log("dobare ersal konid ;)")
@@ -53,17 +66,7 @@ const ConfirmEmail = (props) => {
         <h2>تایید ایمیل</h2>
       </div>
       <form className={classes.ConfirmEmailForm} onSubmit={onSubmit}>
-        <Input
-          ltr={code ? true : false}
-          small
-          center
-          id="code"
-          required
-          type="text"
-          placeholder="___    ___    ___"
-          value={code}
-          onType={onInputChangeHandler}
-        />
+        <ConfirmCodeInput length={codeSize} onChangeValue={onInputChangeHandler}/>
         <InlineButton
           type="button"
           clicked={onSendAgainClick}

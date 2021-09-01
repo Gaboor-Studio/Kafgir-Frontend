@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import Button from "../../../UI/Button/Button";
+import ConfirmCodeInput from "../../../UI/ConfirmCodeInput/ConfirmCodeInput";
 import InlineButton from "../../../UI/InlineButton/InlineButton";
 import Input from "../../../UI/Input/Input";
 
@@ -9,8 +10,16 @@ import classes from "./ForgotPassword.module.css";
 const ForgotPassword = (props) => {
   const [codeSent, setCodeSent] = useState(false);
   const [recoverEmail, setRecoverEmail] = useState("");
-  const [recoverCode, setRecoverCode] = useState("");
+  const [recoverCode, setRecoverCode] = useState([]);
   const history = useHistory()
+
+  const codeSize = 5
+
+  useEffect(() => {
+    const codeArray = Array.from({ length: codeSize }, (element, index) => "")
+  
+    setRecoverCode(codeArray)
+  }, [])
 
   const onModeToggle = () => {
     setCodeSent((prevMode) => !prevMode);
@@ -21,10 +30,13 @@ const ForgotPassword = (props) => {
     setRecoverEmail(event.target.value);
   };
 
-  const onCodeFieldChange = (event) => {
-    event.persist();
-    setRecoverCode(event.target.value);
-  };
+  const onCodeFieldChange = useCallback((index, value) => {
+    setRecoverCode(prevCode => {
+      const newCode = [...prevCode]
+      newCode[index] = value
+      return newCode
+    })
+  },[]);
 
   const onSubmitEmail = (event) => {
     event.preventDefault();
@@ -34,6 +46,7 @@ const ForgotPassword = (props) => {
 
   const onSubmitCode = (event) => {
     event.preventDefault();
+    console.log(recoverCode)
     console.log('request sent[forgot password]');
     history.push("/auth/choose-new-password")
   }
@@ -56,17 +69,7 @@ const ForgotPassword = (props) => {
 
   const codeForm = (
     <form onSubmit={onSubmitCode} className={classes.CodeForm}>
-      <Input
-        ltr={recoverCode ? true : false}
-        small
-        center
-        id="code"
-        required
-        type="text"
-        placeholder="___    ___    ___   ___   ___"
-        value={recoverCode}
-        onType={onCodeFieldChange}
-      />
+      <ConfirmCodeInput length={codeSize} onChangeValue={onCodeFieldChange}/>
       <InlineButton clicked={onModeToggle} type="button" text="تغیر ایمیل" />
       <Button>تایید</Button>
     </form>
