@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Redirect, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Categories from "./Components/Pages/Categories/Categories";
 import Planner from "./Components/Pages/Planner/Planner";
 import Recipe from "./Components/Pages/Recipe/Recipe";
@@ -41,7 +41,6 @@ function App() {
                 <ForgotPassword />
               </Route>
             </Switch>
-            {/* <Redirect to="/auth/signup"/> */}
           </AuthLayout>
         </Route>
         <Route path="/profile">
