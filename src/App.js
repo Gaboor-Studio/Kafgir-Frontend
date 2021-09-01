@@ -13,6 +13,7 @@ import Login from "./Components/Pages/Auth/Login/Login";
 import ChangePassword from "./Components/Pages/Auth/ChangePassword/ChangePassword";
 import ChooseNewPassword from "./Components/Pages/Auth/ChooseNewPassword/ChooseNewPassword";
 import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
+import Profile from "./Components/Pages/Profile/Profile"
 
 function App() {
   return (
@@ -42,6 +43,9 @@ function App() {
             </Switch>
             {/* <Redirect to="/auth/signup"/> */}
           </AuthLayout>
+        </Route>
+        <Route path="/profile">
+          <Profile />
         </Route>
         <Route path="/">
           <Layout>

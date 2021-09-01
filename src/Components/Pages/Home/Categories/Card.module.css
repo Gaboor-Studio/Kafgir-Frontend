@@ -1,0 +1,22 @@
+.imagee {
+  width: 100px;
+  height: 100px;
+  border-radius: 15px;
+  float: right;
+  z-index: -1;
+}
+.naman {
+  float: right;
+  margin-top: 70px;
+  margin-right: -100px;
+  width: 100px;
+  height: 30px;
+  background-color: rgba(255, 197, 186, 0.9);
+  font-family: IRANSans;
+  font-size: 14px;
+  color: #3b1913;
+  border-radius: 0px 0px 15px 15px;
+}
+.card{
+  margin-top: 20px;
+}

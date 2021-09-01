@@ -1,0 +1,23 @@
+.logo{
+    float: right;
+    color: #3C1913;
+    margin: 5px;
+}
+.break{
+    margin-top: 20px;
+}
+.categories{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+}
+@media (min-width : 480px){
+    .categories{
+        width: 400px;
+        float: right;
+        padding-right: 20px;
+        padding-bottom: 20px;
+    }
+}

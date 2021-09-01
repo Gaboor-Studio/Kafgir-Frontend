@@ -4,11 +4,13 @@ import breakfast from "..//..//..//..//assets/Home/Home Planner/breakfast.svg";
 import launch from "..//..//..//..//assets/Home/Home Planner/launch.svg";
 import dinner from "..//..//..//..//assets/Home/Home Planner/dinner.svg";
 import adder from "..//..//..//..//assets/planner-add.png";
+import leftarrow from "..//..//..//..//assets/left-arrow.png";
+import rightarrow from "..//..//..//..//assets/right-arrow.png";
 import Meal from "./Meal.js";
 import { useState } from "react";
 
 const Planner = (props) => {
-  const [daysArray, setdaysArray] = useState([
+  const daysArray=[
     {
       day: "یکشنبه - ۷ شهریور",
       meal: [
@@ -36,25 +38,23 @@ const Planner = (props) => {
       day: "دوشنبه - ۸ شهریور",
       meal: [
         {
-          breakfast: {
-            name: "سوسیس تخم مرغ",
-            rate: 3.5,
-            hardness: 1,
-            time: "۱۵ دقیقه",
-          },
-          launch: {
-            name: "",
-            rate: 0,
-            hardness: 0,
-            time: "",
-          },
+          name: "تخم مرغ",
+          rate: 3.5,
+          hardness: 1,
+          time: "۱۵ دقیقه",
+        },
+        {
+          name: "",
+          rate: 0,
+          hardness: 0,
+          time: "",
+        },
 
-          dinner: {
-            name: "",
-            rate: 0,
-            hardness: 0,
-            time: "",
-          },
+        {
+          name: "",
+          rate: 0,
+          hardness: 0,
+          time: "",
         },
       ],
     },
@@ -62,59 +62,80 @@ const Planner = (props) => {
       day: "سه شنبه - ۹ شهریور",
       meal: [
         {
-          breakfast: {
-            name: "سوسیس تخم مرغ",
-            rate: 3.5,
-            hardness: 1,
-            time: "۱۵ دقیقه",
-          },
-          launch: {
-            name: "",
-            rate: 0,
-            hardness: 0,
-            time: "",
-          },
+          name: "سوسیس",
+          rate: 3.5,
+          hardness: 1,
+          time: "۱۵ دقیقه",
+        },
+        {
+          name: "",
+          rate: 0,
+          hardness: 0,
+          time: "",
+        },
 
-          dinner: {
-            name: "",
-            rate: 0,
-            hardness: 0,
-            time: "",
-          },
+        {
+          name: "",
+          rate: 0,
+          hardness: 0,
+          time: "",
         },
       ],
     },
-  ]);
-  let day = 0;
-  let today = daysArray[day];
+  ];
+  const [displayingDay, setDisplayingDay] = useState(0);
+  const rightArrowHandler = () => {
+    if (displayingDay > 0) {
+      setDisplayingDay(displayingDay - 1);
+    }
+  };
+
+  const leftArrowHandler = () => {
+    if (displayingDay < daysArray.length-1) {
+      setDisplayingDay(displayingDay + 1);
+    }
+  };
+
   return (
     <div>
       <div className={classes.header}>
-        <p>{today.day}</p>
+        <p>{daysArray[displayingDay].day}</p>
       </div>
+      <img
+        className={classes.leftarrow}
+        src={leftarrow}
+        alt="leftarrow"
+        onClick={leftArrowHandler}
+      />
+      <img
+        className={classes.rightarrow}
+        src={rightarrow}
+        alt="rightarrow"
+        onClick={rightArrowHandler}
+      />
       <div className={classes.main}>
         <div className={classes.meal}>
           <img className={classes.foodico} src={breakfast} alt="breakfast" />
-          {today.meal[0].name === "" ? (
+          {daysArray[displayingDay].meal[0].name === "" ? (
             <img src={adder} className={classes.adder} alt="adder" />
           ) : (
-            <Meal today={today.meal[0]} />
+            <Meal today={daysArray[displayingDay].meal[0]} />
           )}
         </div>
         <div className={classes.meal}>
           <img className={classes.foodico} src={launch} alt="launch" />
-          {today.meal[1].name === "" ? (
+          {daysArray[displayingDay].meal[1].name === "" ? (
             <img src={adder} className={classes.adder} alt="adder" />
           ) : (
-            <Meal today={today.meal[1]} />
+            <Meal today={daysArray[displayingDay].meal[1]} />
           )}
         </div>
         <div className={classes.meal}>
           <img className={classes.foodico} src={dinner} alt="dinner" />
-          {today.meal[2].name === "" ? (
+          {daysArray[displayingDay].meal[2].name === "" ? (
             <img src={adder} className={classes.adder} alt="adder" />
           ) : (
-            <Meal today={today.meal[2]} />
+            <Meal today={daysArray[displayingDay].meal[2]} />
           )}
         </div>
       </div>
