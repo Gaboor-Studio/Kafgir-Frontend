@@ -1,0 +1,14 @@
+.CommentBox{
+    border: none;
+    direction: rtl;
+    background-color: #FFC5BA;
+    border-radius: 8px;
+    padding: 8px;
+    width: 90%;
+    height: 30vh;
+}
+
+.CommentBox:active,
+.CommentBox:focus{
+    outline: none;
+}

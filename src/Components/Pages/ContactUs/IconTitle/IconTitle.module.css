@@ -1,0 +1,8 @@
+.IconTitle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 16px;
+    color: rgba(67, 54, 54, 0.6);
+}

@@ -1,0 +1,100 @@
+.ContactUs{
+    font-family: IranSans;
+}
+
+.TopBar{
+    text-align: center;
+    width: 100%;
+    top: 0%;
+    padding-bottom: 4px;
+    margin-bottom: 20px;
+    background-color: #FFEEEC;
+    color: #FF8877;
+    box-shadow: 0 8px 8px #adacac;
+}
+
+.TopBar h2 {
+    margin: 10px 0 0 0;
+    padding-right: 10px;
+}
+
+.ContactUsBody {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.ContactDetails{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+}
+
+.ContactComment{
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.Inliner{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 16px;
+}
+
+.AlignButtonLeft{
+    align-self: center;
+    margin-left: 0;
+}
+
+.AlignTitleRight{
+    align-self: flex-end;
+    margin-right: 16px;
+}
+
+.AlignLogoLeft{
+    align-self: center;
+    margin-left: 0;
+}
+
+@media (min-width: 700px){
+    .TopBar{
+        text-align: right;
+    }
+
+    .ContactUsBody {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        gap: 0;
+    }
+
+    .ContactDetails{
+        width: 45%;
+    }
+
+    .ContactComment{
+        width: 55%;
+    }
+
+    .AlignButtonLeft{
+        align-self: flex-start;
+        margin-left: 32px;
+    }
+
+    .AlignLogoLeft{
+        align-self: flex-start;
+        margin-left: 32px;
+    }
+}
