@@ -1,6 +1,7 @@
 import React from "react";
 import classes from "./Categories.module.css";
 import logo from "..//..//..//..//assets/Home/categories.svg";
+import {Link } from "react-router-dom";
 import Card from "./Card";
 const Categories = (props) => {
   const categories = [
@@ -39,6 +40,7 @@ const Categories = (props) => {
     <div>
       <img className={classes.logo} src={logo} alt="logo" />
       <h className={classes.logo}>دسته بندی ها</h>
+      <Link to="categories" className={classes.allbtn}>مشاهده همه</Link>
       <br className={classes.break} />
       <div className={classes.categories}>
         <Card className={classes.card} details={categories[0]} />

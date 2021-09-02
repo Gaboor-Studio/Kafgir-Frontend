@@ -13,11 +13,22 @@
     padding-bottom: 20px;
     padding-right: 10px;
 }
+.allbtn{
+    color: #FF8877;
+    float: left;
+    text-decoration: none;
+    margin-left: 10%;
+    padding-top: 5px;
+}
 @media (min-width : 480px){
     .categories{
         width: 400px;
         float: right;
         padding-right: 20px;
         padding-bottom: 20px;
+    }
+    .allbtn{
+        float: right;
+        margin-right: 10%;
     }
 }
