@@ -7,13 +7,13 @@ import more from "../../../assets/profile/more.png"
 import editName from "../../../assets/profile/edit_name.png"
 import nameLine from "../../../assets/profile/name-line.png"
 import classes from "./UpperInformation.module.css";
+import ImageEdit from "./ImageEdit"
 const UpperInformation = () => {
     return (
         <div>
             <div className={classes.upperPart} dir="rtl">
                 <div className={classes.editPhoto}>
-                    <img src={deletePhoto} alt="delete avatar"></img>
-                    <img src={newPhoto} alt="new avatar"></img>
+                    <ImageEdit newPhoto={newPhoto} deletePhoto={deletePhoto}></ImageEdit>
                 </div>
                 <div className={classes.profilePicContainer}>
                     <img src={pictureBackground} alt="profile avatar background" className={classes.profilePicBackground}></img>
