@@ -90,8 +90,21 @@
 
     .upperPart{
         display: grid;
-        grid-template-columns: 5vw 30vh 3vw 65vw;
+        grid-template-columns: 5vw 30vh 7vw 60vw;
     }
     
+    .profilePicBackground{
+        width: 40vh;
+    }
+    
+    .profilePic{
+        left: 25%;
+        bottom: 20%;
+    }
+    
+    .image{
+        width:23vh ;
+        height: 23vh;
+    }
 
 }
