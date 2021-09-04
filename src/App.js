@@ -15,6 +15,7 @@ import ChooseNewPassword from "./Components/Pages/Auth/ChooseNewPassword/ChooseN
 import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
 import Profile from "./Components/Pages/Profile/Profile";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
+import PopularFood from "./Components/Pages/PopularFood/PopularFood"
 
 function App() {
   return (
@@ -64,6 +65,9 @@ function App() {
               </Route>
               <Route path="/contact-us">
                 <ContactUs />
+              </Route>
+              <Route path="/popular-food">
+                <PopularFood />
               </Route>
               <Route path="/">
                 <Home />
