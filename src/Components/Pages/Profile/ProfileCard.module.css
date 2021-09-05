@@ -70,17 +70,20 @@
         margin-top: 20px;
         margin-bottom: 10px;
         grid-template-columns: 10% 10% 70% 10%;
+        grid-template-rows: 1fr;
     }
     .profileCardTextless{
         margin-top: 30px;
         margin-bottom: 10px;
         grid-template-columns: 10% 80% 0% 10%;
+        grid-template-rows: 1fr;
     }
     
     .emailIcon {
-        justify-self: center;
+        justify-self: end;
         margin: 10px 20px;
-        width: 25%;
+        aspect-ratio: 1;
+        height: 45px;
         grid-column-start: 1;
         margin-left: 40px;
     }
@@ -97,6 +100,9 @@
         font-size: max(14px,2.2vw);
         font-weight: bold;
         margin: 10px 20px;
+        grid-row-start: 1;
+        grid-column-start: 3;
+        margin-left: 5%;
     }
     
     .arrow{
@@ -106,5 +112,14 @@
 
     .noArrow{
         display: none;
+    }
+
+    .borderTextless{
+        background-color:  #EF6637;
+        height: 0.15vw;
+        width: 70vw;
+        margin: auto;
+        margin-top: 30px;
+    
     }
 }
