@@ -1,0 +1,34 @@
+.scroll {
+  position:absolute;
+  display: flex;
+  overflow: auto;
+  white-space: nowrap;
+  direction: rtl;
+  height: 350px;
+  width: 100%;
+  right: 20px;
+  padding-top: 80px;
+  margin-bottom: 50px;
+}
+.background{
+  top: 0;
+  right: 0;
+  position: absolute;
+  height: 420px;
+  z-index: -1;
+}
+
+.title {
+  color: #3b1913;
+  font-size: 20px;
+  float: right;
+  padding-top: 40px;
+  padding-right: 20px;
+}
+.card{
+  position: absolute;
+  left: 0;
+  height: 350px;
+  width: 100%;
+  padding-left: 20px;
+}
