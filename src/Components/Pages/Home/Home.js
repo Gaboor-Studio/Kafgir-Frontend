@@ -56,17 +56,13 @@ const foods = [
 const Home = () => {
   return (
     <div className={classes.Home}>
-      <div className={classes.layout}>
         <Planner />
-      </div>
-      <br />
-      <div className={classes.layout}>
         <Categories />
-      </div>
-      <br />
       <div className={classes.layout}>
         <Card details={foods} title="برترین غذاهای ماه" />
       </div>
+      <br />
+      <br />
     </div>
   );
 };

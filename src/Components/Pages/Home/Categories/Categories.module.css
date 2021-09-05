@@ -1,37 +1,57 @@
-.logo{
-    float: right;
-    color: #3C1913;
-    margin: 5px;
+.logo {
+  float: right;
+  color: #3c1913;
+  margin: 5px;
 }
-.break{
-    margin-top: 20px;
+.break {
+  margin-top: 20px;
 }
-.categories{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    margin-top: 10px;
+.categories {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 10px;
+}
+.allbtn {
+  color: #ff8877;
+  float: left;
+  text-decoration: none;
+  margin-left: 10%;
+  padding-top: 5px;
+}
+.allbtn:hover {
+  color: #ff644d;
+}
+@media (min-width: 480px) {
+  .categories {
+    width: 70%;
+    margin-left: 15%;
     padding-bottom: 20px;
-    padding-right: 10px;
+  }
+  .allbtn {
+    float: right;
+    margin-right: 35%;
+    margin-top: 50px;
+  }
+  .logo {
+    margin-top: 50px;
+    margin-right: 20px;
+  }
 }
-.allbtn{
-    color: #FF8877;
-    float: left;
-    text-decoration: none;
-    margin-left: 10%;
-    padding-top: 5px;
-}
-.allbtn:hover{
-    color: #ff644d;
-}
-@media (min-width : 480px){
-    .categories{
-        width: 400px;
-        float: right;
-        padding-right: 20px;
-        padding-bottom: 20px;
-    }
-    .allbtn{
-        float: right;
-        margin-right: 10%;
-    }
+@media (min-width:700px){
+  .categories {
+    width: 40%;
+    margin-left: 50%;
+    padding-bottom: 20px;
+  }
+  .allbtn {
+    float: right;
+    margin-right: 35%;
+    margin-top: 50px;
+  }
+  .logo {
+    margin-top: 50px;
+    margin-right: 20px;
+  }
 }

@@ -11,6 +11,9 @@ const Card = (props) => {
         {props.details.map((detail, index) => (
           <Layout image={detail.image} name={detail.name} hardness={detail.hardness} time={detail.time} rate={detail.rate} />
         ))}
+        <div className={classes.all}>
+          <p className={classes.allbtn}>مشاهده همه</p>
+        </div>
       </div>
     </div>
   );
