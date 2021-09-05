@@ -1,4 +1,4 @@
-.image{
+.image {
   width: 100px;
   height: 100px;
   border-radius: 15px;
@@ -18,8 +18,8 @@
   border-radius: 0px 0px 15px 15px;
 }
 .card {
-  background: rgba(255, 255, 255, 0.3);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 7px 10px rgba(0, 0, 0, 0.1);
+  background: rgba(184, 184, 184, 0.2);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.5), 0px 7px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
   margin-bottom: 10px;
   margin-top: -10px;
@@ -29,6 +29,9 @@
   height: 280px;
   margin-right: 10px;
   margin-left: 10px;
+}
+.card:hover {
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5), 0px 7px 10px rgba(0, 0, 0, 0.1);
 }
 
 .recipebtn {
@@ -42,15 +45,18 @@
   width: 100px;
   height: 30px;
 }
-.hardness{
+.recipebtn:hover {
+  background-color: #ff644d;
+}
+.hardness {
   margin-top: 80px;
   transform: scaleX(-1);
 }
-.time{
+.time {
   margin-top: -30px;
   padding-left: 10px;
 }
-.rate{
+.rate {
   margin-top: -20px;
   transform: scaleX(-1);
 }

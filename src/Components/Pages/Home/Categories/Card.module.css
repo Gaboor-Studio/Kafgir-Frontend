@@ -5,6 +5,9 @@
   float: right;
   z-index: -1;
 }
+.imagee:hover{
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5), 0px 7px 10px rgba(0, 0, 0, 0.1);
+}
 .naman {
   float: right;
   margin-top: 70px;
@@ -16,6 +19,9 @@
   font-size: 14px;
   color: #3b1913;
   border-radius: 0px 0px 15px 15px;
+}
+.naman:hover{
+  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5), 0px 7px 10px rgba(0, 0, 0, 0.1);
 }
 .card{
   margin-top: 20px;

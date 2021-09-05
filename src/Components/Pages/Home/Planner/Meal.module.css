@@ -22,7 +22,9 @@
     width: 100px;
     height: 30px;
 }
-
+.recipebtn:hover{
+    background-color: #ff644d;
+}
 @media (max-width:334px){
     .recipebtn{
         width: 70px;
