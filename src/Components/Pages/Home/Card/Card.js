@@ -9,7 +9,7 @@ const Card = (props) => {
       <img src={background} className={classes.background} />
       <div className={classes.scroll}>
         {props.details.map((detail, index) => (
-          <Layout image={detail.image} name={detail.name} />
+          <Layout image={detail.image} name={detail.name} hardness={detail.hardness} time={detail.time} rate={detail.rate} />
         ))}
       </div>
     </div>
