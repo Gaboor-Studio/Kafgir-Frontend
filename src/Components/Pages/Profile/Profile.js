@@ -1,10 +1,10 @@
 import React from "react";
 import UpperInformation from "./UpperInformation"
 import ProfileCard from "./ProfileCard"
-import emailIcon from "../../../assets/profile/email.png"
-import logoutIcon from "../../../assets/profile/logout.png"
-import passwordIcon from "../../../assets/profile/password.png"
-import contactUsIcon from "../../../assets/profile/contact-us.png"
+import emailIcon from "../../../assets/profile/email.svg"
+import logoutIcon from "../../../assets/profile/logout.svg"
+import passwordIcon from "../../../assets/profile/password.svg"
+import contactUsIcon from "../../../assets/profile/contact-us.svg"
 const Profile = () => {
     return (
         <div>

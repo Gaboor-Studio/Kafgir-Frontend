@@ -1,6 +1,6 @@
 import React from "react";
 import classes from "./ProfileCard.module.css"
-import leftArrow from "../../../assets/profile/left-arrow.png"
+import leftArrow from "../../../assets/profile/left-arrow.svg"
 
 const ProfileCard = (props) => {
     return (
