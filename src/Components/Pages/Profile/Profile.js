@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import UpperInformation from "./UpperInformation"
 import ProfileCard from "./ProfileCard"
 import emailIcon from "../../../assets/profile/email.svg"
@@ -7,9 +7,11 @@ import passwordIcon from "../../../assets/profile/password.svg"
 import contactUsIcon from "../../../assets/profile/contact-us.svg"
 import accountIcon from "../../../assets/profile/account.svg"
 const Profile = () => {
+    const [editNameState,setEditNameState]= useState(false);
+
     return (
         <div>
-            <UpperInformation></UpperInformation>
+            <UpperInformation editState={editNameState} setEditState={setEditNameState}></UpperInformation>
             <ProfileCard title="نام کاربری" text="username" icon={accountIcon}></ProfileCard>
             <ProfileCard title="ایمیل" text="useremailexample@gmail.com" icon={emailIcon}></ProfileCard>
             <ProfileCard title="تعویض رمز عبور" text="" icon={passwordIcon} arrow></ProfileCard>

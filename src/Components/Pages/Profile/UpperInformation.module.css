@@ -70,6 +70,32 @@
     font-size: 4vw;
 }
 
+.editState{
+    display: none;
+}
+
+.inputName{
+    font-size: max(2.5vw,25px);
+    font-weight: bold;
+    background-color: #FFEEEC;
+    width: 35vw;
+    border-top-width: 0px;
+    border-right-width: 0px;
+    border-left-width: 0px;
+}
+
+.submitButton{
+    padding: max(3px,0.6vh) max(15px,1.3vw);
+    font-size: max(1.4vw,20px);
+    margin: 0px 30px;
+    border-radius: 6px;
+    background-color: #FF8877;
+    color: white;
+    border: 0px;
+    align-self: center;
+    
+}
+
 @media (min-width: 750px){
     .username{
         font-size: 2vw;
@@ -107,4 +133,25 @@
         height: 23vh;
     }
 
+    .inputName{
+        font-size: max(2.5vw,30px);
+        font-weight: bold;
+        background-color: #FFEEEC;
+        width: 25vw;
+        border-top-width: 0px;
+        border-right-width: 0px;
+        border-left-width: 0px;
+    }
+    
+    .submitButton{
+        padding: max(5px,1vh) max(20px,2.1vw);
+        font-size: max(1.4vw,20px);
+        margin: 0px 30px;
+        border-radius: 6px;
+        background-color: #FF8877;
+        color: white;
+        border: 0px;
+        align-self: center;
+        
+    }
 }
