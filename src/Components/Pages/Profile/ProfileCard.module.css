@@ -1,6 +1,7 @@
 .profileCard{
     display: grid;
-    grid-template-columns: 10% 10% 60% 20%;
+    grid-template-columns: 10% 30% 50% 10%;
+    grid-template-rows: 0.5fr 0.2fr;
     margin: 0vh 4vh 0px 4vh;
     align-items: center;
 }
@@ -8,14 +9,16 @@
 .profileCardTextless{
     display: grid;
     grid-template-columns: 10% 70% 0% 20%;
-    margin: 0vh 4vh 0px 4vh;
+    margin: 10px 4vh 0px 4vh;
     align-items: center;
 }
 
 .emailIcon {
-    width: 4vh;
-    justify-self: end;
+    justify-self: center;
     margin: 10px 20px;
+    width: fit-content;
+    grid-column-start: 1;
+    margin-left: 40px;
 }
 
 .title{
@@ -29,13 +32,20 @@
 .cardText{
         font-size: 5vw;
         font-weight: bold;
-        justify-self: center;
-        margin-top: 80px;
+        justify-self: end;
+        grid-row-start: 2;
+        grid-column-start: 3;
+        margin-bottom: auto;
+        margin-top: 0px;
 }
 
 .arrow{
     justify-self: end;
     width: 3.5vw;
+    grid-column-start:4 ;
+}
+.noArrow{
+    display: none;
 }
 
 .border{
@@ -43,6 +53,15 @@
     height: 0.15vw;
     width: 70vw;
     margin: auto;
+}
+
+.borderTextless{
+    background-color:  #EF6637;
+    height: 0.15vw;
+    width: 70vw;
+    margin: auto;
+    margin-top: 15px;
+
 }
 
 @media (min-width: 480px){
@@ -59,9 +78,11 @@
     }
     
     .emailIcon {
-        width: 6vh;
-        justify-self: end;
+        justify-self: center;
         margin: 10px 20px;
+        width: 25%;
+        grid-column-start: 1;
+        margin-left: 40px;
     }
     
     .title{
@@ -81,5 +102,9 @@
     .arrow{
         justify-self: center;
         width: max(1.5vw,15px);
+    }
+
+    .noArrow{
+        display: none;
     }
 }
