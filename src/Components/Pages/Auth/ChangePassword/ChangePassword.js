@@ -17,7 +17,7 @@ const ChangePassword = (props) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    history.push("/auth/choose-new-password");
+    history.push("/auth/choose-new-password", {old_password: oldPassword});
   };
 
   return (

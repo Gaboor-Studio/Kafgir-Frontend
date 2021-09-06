@@ -4,7 +4,6 @@ import ConfirmCodeDigit from "./ConfirmCodeDigit.js/ConfirmCodeDigit";
 import classes from "./ConfirmCodeInput.module.css";
 
 const ConfirmCodeInput = React.memo((props) => {
-    console.log('[in Conf Input]')
 
   const handleChange = (e) => {
     const { maxLength, value, name } = e.target;

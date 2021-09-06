@@ -36,7 +36,7 @@ function App() {
               <Route path="/auth/change-password">
                 <ChangePassword />
               </Route>
-              <Route path="/auth/choose-new-password">
+              <Route path="/auth/choose-new-password/:reset_token">
                 <ChooseNewPassword />
               </Route>
               <Route path="/auth/forgot-password">

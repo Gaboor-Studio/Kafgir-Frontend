@@ -1,0 +1,21 @@
+.RecoverForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+
+.Radio{
+    width: 95%;
+    font-size: small;
+    color: #DE5C4B;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-family: IranSans;
+}
