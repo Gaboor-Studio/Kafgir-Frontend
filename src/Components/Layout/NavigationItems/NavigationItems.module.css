@@ -2,16 +2,32 @@
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-end;
-    padding: 0;
+    padding-right: 0;
     margin: 0;
     height: 100%;
     width: 100%;
     align-items: center;
+    direction: rtl;
+    right: 0;
 }
-
+.search{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    padding-right: 0;
+    margin: 0;
+    width: 100%;
+    align-items: center;
+    direction: rtl;
+    right: 0;
+}
 @media (min-width: 480px) {
     .NavigationItems {
         flex-direction: row;
         justify-content: space-around;
+        direction: ltr;
+    }
+    .search{
+        display: none;
     }
 }

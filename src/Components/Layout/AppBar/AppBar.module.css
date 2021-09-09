@@ -21,6 +21,9 @@
 }
 
 @media (min-width: 480px){
+    .AppBar{
+        direction: ltr;
+    }
     .title{
         display: none;
     }
