@@ -109,6 +109,8 @@
     .nameComponent{
         grid-column-start: auto;
         grid-column-end: auto;
+        margin-top: 8vh;
+        align-self: flex-start;
     }
     .profilePicContainer{
         margin-left: auto;

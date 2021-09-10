@@ -64,18 +64,16 @@
 
 }
 
-@media (min-width: 480px){
+@media (min-width: 750px){
     .profileCard{
-        padding-bottom: 10px;
-        margin-top: 20px;
         margin-bottom: 10px;
-        grid-template-columns: 10% 10% 70% 10%;
+        grid-template-columns: 10% 30% 50% 10%;
         grid-template-rows: 1fr;
+        height: 80px;
     }
     .profileCardTextless{
-        margin-top: 30px;
         margin-bottom: 10px;
-        grid-template-columns: 10% 80% 0% 10%;
+        grid-template-columns: 10% 30% 50% 10%;
         grid-template-rows: 1fr;
     }
     
@@ -97,7 +95,7 @@
     }
     
     .cardText{
-        font-size: max(14px,2.2vw);
+        font-size: 3.6vh;
         font-weight: bold;
         margin: 10px 20px;
         grid-row-start: 1;
@@ -116,10 +114,14 @@
 
     .borderTextless{
         background-color:  #EF6637;
-        height: 0.15vw;
+        height: 2.5px;
         width: 70vw;
         margin: auto;
-        margin-top: 30px;
+        margin-top: 10px;
     
+    }
+    .border{
+        height: 2.5px;
+
     }
 }
