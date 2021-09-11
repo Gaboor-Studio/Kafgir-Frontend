@@ -1,5 +1,6 @@
 import React from "react"
 import FoodCard from "../../UI/FoodCard/FoodCard"
+import PageHeader from "../../UI/PageHeader/PageHeader"
 import Ghorme from "../../../assets/food_pics/ghorme.jpg"
 import Gheime from "../../../assets/food_pics/gheime.jpg"
 import Karafs from "../../../assets/food_pics/karafs.jpg"
@@ -30,6 +31,7 @@ const PopularFood = () => {
     ]
     return (
         <div>
+            <PageHeader title="غذا های محبوب ماه"></PageHeader>
             {foods.map(curFood=>(<FoodCard food={curFood.food} key={curFood.id}></FoodCard>))}
         </div>
     );
