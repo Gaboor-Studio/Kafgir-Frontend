@@ -23,7 +23,7 @@ const RecipeCard = (props) => {
     if (isOpen === true) {
       setAppearingChildren(displayIngredients);
     }
-    if (window.innerWidth >= 480) {
+    if (window.innerWidth >= 800) {
       setIsOpen(true);
       setAppearingChildren(displayIngredients);
     }
@@ -35,7 +35,7 @@ const RecipeCard = (props) => {
       setTimeout(() => setAppearingChildren(displayIngredients), 250);
       setIsOpen(true);
     } else {
-      if (window.innerWidth <= 480) {
+      if (window.innerWidth <= 800) {
         setInnerBarClasses(classes.innerBar + " " + classes.close);
         setExtendImage(add);
         setTimeout(() => setAppearingChildren(), 250);
