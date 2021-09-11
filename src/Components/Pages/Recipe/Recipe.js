@@ -22,7 +22,6 @@ const recipe = (props) => {
           hardness={2}
           time="۱ ساعت و ۲۰ دقیقه"
         />
-        {/* <div style={{backgroundColor: "blue", height: "100%"}}>.</div> */}
       </div>
       <div className={classes.RecipeCard}><RecipeCard ingredients={tuple}/>
       </div>

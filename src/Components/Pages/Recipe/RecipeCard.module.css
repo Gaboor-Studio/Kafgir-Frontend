@@ -42,8 +42,6 @@
 .open {
   height: auto;
 }
-/* .ingr {
-} */
 .amou {
   text-align: left;
   padding-left: 10px;
@@ -54,7 +52,7 @@
   margin-bottom: 5px;
   background-color: #ffeeec;
 }
-@media (min-width: 480px) {
+@media (min-width: 800px) {
   .outerBar {
     display: flex;
     background-color: #3b1913;
@@ -90,9 +88,6 @@
     transition: height 0.4s;
     display: block;
   }
-
-  /* .close {
-  } */
   .open {
     height: 600px;
   }
