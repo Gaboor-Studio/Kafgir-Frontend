@@ -10,7 +10,7 @@
     background-color: #FFC5BA;
     border-radius: 10px;
     margin: 2vh 3vw;
-    padding: 10px 10px;
+    padding: 10px 10px 0.5vh 10px;
     box-shadow: 0px 7px #d6d6d6;
 }
 
@@ -24,6 +24,7 @@
 }
 
 .instruction{
+    text-decoration: none;
     grid-row-start: 2;
     grid-row-end: 4;
     background-color: #FF8877;
@@ -54,6 +55,83 @@
 .time{
     grid-column-start: 3;
     grid-row-start: 3;
+    grid-row-end: 4;
+    margin-bottom: auto;
+}
+
+
+@media (min-width: 480px){
+
+.cardContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 0.2fr 0.3fr 0.55fr;
+    background-color: #FFC5BA;
+    border-radius: 10px;
+    margin: 2vh 1.8vw;
+    padding: 10px 10px 0.5vh 10px;
+    box-shadow: 0px 7px #d6d6d6;
+}
+
+.picture{
+    grid-row-start: 1;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.foodName{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-weight: bold;
+    font-size: 110%;
+    font-weight: bold;
+    justify-self: start;
+    margin: 0px 20px 0px 0px;
+    padding: 0px;
+    align-self: center;
+}
+
+.instruction{
+    text-decoration: none;
+    grid-row-start: 4;
+    grid-row-end: 5;
+    background-color: #FF8877;
+    border-radius: 10px;
+    align-self: center;
+    justify-self: center;
+    padding: 0.4vh 28%;
+    
+}
+
+.instruction p{
+    color: #F6F5F5;
+    font-size: max(1.5vw,20px);
+    font-weight: normal;
+    margin: 0px;
+    padding: 0px;
+}
+
+.difficulty{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: end;
+    margin-top: auto;
+}
+
+.rating{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    justify-self: end;
+}
+
+.time{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 4;
     grid-row-end: 5;
     margin-bottom: auto;
+}
+
+
 }

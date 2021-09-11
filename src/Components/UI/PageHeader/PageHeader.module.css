@@ -25,3 +25,30 @@
     left: 3%;
     width: 9vw;
 }
+
+
+@media (min-width: 480px){
+    .header{
+        margin-bottom: 3vh;
+        position: relative;
+        box-shadow: 0px 3px #d6d6d6;
+        
+    }
+    
+    .title{
+        font-size: max(2.5vw,25px);
+        color: #FF8877;
+        margin: 1vh 0vh 0.4vh 0vh;
+    }
+    
+    .bottomBorder{
+        display: none;
+    }
+    
+    .arrow{
+        position: absolute;
+        top: 32%;
+        left: 3%;
+        width: max(3vw,33px);
+    }
+}
