@@ -2,11 +2,11 @@
   display: flex;
   background-color: #FFC5BA;
   color: #3b1913;
-  padding-top: 10px;
   box-sizing: border-box;
   width: 90%;
   height: 20px;
   padding: 0px 10px;
+  padding-top: 10px;
   margin: auto;
   border-radius: 10px 10px 0px 0px;
   font-family: IranSans;
@@ -14,6 +14,7 @@
   font-size: 70%;
   font-weight: bold;
   min-height: 35px;
+  margin-top: 10px;
 }
 .extendButton {
   margin-right: auto;
@@ -58,10 +59,9 @@
     display: flex;
     box-sizing: border-box;
     font-family: IranSans;
-    width: 100%;
+    width: 98%;
     height: 30px;
     padding: 0px 20px;
-    margin: auto;
     border-radius: 15px 15px 0px 0px;
     align-items: center;
     font-size: 70%;
@@ -71,13 +71,9 @@
     display: none;
   }
   .innerBar {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    overflow: auto;
-    white-space: nowrap;
     justify-content: space-evenly;
     box-sizing: border-box;
-    width: 100%;
+    width: 98%;
     font-family: IranSans;
     text-align: right;
     height: auto;
@@ -86,7 +82,6 @@
     transition: height 0.4s;
     margin-bottom: 20px;
     display: block;
-    height: 33vw;
   }
   .open {
     height: 600px;
