@@ -1,0 +1,32 @@
+.ConfirmChange {
+    display: block;
+    width: 312px;
+    margin: 0 auto;
+    font-family: IranSans;
+  }
+
+  .ConfirmChangeTitle {
+    color: #FF8877;
+    margin-bottom: 5rem;
+  }
+
+  .EmailForm,
+  .CodeForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+  @media (min-width: 480px) {
+    .ConfirmChange {
+      width: 65%;
+    }
+  }
+  
+  @media (min-width: 800px) {
+    .ConfirmChange {
+      width: 520px;
+    }
+  }
