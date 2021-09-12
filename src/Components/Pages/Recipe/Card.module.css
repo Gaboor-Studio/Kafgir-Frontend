@@ -28,6 +28,17 @@
   padding-bottom: 50px;
   border-radius: 0px 0px 15px 15px;
 }
+.addpln{
+  float: left;
+  margin-left: 20px;
+  margin-top: 8%;
+
+}
+.addfav{
+  float: right;
+  margin-right: 20px;
+  margin-top: 8%;
+}
 .left {
   float: left;
   padding-left: 5px;
@@ -42,13 +53,17 @@
 @media (min-width: 480px) {
   .image {
     width: 80%;
-    margin-left: 15%;
-    margin-right: 15%;
-    float: right;
+    margin-left: 10%;
   }
   .ima {
     border-radius: 15px;
     width: 70%;
+  }
+  .addfav{
+    margin-top: 6%;
+  }
+  .addpln{
+    margin-top: 6%;
   }
   .text {
     width: 70%;
@@ -60,15 +75,13 @@
     font-size: 24px;
     color: #3b1913;
     border-radius: 0px 0px 15px 15px;
-    margin-left: 0%;
+    margin-left: 15%;
   }
 
   @media (min-width: 800px) {
     .image {
       width: 100%;
-      margin-left: auto;
       float: right;
-      margin-right: 0%;
     }
     .ima {
       border-radius: 15px;
@@ -84,6 +97,7 @@
       font-size: 24px;
       color: #3b1913;
       border-radius: 0px 0px 15px 15px;
+      margin-left: 0;
     }
   }
 }

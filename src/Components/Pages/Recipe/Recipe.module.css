@@ -12,29 +12,50 @@ body {
   width: 100%;
   padding-top: 20px;
 }
+.addpln{
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+.addfav{
+  float: right;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
 
+.buttons{
+    
+}
 @media (min-width: 800px) {
-  .Recipe{
-    display: grid;
-    grid-template-columns: 5fr 3fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    gap: 10px;
+  .Recipe {
+    display:block;
   }
 
   .card {
-    width: auto;
-    grid-row: 1/2;
-    grid-column: 2/2;
+    width: 35%;
     padding-top: 20px;
     margin-right: 10px;
+    float: right;
   }
-
+  
   .RecipeCard {
-    width: auto;
-    grid-column: 1/2;
-    grid-row: 1/2 cover;
+    width: 60%;
     padding-top: 20px;
     margin-left: 10px;
+    float: left;
   }
-
+  .Recipesteps {
+    padding-top: 20px;
+    margin-top: 20px;
+  }
+  .addpln{
+    float: right;
+    margin-right: -100%;
+    margin-top: 360%;
+  }
+  .addfav{
+    margin-right: -350%;
+    margin-top: 360%;
+  }
 }
+

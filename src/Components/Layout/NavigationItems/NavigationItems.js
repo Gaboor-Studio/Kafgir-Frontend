@@ -24,12 +24,12 @@ const navigationItems = (props) => {
         imageTitle="shop"
       />
       <div className={classes.search}>
-        <NavigationItem
-          route="/search"
-          name="جستجو"
-          imageUrl={seacrh}
-          imageTitle="seacrh"
-        />
+      <NavigationItem
+        route="/search"
+        name="جستجو"
+        imageUrl={seacrh}
+        imageTitle="seacrh"
+      />
       </div>
       {props.children}
       <NavigationItem
