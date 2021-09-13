@@ -1,0 +1,29 @@
+.buttonContainer{
+    display: flex;
+    margin: 2.5vh 0px;
+}
+
+.addButton{
+    background-color: #FF8877;
+    border-radius: 10px;
+    border: 0px;
+    color: white;
+    font-size: 6vw;
+    padding: 10px 13px;
+    margin-left: auto;
+    margin-right: 4vw;
+    margin-bottom: 1vh;
+}
+
+.deleteAllButton{
+    display: inline;
+    background-color: #FF8877;
+    border-radius: 10px;
+    border: 0px;
+    color: white;
+    font-size: 6vw;
+    padding: 10px 13px;
+    margin-right: auto;
+    margin-left: 4vw;
+    margin-bottom: 1vh;
+}

@@ -16,6 +16,7 @@ import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPasswor
 import Profile from "./Components/Pages/Profile/Profile";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
 import PopularFood from "./Components/Pages/PopularFood/PopularFood"
+import ShoppingList from "./Components/Pages/ShoppingList/ShoppingList";
 
 function App() {
   return (
@@ -53,6 +54,9 @@ function App() {
             <Switch>
               <Route path="/profile">
                 <Profile />
+              </Route>
+              <Route path="/shop_list">
+                <ShoppingList />
               </Route>
               <Route path="/categories">
                 <Categories />
