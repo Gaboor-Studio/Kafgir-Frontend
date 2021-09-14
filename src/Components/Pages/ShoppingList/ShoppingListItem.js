@@ -1,17 +1,16 @@
-import React from "react"
+import React, { useState } from "react"
 import classes from "./ShoppingListItem.module.css"
 import Icons from "./Icons"
 
 const ShoppingListItem = (props) => {
 
-
     return (
         <div className={classes.container}>
-            <div className={classes.line}></div>
+            <div className={classes.line} />
             <div dir="rtl" className={classes.ingredientContainer}>
-                <p className={classes.name}>{props.name}</p>
-                <p className={classes.amount}>{props.amount}</p>
-                <Icons></Icons>
+                <p className={props.checked ? [classes.name, classes.checked].join(' ') : classes.name}>{props.name}</p>
+                <p className={props.checked ? [classes.amount, classes.checked].join(' ') : classes.amount}>{props.amount + ' ' + props.unit}</p>
+                <Icons checked={props.checked} />
             </div>
         </div>
     );

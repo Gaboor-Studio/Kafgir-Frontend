@@ -1,0 +1,140 @@
+.addItemPanel{
+    display: flex;
+    position: absolute;
+    background-color: #FFC5BA;
+    width: 80vw;
+    height: 45vw;
+    z-index: 500;
+    left: 10vw;
+    top: 30vw;
+    border-radius: 23px;
+}
+
+.closeButton{
+    width: 6vw;
+    margin: 3vw 3vw auto auto;
+}
+
+.itemName{
+    height: 9vw;
+    width: 30vw;
+    position: absolute;
+    right: 25vw;
+    top: 4vw;
+    background-color: #FFC5BA;
+    border: 0px;
+    font-size: 7vw;
+    text-align: center;
+}
+
+.itemAmount{
+    height: 9vw;
+    width: 20vw;
+    position: absolute;
+    right: 11vw;
+    top: 19vw;
+    background-color: #FFC5BA;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    font-size: 7vw;
+    text-align: center;
+}
+
+.unit{
+    height: 9vw;
+    width: 30vw;
+    position: absolute;
+    left: 11vw;
+    top: 19vw;
+    background-color: #FFC5BA;
+    border: 0px;
+    font-size: 6vw;
+    text-align: center;
+}
+
+.confirmButton{
+    position: absolute;
+    background-color: #FF8877;
+    width: 100%;
+    height: 11vw;
+    bottom: 0%;
+    border-radius:0px 0px 23px 23px;
+    font-size: 5.5vw;
+    color: white;
+}
+
+.hide{
+    display: none;
+}
+
+
+@media (min-width: 480px){
+    .addItemPanel{
+        display: flex;
+        position: absolute;
+        background-color: #FFC5BA;
+        width: 50vw;
+        height: 26vw;
+        z-index: 500;
+        left: 25vw;
+        top: 20vh;
+        border-radius: 23px;
+    }
+    
+    .closeButton{
+        width: 3vw;
+        margin: 1.2vw 1.2vw auto auto;
+    }
+    
+    .itemName{
+        height: 6vw;
+        width: 20vw;
+        position: absolute;
+        right: 15vw;
+        top: 0.7vw;
+        background-color: #FFC5BA;
+        border: 0px;
+        font-size: 3.5vw;
+        text-align: center;
+    }
+    
+    .itemAmount{
+        height: 6vw;
+        width: 14vw;
+        position: absolute;
+        right: 7vw;
+        top: 11vw;
+        background-color: #FFC5BA;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        font-size: 3.5vw;
+        text-align: center;
+    }
+    
+    .unit{
+        height: 6vw;
+        width: 14vw;
+        position: absolute;
+        right: 27vw;
+        top: 11vw;
+        background-color: #FFC5BA;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+        font-size: 3.5vw;
+        text-align: center;
+    }
+    
+    .confirmButton{
+        position: absolute;
+        background-color: #FF8877;
+        width: 100%;
+        height: 6vw;
+        bottom: 0%;
+        border-radius:0px 0px 23px 23px;
+        font-size: 3vw;
+        color: white;
+    }
+}

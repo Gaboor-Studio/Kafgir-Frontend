@@ -27,3 +27,17 @@
     margin-left: 4vw;
     margin-bottom: 1vh;
 }
+
+@media (min-width: 480px){
+    .addButton{
+        font-size: max(25px,2vw);
+        padding: 10px 1vw;
+        
+    }
+
+    .deleteAllButton{
+        font-size: max(25px,2vw);
+        padding: 10px 1vw;
+
+    }
+}
