@@ -5,21 +5,23 @@ import closeButton from "../../../../assets/shopping-list/close-button.svg"
 const AddItemPanel = (props) => {
     const [itemName, setItemName] = useState('');
     const [itemAmount, setItemAmount] = useState('');
-    const [itemUnit, setItemUnit] = useState('کیلوگرم')
+    const [itemUnit, setItemUnit] = useState('')
 
     const closePanel = () => {
         setItemName('');
         setItemAmount('');
+        setItemUnit('');
         props.onClose();
     }
     const confirmItem = () => {
         if (itemName.length>10)
             alert("نام ایتم باید کمتر از 10 حرف باشد")
-        if(itemName.length<1)
+        else if(itemName.length<1)
             alert("نام نباید خالی باشد")
         else {
             setItemName('');
             setItemAmount('');
+            setItemUnit('');
             props.onConfirm(itemName, itemAmount, itemUnit);
         }
     }
@@ -38,11 +40,7 @@ const AddItemPanel = (props) => {
             <img src={closeButton} className={classes.closeButton} onClick={closePanel}></img>
             <input type="text" className={classes.itemName} placeholder="نام" maxLength="10" onChange={nameChangeHandler} value={itemName} />
             <input type="number" className={classes.itemAmount} onChange={amountChangeHandler} value={itemAmount} />
-            <select id="unit" className={classes.unit} onChange={unitChangeHandler}>
-                <option value="کیلوگرم" >کیلوگرم</option>
-                <option value="گرم" >گرم</option>
-                <option value="عدد" >عدد</option>
-            </select>
+            <input type="text" className={classes.unit} onChange={unitChangeHandler} value={itemUnit} placeholder="کیلوگرم" />
             <div className={classes.confirmButton} onClick={confirmItem}>تایید</div>
         </div>
     );
