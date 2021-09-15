@@ -1,14 +1,17 @@
+//WeekSelector component for selecting the week that user wants to see it's mealplan.
+
 import React from "react";
 import leftArrow from "../../../assets/left-arrow.png"
 import rightArrow from "../../../assets/right-arrow.png"
 import classes from "./WeekSelector.module.css"
 
 const WeekSelector = (props) => {
+    // go to the past week
     const rightArrowHandler = () => {
         if(props.displayingWeek>0)
             props.setDisplayingWeek(-1);
     }
-
+    //go to the next week
     const leftArrowHandler = () => {
         if(props.displayingWeek<props.weeks.length-1)
             props.setDisplayingWeek(1);

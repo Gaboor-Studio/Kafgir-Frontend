@@ -1,3 +1,5 @@
+//ShoppingList page component which consists of a header, ShoppingListItem components and AddItem component for adding a new item to the list
+
 import React, { useState } from "react"
 import PageHeader from "../../UI/PageHeader/PageHeader"
 import classes from "./ShoppingList.module.css"
@@ -8,7 +10,7 @@ import AddItemPanel from "./AddItemPanel/AddItemPanel"
 const ShoppingList = () => {
     const [showBackdrop, setShowBackdrop] = useState(false);
     const [showAddItemPanel, setShowAddItemPanel] = useState(false);
-
+    
     const closeAddItem = () => {
         setShowBackdrop(false);
         setShowAddItemPanel(false);

@@ -1,3 +1,5 @@
+//profile card component for showing information like email or linking other pages like contact us
+
 import React from "react";
 import classes from "./ProfileCard.module.css"
 import leftArrow from "../../../assets/profile/left-arrow.svg"

@@ -1,3 +1,5 @@
+//Planner page component which is responsible for selecting a week with WeekSelector component and then showing it's planning with week and day components.
+
 import React from "react";
 import { useState } from "react";
 import WeekSelector from "./WeekSelector"
@@ -591,6 +593,7 @@ const Planner = (props) => {
         }
     ]);
     const [displayingWeekVar, setDisplayingWeekVar] = useState(1);
+    //to remove a meal from plan
     const sendRemoveRequest = (meal, day, week) => {
         let newWeeksArray=weeksArray;
         newWeeksArray[week].days[day][meal].name="";
@@ -598,6 +601,7 @@ const Planner = (props) => {
         newWeeksArray[week].days[day][meal].link="";
         setWeeksArray(prev=>([...newWeeksArray]));
     }
+    //to change the week that will be shown in the page
     const changeDisplayingWeekVar = (value) => {
         setDisplayingWeekVar(prevvalue => prevvalue + value);
     }

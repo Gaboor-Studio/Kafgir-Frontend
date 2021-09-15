@@ -1,3 +1,5 @@
+//profile page component that consists of information cards and upper information which is profile picture and username
+
 import React, { useState } from "react";
 import UpperInformation from "./UpperInformation"
 import ProfileCard from "./ProfileCard"

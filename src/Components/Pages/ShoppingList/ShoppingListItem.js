@@ -1,3 +1,5 @@
+//component for each item in shopping list which consists of name, amount, unit, and icons
+
 import React, { useState } from "react"
 import classes from "./ShoppingListItem.module.css"
 import Icons from "./Icons"

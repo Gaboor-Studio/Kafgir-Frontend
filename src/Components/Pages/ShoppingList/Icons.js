@@ -1,3 +1,5 @@
+//icon component for each item in shopping list. icons consist of edit, delete and check buttons
+
 import React from "react"
 import deleteItem from "../../../assets/shopping-list/delete.svg"
 import check from "../../../assets/shopping-list/check.svg"
