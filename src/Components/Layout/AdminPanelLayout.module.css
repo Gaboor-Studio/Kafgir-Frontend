@@ -1,0 +1,41 @@
+.pageContainer{
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.layout{
+    text-align: start;
+    background-color: white;
+    height: 100vh;
+    width: 100%;
+}
+
+.title{
+    margin-left: auto;
+    margin-right: 1vw;
+    color: green;
+    font-size: max(1.4vw,17px);
+    margin-bottom: 10vh;
+}
+
+.button{
+    display: block;
+    width: 80%;
+    height: 6%;
+    font-size: max(1.4vw,17px);
+    border-radius: 50px;
+    background-color: white;
+    margin-right: 1vw;
+    margin-top: 1vh;
+    border-width: 1px;
+    background-color: rgb(255, 255, 225);
+}
+
+.buttonSelected{
+    background-color: rgb(40, 172, 106);
+    color: white;
+}
+
+.link{
+    text-decoration: none;
+}
