@@ -12,23 +12,23 @@ const Day = (props) => {
     const [extendImage, setExtendImage] = useState(add);
     const [appearingChildren, setAppearingChildren] = useState();
     //to render the foods in a day if expanded
-    useEffect(()=>{
-        if(isOpen===true){
+    useEffect(() => {
+        if (isOpen === true) {
             setAppearingChildren(props.children)
         }
-    },[props.weekNo,isOpen,props.children]);
+    }, [props.weekNo, isOpen, props.children]);
     //to toggle the day open or close if clicked and hide or show children
     const toggleOpen = () => {
         if (isOpen === false) {
             setInnerBarClasses(classes.innerBar + ' ' + classes.open);
             setExtendImage(remove);
-            setTimeout(()=>setAppearingChildren(props.children),250);
+            setTimeout(() => setAppearingChildren(props.children), 250);
             setIsOpen(true);
         }
         else {
             setInnerBarClasses(classes.innerBar + ' ' + classes.close);
             setExtendImage(add);
-            setTimeout(()=>setAppearingChildren(),250);
+            setTimeout(() => setAppearingChildren(), 250);
             setIsOpen(false);
         }
     }
