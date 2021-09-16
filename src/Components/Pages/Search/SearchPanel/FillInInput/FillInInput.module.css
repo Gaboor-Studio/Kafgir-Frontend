@@ -1,0 +1,62 @@
+.FillInInput{
+    width: 144px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 8px;
+    color: #A3A3A3;
+    background-color: whitesmoke;
+    border-radius: 0.2rem;
+}
+
+.FillInInput input {
+    text-align: center;
+    color: #BF3826;
+    background-color: inherit;
+    border: none;
+    border-bottom: #A3A3A3 1px solid;
+    outline: none;
+    padding: 2px 4px;
+    width: 42px;
+}
+
+.Arrows {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.Arrows img {
+    width: 75%;
+    cursor: pointer;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.FillInInput input::-webkit-outer-spin-button,
+.FillInInput input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.FillInInput input[type=number] {
+  -moz-appearance: textfield;
+}
+
+@media (min-width: 480px){
+    .FillInInput {
+        width: 30vw;
+    }
+}
+
+@media (min-width: 800px){
+
+    .FillInInput {
+        width: 240px;
+    }
+
+}

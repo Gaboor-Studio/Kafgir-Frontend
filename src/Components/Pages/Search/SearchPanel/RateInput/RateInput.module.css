@@ -1,0 +1,45 @@
+.RateList {
+    opacity: 100%;
+    transition: opacity 0.2s ease-in-out;
+    background-color: whitesmoke;
+    color: #A3A3A3;
+    margin-top: 0;
+    border-radius: 0 0 1rem 1rem;
+}
+
+.RateListHidden {
+    opacity: 0%;
+    transition: opacity 0.2s ease-in-out;
+}
+
+.RateList ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    list-style-type: none;
+    list-style: none;
+    text-decoration: none;
+}
+
+.RateList li {
+    width: 25%;
+    cursor: pointer;
+}
+
+.SelectedOption,
+.RateList li:hover {
+    background-color: #AC8949;
+    color: #FFF2D9;
+}
+
+.RateList li:first-of-type {
+    border-radius: 0 0 0 1rem;
+}
+
+.RateList li:last-of-type {
+    border-radius: 0 0 1rem 0;
+}

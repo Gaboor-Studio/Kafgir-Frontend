@@ -15,7 +15,8 @@ import ChooseNewPassword from "./Components/Pages/Auth/ChooseNewPassword/ChooseN
 import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
 import Profile from "./Components/Pages/Profile/Profile";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
-import PopularFood from "./Components/Pages/PopularFood/PopularFood"
+import PopularFood from "./Components/Pages/PopularFood/PopularFood";
+import Search from "./Components/Pages/Search/Search";
 
 function App() {
   return (
@@ -68,6 +69,9 @@ function App() {
               </Route>
               <Route path="/popular-food">
                 <PopularFood />
+              </Route>
+              <Route path="/search">
+                <Search />
               </Route>
               <Route path="/">
                 <Home />
