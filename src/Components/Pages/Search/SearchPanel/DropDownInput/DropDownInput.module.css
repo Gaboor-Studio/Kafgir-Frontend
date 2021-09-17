@@ -1,0 +1,32 @@
+.DropDownInput {
+    width: 92%;
+    box-sizing: border-box;
+    padding: 5px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row-reverse;
+    background-color: whitesmoke;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.DropDownInput img {
+    cursor: pointer;
+}
+
+.Straight {
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+@media (min-width: 480px) {
+    .DropDownInput {
+        padding: 0px 8px;
+    }
+}
+
+@media (min-width: 1000px) {
+    .DropDownInput {
+        width: 91%;
+    }
+}

@@ -10,10 +10,21 @@
     font-family: IranSans;
 }
 
+.LargeInput {
+    width: 90%;
+    /* padding: 10px; */
+    margin: 5px 0;
+    font-size: large;
+    border-radius: 0.5rem;
+}
+
+.Bright {
+    background-color: whitesmoke;
+}
+
 .PublicInput:focus {
     outline: none;
 }
-
 
 .SmallInput {
     width: 144px;
@@ -27,6 +38,20 @@
     direction: ltr;
 }
 
+.MenuInput {
+    cursor: pointer;
+    margin: 0;
+    border-radius: 0.2rem 0.2rem 0 0;
+}
+
+.MenuInputClosed {
+    border-radius: 0.2rem;
+}
+
+.MenuInput:hover {
+    background-color: rgba(245, 245, 245, 0.603);
+}
+
 @media (min-width: 480px){
     .PublicInput {
         width: 62.5vw;
@@ -34,6 +59,10 @@
 
     .SmallInput {
         width: 30vw;
+    }
+
+    .LargeInput {
+        width: 90%;
     }
 }
 
@@ -44,5 +73,9 @@
 
     .SmallInput {
         width: 240px;
+    }
+
+    .LargeInput {
+        width: 90%;
     }
 }

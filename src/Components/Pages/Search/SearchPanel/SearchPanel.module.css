@@ -1,0 +1,65 @@
+.SearchPanel {
+    /* position: absolute; */
+    /* top: 56px; */
+    text-align: center;
+    left: 0;
+    width: 100%;
+    background-color: #FFC5BA;
+    padding-bottom: 8px;
+    padding-top: 12px;
+    border-radius: 0 0 5rem 5rem;
+}
+
+.SearchPanelTitle {
+    color: #FF8877;
+    margin: 0 auto 16px auto;
+    width: 80%;
+}
+
+.SearchPanelTitle img {
+    width: 32px;
+    cursor: pointer;
+}
+
+.SearchPanelTitle h3 {
+    margin: 8px auto;
+    margin-right: calc(50% - 28px);
+}
+
+.SearchPanelTitle hr {
+    color: #EB7D6D;
+    background-color: #EB7D6D;
+    border: #EB7D6D 1px solid
+}
+
+.SearchPanelTitleRow {
+    text-align: center;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.SearchPanelForm {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.SearchPanelHiddenForm {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+}
+
+.SearchPanelFormHidden {
+    display: none;
+}

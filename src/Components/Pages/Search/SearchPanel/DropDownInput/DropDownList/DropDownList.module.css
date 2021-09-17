@@ -1,0 +1,18 @@
+.DropDownList{
+    position: absolute;
+    z-index: 80;
+    top: 100%;
+    left: 0;
+    height: 35vh;
+    overflow-y: scroll;
+    background-color: #E4B4AB;
+    opacity: 90%;
+    width: 100%;
+    margin-top: 0;
+    padding: 8px 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 0 0 0.5rem 0.5rem;
+}

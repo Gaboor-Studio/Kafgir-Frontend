@@ -16,6 +16,21 @@ const Input = (props) => {
     styles.push(classes.LeftToRight);
   }
 
+  if (props.bright) {
+    styles.push(classes.Bright);
+  }
+
+  if (props.large) {
+    styles.push(classes.LargeInput);
+  }
+
+  if (props.menu) {
+    styles.push(classes.MenuInput);
+  }
+
+  if (props.menuClosed) {
+    styles.push(classes.MenuInputClosed);
+  }
   return (
     <input
       disabled={props.disabled}
@@ -25,6 +40,8 @@ const Input = (props) => {
       type={props.type}
       placeholder={props.placeholder}
       value={props.value}
+      onKeyDown={ props.keyDownActive ? (event) => props.onKeyDown(event) : () => {}}
+      onClick={props.onClick}
       onChange={(event) => props.onType(event)}
     />
   );

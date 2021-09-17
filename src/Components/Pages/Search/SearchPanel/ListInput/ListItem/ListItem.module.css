@@ -1,0 +1,19 @@
+.ListItem {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 4px;
+    padding: 4px 6px;
+    margin: 0 1px;
+    background-color: #B15949;
+    color: whitesmoke;
+    border-radius: 8px;
+}
+
+.ListItem p {
+    margin: 0;
+}
+
+.ListItem img {
+    cursor: pointer;
+}

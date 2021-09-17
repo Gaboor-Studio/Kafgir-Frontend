@@ -1,0 +1,16 @@
+.DropDownItem {
+    background-color: #FFF4F2;
+    margin: 0 8px;
+    padding: 16px 8px;
+    border-radius: 1rem;
+}
+
+.DropDownItem:hover {
+    background-color: #FFE1DC;
+}
+
+.ActiveListItem,
+.ActiveListItem:hover {
+    background-color: #BDB5B3;
+    color: #FFF8F7;
+}

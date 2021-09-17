@@ -14,6 +14,7 @@ import ChangePassword from "./Components/Pages/Auth/ChangePassword/ChangePasswor
 import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
 import Profile from "./Components/Pages/Profile/Profile";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
+import Search from "./Components/Pages/Search/Search";
 import PopularFood from "./Components/Pages/PopularFood/PopularFood"
 import ShoppingList from "./Components/Pages/ShoppingList/ShoppingList";
 import AdminPanelLayout from "./Components/Layout/AdminPanelLayout";
@@ -41,9 +42,6 @@ function App() {
               <Route path="/auth/change-password">
                 <ChangePassword />
               </Route>
-              {/* <Route path="/auth/choose-new-password/:reset_token">
-                <ChooseNewPassword />
-              </Route> */}
               <Route path="/auth/forgot-password">
                 <ForgotPassword />
               </Route>
@@ -92,6 +90,9 @@ function App() {
               </Route>
               <Route path="/popular-food">
                 <PopularFood />
+              </Route>
+              <Route path="/search">
+                <Search />
               </Route>
               <Route path="/">
                 <Home />
