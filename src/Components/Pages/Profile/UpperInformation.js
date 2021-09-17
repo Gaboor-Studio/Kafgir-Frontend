@@ -1,3 +1,6 @@
+//needs cleaning
+//upper information component for showing profile picture, showing and editing the username and ImageEdit component
+
 import React, { useState } from "react";
 import defaultProfilePic from "../../../assets/profile/default-profile-pic.jpg"
 import newPhoto from "../../../assets/profile/new_photo.svg"
@@ -12,9 +15,11 @@ import Button from "../../UI/Button/Button"
 
 const UpperInformation = (props) => {
     const [usernameInput, setUsernameInput] = useState('');
+    //enable edit username input
     const edit = () => {
         props.setEditState(true);
     }
+    //check new username validity and submit
     const editSubmit = (event) => {
         event.preventDefault();
         if (usernameInput.length >= 4) {

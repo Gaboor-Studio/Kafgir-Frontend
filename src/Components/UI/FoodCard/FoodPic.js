@@ -1,3 +1,5 @@
+//picture of food in foodcard component
+
 import React from "react"
 import classes from "./FoodPic.module.css"
 

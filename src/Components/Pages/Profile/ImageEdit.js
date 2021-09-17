@@ -1,15 +1,19 @@
+//edit image panel for uploading or deleting profile picture
+
 import React, { useState } from "react";
 import classes from "./ImageEdit.module.css"
 import ConfirmModal from "../../UI/Modal/ConfirmModal/ConfirmModal"
 
 const ImageEdit = (props) => {
     const [modalOpen, setModalOpen] = useState(false);
+    //check if uploaded file is an image
     const validateImageType = (event) => {
         event.persist();
         if (event.target.files[0].type !== 'image/png' && event.target.files[0].type !== 'image/jpeg') {
             alert("file must be an image");
         }
     }
+    //ask user if they are sure deleting the image
     const askDeleteAvatar = () => {
         setModalOpen(true)
     }

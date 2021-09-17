@@ -1,3 +1,5 @@
+//FoodCard component for displaying each food's information in pages like popular foods or search results
+
 import React from "react"
 import FoodPic from "./FoodPic"
 import classes from "./FoodCard.module.css"

@@ -1,0 +1,62 @@
+.container{
+    margin: 0px 0px;
+}
+
+.ingredientContainer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0px 0px;
+    padding: 4.8vh 0px;
+}
+
+.name{
+    margin: 0px 0px;
+    margin-left: auto;
+    margin-right: 4vw;
+    font-size: 4.8vw;
+}
+
+.checked{
+    text-decoration: line-through;
+}
+
+.amount{
+    margin: 0px 0px;
+    margin-left: 5vw;
+    font-size: 4.8vw;
+}
+
+.line{
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(128,128,128,30%);
+    height: 0.15vh;
+    width: 80vw;
+}
+
+
+@media (min-width: 480px){
+    .ingredientContainer{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        margin: 0px 0px;
+        padding: 4.3vh 0px;
+    }
+    
+    .name{
+        margin: 0px 0px;
+        margin-left: auto;
+        margin-right: 4vw;
+        font-size: max(23px,1.8vw);
+    }
+    
+    .checked{
+        text-decoration: line-through;
+    }
+    
+    .amount{
+        margin: 0px 0px;
+        margin-left: 5vw;
+        font-size: max(23px,1.8vw);
+    }
+}
