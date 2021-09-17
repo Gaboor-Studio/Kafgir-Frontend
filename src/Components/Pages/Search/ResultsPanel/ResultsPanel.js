@@ -7,6 +7,9 @@ import ghorme from '../../../../assets/search_page/ghorme.png';
 
 import ResultItem from "./ResultItem/ResultItem";
 
+/**
+ * dummy results for a normal search
+ */
 const searchResults = [
   {
     id: 1,
@@ -34,7 +37,14 @@ const searchResults = [
   },
 ]
 
+/**
+ * functional component that manages the whole search results and shows them
+ * @param {*} props 
+ * @returns 
+ */
 const ResultsPanel = (props) => {
+
+  // this variable holds the results to a search request(for now)
   const [results, setResults] = useState(searchResults)
 
   return (

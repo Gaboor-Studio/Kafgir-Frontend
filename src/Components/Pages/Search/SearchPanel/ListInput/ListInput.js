@@ -7,6 +7,9 @@ import add from "../../../../../assets/search_page/add.png";
 import clear from "../../../../../assets/search_page/clear.png";
 import ListItem from "./ListItem/ListItem";
 
+/**
+ * functional component for user to enter their ingredients to search in foods
+ */
 const ListInput = React.memo((props) => {
 
   return (

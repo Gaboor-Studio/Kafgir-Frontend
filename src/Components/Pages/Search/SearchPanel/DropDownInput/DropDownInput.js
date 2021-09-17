@@ -8,17 +8,25 @@ import uparrow from "../../../../../assets/search_page/uparrow.png";
 import clear from "../../../../../assets/search_page/clear.png";
 import DropDownList from "./DropDownList/DropDownList";
 
+/**
+ * functional component for user to choose a category to look into
+ * @param {*} props 
+ * @returns None
+ */
 const DropDownInput = (props) => {
+
+  // holds the open/close state to the category list
   const [listOpen, setListOpen] = useState(false);
+
+  // reference to the dropdown list
   const ref = useRef(null);
 
   useEffect(() => {
     /**
-     * Alert if clicked on outside of element
+     * close menu if clicked on outside of it
      */
     function handleClickOutside(event) {
       if (ref.current && !ref.current.contains(event.target)) {
-        // alert("You clicked outside of me!");
         setListOpen(false);
       }
     }
@@ -31,10 +39,16 @@ const DropDownInput = (props) => {
     };
   }, [ref]);
 
+  /**
+   * opens and closes the dropdown menu
+   */
   const onToggleListHandler = () => {
     setListOpen((prevState) => !prevState);
   };
 
+  /**
+   * closes the dropdown menu
+   */
   const onCloseListHandler = () => {
     setListOpen(false);
   };

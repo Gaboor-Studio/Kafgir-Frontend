@@ -5,6 +5,11 @@ import classes from './HistoryItem.module.css'
 import hat from '../../../../../assets/search_page/hat.png'
 import clear from '../../../../../assets/search_page/clear.png'
 
+/**
+ * a component that shows a single history record
+ * @param {*} props 
+ * @returns None
+ */
 const HistoryItem = (props) => {
 
     return (

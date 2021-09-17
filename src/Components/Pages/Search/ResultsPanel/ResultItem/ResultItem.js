@@ -8,6 +8,11 @@ import Time from '../../../../UI/Time/Time'
 
 import classes from "./ResultItem.module.css";
 
+/**
+ * this component represents a single search result that is a food
+ * @param {*} props 
+ * @returns 
+ */
 const ResultItem = (props) => {
   return (
     <li className={classes.ResultItem}>

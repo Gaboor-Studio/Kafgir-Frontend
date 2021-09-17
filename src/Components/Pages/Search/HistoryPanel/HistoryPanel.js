@@ -5,6 +5,9 @@ import classes from './HistoryPanel.module.css'
 import deleteall from '../../../../assets/search_page/deleteall.png'
 import HistoryItem from "./HistoryItem/HistoryItem";
 
+/**
+ * dummy search history
+ */
 const searchHistory = [
     {
         id: 1,
@@ -28,10 +31,20 @@ const searchHistory = [
     },
 ]
 
+/**
+ * a component that manages the history panel and shows the search history
+ * @param {*} props 
+ * @returns None
+ */
 const HistoryPanel = (props) => {
 
+    // state to hold the dummy history for now
     const [history, setHistory] = useState(searchHistory)
 
+    /**
+     * removes a single history record
+     * @param {*} h 
+     */
     const onRemoveHistoryHandler = (h) => {
         setHistory(prevHistory => {
             const newHistory = prevHistory.filter(history => history.id !== h.id)
@@ -39,6 +52,9 @@ const HistoryPanel = (props) => {
         })
     }
 
+    /**
+     * clears the whole search history
+     */
     const onClearHistory = () => {
         setHistory([])
     }

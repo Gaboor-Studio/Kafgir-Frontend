@@ -2,6 +2,11 @@ import React from "react";
 
 import classes from './DropDownItem.module.css'
 
+/**
+ * component that represents a category in the dropdown menu
+ * @param {*} props 
+ * @returns None
+ */
 const DropDownItem = (props) => {
 
     return (

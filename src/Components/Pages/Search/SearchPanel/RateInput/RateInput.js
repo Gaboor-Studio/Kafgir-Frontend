@@ -4,9 +4,19 @@ import classes from "./RateInput.module.css";
 
 import Input from "../../../../UI/Input/Input";
 
+/**
+ * this functional component creates the input to get food's difficulty
+ * @param {*} props 
+ * @returns None
+ */
 const RateInput = (props) => {
+
+  // holds the state to show or not to show the choices
   const [optionsOpen, setOptionsOpen] = useState(false);
 
+  /**
+   * opens and closes the choices area
+   */
   const onOptionsToggleHandler = () => {
     setOptionsOpen((prevState) => !prevState);
   };

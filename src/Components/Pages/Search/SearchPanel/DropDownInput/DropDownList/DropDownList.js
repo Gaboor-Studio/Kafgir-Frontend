@@ -3,6 +3,11 @@ import DropDownItem from "./DropDownItem/DropDownItem";
 
 import classes from './DropDownList.module.css';
 
+/**
+ * component that represents the dropdown menu itself
+ * @param {*} props 
+ * @returns None
+ */
 const DropDownList = (props) => {
 
     return (

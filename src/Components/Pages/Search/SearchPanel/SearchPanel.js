@@ -11,6 +11,7 @@ import RateInput from "./RateInput/RateInput";
 import FillInInput from "./FillInInput/FillInInput";
 import DropDownInput from "./DropDownInput/DropDownInput";
 
+// dummy category data
 const categories = [
   {
     id: 1,
@@ -38,17 +39,37 @@ const categories = [
   },
 ];
 
+/**
+ * this functional component creates all inputs and sends the search request to the server
+ */
 const SearchPanel = React.memo((props) => {
+
+  // holds state between showing all inputs or only one input
   const [moreSetting, setMoreSetting] = useState(false);
+
+  // food's name to look for
   const [foodName, setFoodName] = useState("");
+
+  // food's ingredients to look for
   const [ingredients, setIngredients] = useState({
     saved: [],
     new: "",
   });
+
+  // food's difficulty to look for
   const [level, setLevel] = useState(null);
+
+  // food's cooking duration to look for
   const [duration, setDuration] = useState(0);
+
+  // which category to look inside
   const [category, setCategory] = useState(null);
 
+  /**
+   * check if a value is an integer
+   * @param {*} value 
+   * @returns true for integer values
+   */
   const isInt = (value) => {
     return (
       !isNaN(value) &&
@@ -57,19 +78,33 @@ const SearchPanel = React.memo((props) => {
     );
   };
 
+  /**
+   * opens and closes the extra settings
+   */
   const onToggleSettingHandler = () => {
     setMoreSetting(prevState => !prevState)
   }
 
+  /**
+   * handler for food name input
+   * @param {*} event 
+   */
   const onFoodChangeHandler = (event) => {
     event.persist();
     setFoodName(event.target.value);
   };
 
+  /**
+   * clears food name input
+   */
   const onFoodClearHandler = () => {
     setFoodName("");
   };
 
+  /**
+   * handler for add new ingredient input 
+   * @param {*} event 
+   */
   const onIngredientChangeHandler = (event) => {
     event.persist();
     setIngredients((prevIngredients) => ({
@@ -78,10 +113,16 @@ const SearchPanel = React.memo((props) => {
     }));
   };
 
+  /**
+   * clears new ingredient input
+   */
   const onIngredientClearHandler = () => {
     setIngredients((prevIngredients) => ({ ...prevIngredients, new: "" }));
   };
 
+  /**
+   * adds the typed ingredient to the saved ones
+   */
   const onIngredientAddHandler = () => {
     setIngredients((prevIngredients) => {
       const newSavedIngredients = prevIngredients.saved.concat(
@@ -95,6 +136,9 @@ const SearchPanel = React.memo((props) => {
     });
   };
 
+  /**
+   * deletes a saved ingredient
+   */
   const onIngredientDeleteHandler = useCallback((ingredient) => {
     setIngredients((prevIngredients) => {
       const newSavedIngredients = prevIngredients.saved.filter(
@@ -108,6 +152,10 @@ const SearchPanel = React.memo((props) => {
     });
   }, []);
 
+  /**
+   * handles the enter key being pressed while we're on ingredient input
+   * @param {*} event 
+   */
   const onEnterPressedHandler = (event) => {
     event.persist();
     if (event.key === "Enter") {
@@ -115,16 +163,25 @@ const SearchPanel = React.memo((props) => {
     }
   };
 
+  /**
+   * sets the difficulty to the food we're searching for
+   */
   const onSetLevelHandler = useCallback((number) => {
     if ((number > 0 && number < 4) || number == null) {
       setLevel(number);
     }
   }, []);
 
+  /**
+   * changes the cooking duration for the food
+   */
   const onChangeDurationHandler = useCallback((event) => {
     setDuration(event.target.value.slice(0, 3));
   }, []);
 
+  /**
+   * increases the cooking duration by one minute
+   */
   const onIncreaseDurationByOneHandler = useCallback(() => {
     if (duration == null) {
       setDuration(1);
@@ -141,6 +198,9 @@ const SearchPanel = React.memo((props) => {
     }
   }, [duration]);
 
+  /**
+   * decreases the cooking duration by one minute
+   */
   const onDecreaseDurationByOneHandler = useCallback(() => {
     if (duration == null) {
       setDuration(0);
@@ -157,11 +217,19 @@ const SearchPanel = React.memo((props) => {
     }
   }, [duration]);
 
+  /**
+   * sets the category we're searching on
+   * @param {*} category 
+   */
   const onSetCategoryHandler = (category) => {
     setCategory(category);
   };
 
-  const onClearCategoryHandler = (category) => {
+  /**
+   * clears the category to be searched
+   * @param {*} category 
+   */
+  const onClearCategoryHandler = () => {
     setCategory(null);
   };
 
