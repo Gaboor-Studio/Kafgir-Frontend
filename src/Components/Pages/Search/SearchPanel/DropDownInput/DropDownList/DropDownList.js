@@ -7,7 +7,7 @@ const DropDownList = (props) => {
 
     return (
         <ul className={classes.DropDownList}>
-            {props.list.map(item => <DropDownItem active={props.selected ? props.selected.id == item.id : false} item={item} key={item.id} onSelectItem={props.onSetCategory}/>)}
+            {props.list.map(item => <DropDownItem active={props.selected ? props.selected.id === item.id : false} item={item} key={item.id} onSelectItem={props.onSetCategory}/>)}
         </ul>
     );
 }

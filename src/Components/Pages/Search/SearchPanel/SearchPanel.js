@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useState } from "react";
 
 import classes from "./SearchPanel.module.css";
 
@@ -39,7 +39,7 @@ const categories = [
 ];
 
 const SearchPanel = React.memo((props) => {
-  const [moreSetting, setMoreSetting] = useState(true);
+  const [moreSetting, setMoreSetting] = useState(false);
   const [foodName, setFoodName] = useState("");
   const [ingredients, setIngredients] = useState({
     saved: [],
@@ -52,7 +52,7 @@ const SearchPanel = React.memo((props) => {
   const isInt = (value) => {
     return (
       !isNaN(value) &&
-      parseInt(Number(value)) == value &&
+      parseInt(Number(value)) === value &&
       !isNaN(parseInt(value, 10))
     );
   };
@@ -106,7 +106,7 @@ const SearchPanel = React.memo((props) => {
       };
       return newIngredients;
     });
-  });
+  }, []);
 
   const onEnterPressedHandler = (event) => {
     event.persist();
@@ -119,11 +119,11 @@ const SearchPanel = React.memo((props) => {
     if ((number > 0 && number < 4) || number == null) {
       setLevel(number);
     }
-  });
+  }, []);
 
   const onChangeDurationHandler = useCallback((event) => {
     setDuration(event.target.value.slice(0, 3));
-  });
+  }, []);
 
   const onIncreaseDurationByOneHandler = useCallback(() => {
     if (duration == null) {
@@ -139,7 +139,7 @@ const SearchPanel = React.memo((props) => {
         return newValue < 999 ? newValue : 999;
       });
     }
-  });
+  }, [duration]);
 
   const onDecreaseDurationByOneHandler = useCallback(() => {
     if (duration == null) {
@@ -155,7 +155,7 @@ const SearchPanel = React.memo((props) => {
         return newValue > 0 ? newValue : 0;
       });
     }
-  });
+  }, [duration]);
 
   const onSetCategoryHandler = (category) => {
     setCategory(category);

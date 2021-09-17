@@ -1,0 +1,21 @@
+.HistoryItem {
+    background-color: #FFD5CE;
+    border-radius: 0.5rem;
+    padding: 8px 16px;
+    margin: 12px auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-self: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+
+.RightImage {
+    width: 32px;
+}
+
+.LeftImage {
+    cursor: pointer;
+    margin-right: auto;
+}
+

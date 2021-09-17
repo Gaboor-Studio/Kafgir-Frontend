@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React from "react";
 import Input from "../../../../UI/Input/Input";
 
 import classes from "./ListInput.module.css";
