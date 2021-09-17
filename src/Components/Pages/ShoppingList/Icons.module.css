@@ -1,0 +1,25 @@
+.iconContainer{
+    display: flex;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 3vw;
+}
+
+.icon{
+    align-self: center;
+    margin-left: 3vw;
+}
+
+@media (min-width: 480px){
+    .iconContainer{
+        display: flex;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding-left: 3vw;
+    }
+    
+    .icon{
+        align-self: center;
+        margin-left: 3vw;
+        height: max(2.2vw, 30px);
+    }
+    
+}

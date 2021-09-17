@@ -1,3 +1,5 @@
+//component for showing the plan for the week that was selected by the WeekSelector component. this component shows 7 days of the week and their chilcren which are PlanCards.
+
 import React from "react"
 import Day from "./Day/Day.js"
 import classes from "./Week.module.css"

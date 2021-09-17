@@ -1,3 +1,5 @@
+//PageHeader component. can be used for any page that has a header in it's design for both desktop and phone view
+
 import React from "react"
 import classes from "./PageHeader.module.css"
 import BackArrow from "../../../assets/ui_signs/back-arrow.svg"

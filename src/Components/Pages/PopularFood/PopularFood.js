@@ -1,3 +1,5 @@
+//popular food page component which consists of a pageheader and foodcards for each food
+
 import React from "react"
 import FoodCard from "../../UI/FoodCard/FoodCard"
 import PageHeader from "../../UI/PageHeader/PageHeader"

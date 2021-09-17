@@ -1,3 +1,5 @@
+//component for showing each food in a day
+
 import React from "react"
 import classes from "./Plancard.module.css"
 import addbutton from "../../../../assets/planner-addfood.png"
@@ -5,6 +7,7 @@ import removeButton from "../../../../assets/remove-button.png"
 
 const Plancard = (props) => {
     const mealName=props.meal==="breakfast"?"صبحانه":props.meal==="lunch"?"نهار":"شام";
+    //to remove this food from the plan
     const removeItem = () => {
         props.sendRemoveRequest(props.meal, props.dayNo, props.weekNo);
     }
