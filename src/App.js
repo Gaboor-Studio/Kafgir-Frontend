@@ -11,7 +11,6 @@ import Signup from "./Components/Pages/Auth/Signup/Signup";
 import ConfirmEmail from "./Components/Pages/Auth/ConfirmEmail/ConfirmEmail";
 import Login from "./Components/Pages/Auth/Login/Login";
 import ChangePassword from "./Components/Pages/Auth/ChangePassword/ChangePassword";
-import ChooseNewPassword from "./Components/Pages/Auth/ChooseNewPassword/ChooseNewPassword";
 import ForgotPassword from "./Components/Pages/Auth/ForgotPassword/ForgotPassword";
 import Profile from "./Components/Pages/Profile/Profile";
 import ContactUs from "./Components/Pages/ContactUs/ContactUs";
@@ -42,9 +41,9 @@ function App() {
               <Route path="/auth/change-password">
                 <ChangePassword />
               </Route>
-              <Route path="/auth/choose-new-password/:reset_token">
+              {/* <Route path="/auth/choose-new-password/:reset_token">
                 <ChooseNewPassword />
-              </Route>
+              </Route> */}
               <Route path="/auth/forgot-password">
                 <ForgotPassword />
               </Route>

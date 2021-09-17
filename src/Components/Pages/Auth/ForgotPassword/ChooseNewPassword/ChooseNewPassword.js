@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useParams, useHistory } from "react-router-dom";
 
-import Input from "../../../UI/Input/Input";
-import Button from "../../../UI/Button/Button";
-import ErrorModal from "../../../UI/Modal/ErrorModal/ErrorModal";
+import Input from "../../../../UI/Input/Input";
+import Button from "../../../../UI/Button/Button";
+import ErrorModal from "../../../../UI/Modal/ErrorModal/ErrorModal";
 
 import classes from "./ChooseNewPassword.module.css";
 
@@ -12,25 +12,23 @@ const ChooseNewPassword = (props) => {
     old_password: "",
     password: "",
     password_rep: "",
-    email: ""
+    // email: "",
   });
 
-  const location = useLocation();
+  // const location = useLocation();
+  // const { reset_token } = useParams();
   const history = useHistory();
-  const { reset_token } = useParams();
 
-  useEffect(() => {
-    if (location.state) {
-      setCredentials((prevCredentials) => {
-        const newCredentials = {
-          ...prevCredentials,
-          old_password: location.state.old_password,
-          email: location.state.email
-        };
-        return newCredentials;
-      });
-    }
-  }, [location]);
+  // useEffect(() => {
+  //   if (props.token && props.email){
+  //     setCredentials(prevCredentials => {
+  //       const newCredentials = {
+  //         ...prevCredentials,
+  //         email: 
+  //       }
+  //     })
+  //   }
+  // }, [props]);
 
   const [error, setError] = useState({
     open: false,
@@ -65,8 +63,8 @@ const ChooseNewPassword = (props) => {
         old_password: credentials.old_password,
         new_password: credentials.password,
         new_password_rep: credentials.password_rep,
-        email: credentials.email,
-        reset_token: reset_token,
+        email: props.email,
+        reset_token: props.token,
       }),
     };
 
