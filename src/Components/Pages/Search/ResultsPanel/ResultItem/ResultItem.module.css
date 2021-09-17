@@ -1,0 +1,27 @@
+.ResultItem {
+    background-color: #FFC5BA;
+    border-radius: 1rem;
+    box-shadow: 1px 4px 8px #adacac8f;
+    margin: 8px auto;
+    padding: 8px 8px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ResultItemPic {
+    padding-top: 8px;
+}
+
+.ResultItemTitle h3 {
+    margin: 4px auto;
+}
+
+.ResultItemDetail {
+    padding: 0 8px
+}
+
+.ResultItemTitle h3 {
+    color: #ED5E39;
+}

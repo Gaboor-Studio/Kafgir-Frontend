@@ -24,6 +24,10 @@
     justify-content: space-between;
 }
 
+.HistoryPanelTitle h2 {
+    margin: 4px 0;
+}
+
 .HistoryPanelTitle img {
     cursor: pointer;
 }
