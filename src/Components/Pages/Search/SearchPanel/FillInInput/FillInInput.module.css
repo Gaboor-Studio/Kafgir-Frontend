@@ -1,6 +1,6 @@
 .FillInInput{
     width: 144px;
-    padding: 0 16px;
+    padding: 0 8px;
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
@@ -8,7 +8,7 @@
     gap: 8px;
     color: #A3A3A3;
     background-color: whitesmoke;
-    border-radius: 0.2rem;
+    border-radius: 0.5rem;
 }
 
 .FillInInput input {

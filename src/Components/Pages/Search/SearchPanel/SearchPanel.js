@@ -46,7 +46,7 @@ const SearchPanel = React.memo((props) => {
     new: "",
   });
   const [level, setLevel] = useState(null);
-  const [duration, setDuration] = useState(null);
+  const [duration, setDuration] = useState(0);
   const [category, setCategory] = useState(null);
 
   const isInt = (value) => {
@@ -195,13 +195,13 @@ const SearchPanel = React.memo((props) => {
             onIngredientAdd={onIngredientAddHandler}
             onIngredientDelete={onIngredientDeleteHandler}
           />
-          <RateInput onSetLevel={onSetLevelHandler} level={level} />
           <FillInInput
             duration={duration}
             onChangeDuration={onChangeDurationHandler}
             onAddOne={onIncreaseDurationByOneHandler}
             onSubOne={onDecreaseDurationByOneHandler}
           />
+          <RateInput onSetLevel={onSetLevelHandler} level={level} />
         </div>
         <div style={{ width: "100%" }}>
           <Button>بگرد</Button>

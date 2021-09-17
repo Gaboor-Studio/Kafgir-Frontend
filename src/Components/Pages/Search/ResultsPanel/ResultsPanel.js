@@ -48,7 +48,7 @@ const ResultsPanel = (props) => {
         {
           results && results.length > 0 ?
           <ul>
-              {results.map(result => <ResultItem key={results.id} item={result}/>)}
+              {results.map(result => <ResultItem key={result.id} item={result}/>)}
           </ul> :
           <p>no previous results</p>
         }

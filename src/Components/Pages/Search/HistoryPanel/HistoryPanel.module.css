@@ -1,6 +1,6 @@
 .HistoryPanel {
-    width: 336px;
-    margin: 16px auto;
+    width: 360px;
+    margin: 8px auto;
     padding: 8px;
     display: flex;
     flex-direction: column;
@@ -50,12 +50,12 @@
 
 @media (min-width: 480px){
     .HistoryPanel {
-        width: 70%;
+        width: 75%;
     }
 }
 
 @media (min-width: 800px){
     .HistoryPanel {
-        width: 560px;
+        width: 600px;
     }
 }

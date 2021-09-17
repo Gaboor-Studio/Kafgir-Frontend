@@ -6,7 +6,7 @@ import classes from "./Search.module.css";
 import SearchPanel from "./SearchPanel/SearchPanel";
 
 const Search = (props) => {
-  const [hasResult, setHasResult] = useState(false)
+  const [hasResult, setHasResult] = useState(true)
 
   return (
     <div className={classes.Search}>
