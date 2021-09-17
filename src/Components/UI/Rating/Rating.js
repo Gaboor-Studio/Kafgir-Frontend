@@ -18,11 +18,11 @@ const Rating = (props) => {
   }
   return (
     <div>
-      <img className={classes.rateimage} src={stars[0]} alt="star" />
-      <img className={classes.rateimage} src={stars[1]} alt="star" />
-      <img className={classes.rateimage} src={stars[2]} alt="star" />
-      <img className={classes.rateimage} src={stars[3]} alt="star" />
-      <img className={classes.rateimage} src={stars[4]} alt="star" />
+      <img src={stars[0]} width={props.size} alt="star" />
+      <img src={stars[1]} width={props.size} alt="star" />
+      <img src={stars[2]} width={props.size} alt="star" />
+      <img src={stars[3]} width={props.size} alt="star" />
+      <img src={stars[4]} width={props.size} alt="star" />
     </div>
   );
 };

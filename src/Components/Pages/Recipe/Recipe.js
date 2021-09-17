@@ -4,6 +4,11 @@ import Card from "./Card.js";
 import RecipeCard from "./RecipeCard";
 import RecipeSteps from "./RecipeSteps";
 import ghorme from "..//..//..//assets/ghorme.jpg";
+import profpic from "..//..//..//assets/ali.jpg";
+import commentlogo from "..//..//..//assets/comment.svg";
+import CommentCard from "./Comment/CommentCard";
+import WriteComment from "./Comment/WriteComment";
+import HoverRating from "./Comment/WriteComment";
 let tuple = [
   ["گوشت خورشتی", "۳۰۰ گرم"],
   ["گوشت خورشتی", "۳۰۰ گرم"],
@@ -31,6 +36,14 @@ let tuple2 = [
   ["بعدم برنج درست کنین اینو عمه منم بلده بریزین تو خندق بلا"],
 ];
 
+const comment = {
+  profilename: "علی انصاری",
+  profilepic: profpic,
+  rate: 3.5,
+  comment:
+    "این غذا عالی بود و بالاتر از انتظارات من طعمش به وقوع پیوست مرسی از سایت کفگیر که الان اسمش عوض شده! این غذا عالی بود و بالاتر از انتظارات من طعمش به وقوع پیوست مرسی از سایت کفگیر که الان اسمش عوض شده!",
+  date: new Date().toLocaleDateString("fa-IR"),
+};
 const recipe = (props) => {
   return (
     <div className={classes.Recipe}>
@@ -43,11 +56,42 @@ const recipe = (props) => {
           time="۱ ساعت و ۲۰ دقیقه"
         />
       </div>
+
       <div className={classes.RecipeCard}>
         <RecipeCard ingredients={tuple} />
       </div>
+
       <div className={classes.RecipeSteps}>
         <RecipeSteps recipe={tuple2} />
+      </div>
+
+      <div className={classes.writecomment}>
+        <WriteComment comment={comment}/>
+      </div>
+
+
+      <div className={classes.mycomment}>
+        <h1 className={classes.titlemy}>نظر من</h1>
+        <br />
+        <div className={classes.line} />
+        <br />
+        <div className={classes.mycom}>
+          <CommentCard comment={comment} />
+        </div>
+      </div>
+
+      <br />
+
+      <div className={classes.comment}>
+        <img className={classes.logo} src={commentlogo} alt="comment" />
+        <p className={classes.title}>نظرات</p>
+        <div className={classes.scroll}>
+          <CommentCard comment={comment} />
+          <CommentCard comment={comment} />
+          <CommentCard comment={comment} />
+          <CommentCard comment={comment} />
+          <CommentCard comment={comment} />
+        </div>
       </div>
     </div>
   );
