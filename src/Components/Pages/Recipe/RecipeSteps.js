@@ -7,9 +7,11 @@ import remove from "../../../assets/recipe-close.svg";
 const RecipeSteps = (props) => {
   const displayIngredients = React.useCallback(() => {
     return props.recipe.map((reptile) => (
-      <p>
+      <p className={classes.steps}>
         <div className={classes.line}></div>
-        {reptile[0]}
+        {reptile.step}
+        <br/>
+        {reptile.text}
       </p>
     ));
   }, [props]);

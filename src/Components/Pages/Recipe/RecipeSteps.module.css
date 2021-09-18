@@ -54,18 +54,22 @@
   margin-bottom: 5px;
   background-color: #ffeeec;
 }
+.steps{
+  direction: rtl;
+}
 @media (min-width: 800px) {
   .outerBar {
     display: flex;
     box-sizing: border-box;
+    width: 60%;
     font-family: IranSans;
-    width: 98%;
     height: 30px;
-    padding: 0px 20px;
     border-radius: 15px 15px 0px 0px;
     align-items: center;
     font-size: 70%;
     font-weight: bold;
+    margin-left: 5%;
+    margin-top: 20px;
   }
   .extendButton {
     display: none;
@@ -73,13 +77,14 @@
   .innerBar {
     justify-content: space-evenly;
     box-sizing: border-box;
-    width: 98%;
     font-family: IranSans;
     text-align: right;
     height: auto;
+    width: 60%;
     padding-top: 20px;
     border-radius: 0px 0px 15px 15px;
     transition: height 0.4s;
+    margin-left: 5%;
     margin-bottom: 20px;
     display: block;
   }

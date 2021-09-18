@@ -9,8 +9,8 @@ const RecipeCard = (props) => {
     return props.ingredients.map((reptile) => (
       <p>
         <div className={classes.line}></div>
-        {reptile[0]} 
-        <div className={classes.amou}>{reptile[1]}</div>
+        {reptile.name} 
+        <div className={classes.amou}>{reptile.amount}</div>
       </p>
     ));
   }, [props]);

@@ -73,8 +73,6 @@
   .innerBar {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    overflow: auto;
-    white-space: nowrap;
     justify-content: space-evenly;
     box-sizing: border-box;
     width: 100%;
@@ -86,7 +84,7 @@
     transition: height 0.4s;
     margin-bottom: 20px;
     display: block;
-    height: 33vw;
+    height: auto;
   }
   .open {
     height: 600px;
