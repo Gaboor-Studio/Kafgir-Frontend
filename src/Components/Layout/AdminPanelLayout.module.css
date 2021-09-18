@@ -39,3 +39,23 @@
 .link{
     text-decoration: none;
 }
+
+.infoSection{
+    display: grid;
+    grid-template-rows: 1.2fr 10fr;
+}
+
+.pageHeader{
+    display: grid;
+    background-color: rgb(40, 172, 106);
+    color: white;
+    font-size: max(1.4vw,17px);
+    text-align: center;
+}
+
+.header{
+    margin: 0px;
+    align-self: center;
+    margin-left: auto;
+    margin-right: 1vw;
+}
