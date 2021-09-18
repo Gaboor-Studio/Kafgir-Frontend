@@ -51,24 +51,26 @@ function App() {
             </Switch>
           </AuthLayout>
         </Route>
+        <Route path="/admin-panel">
+          <AdminPanelLayout>
+            <Route path="/admin-panel/tags-and-categories">
+              <TagsAndCategoriesPanel />
+            </Route>
+            <Route path="/admin-panel/food">
+              <FoodAdminPanel />
+            </Route>
+            <Route path="/admin-panel/user-management">
+              <UserManagementPanel />
+            </Route>
+            <Route path="/admin-panel/admin-management">
+              <AdminManagementPanel />
+            </Route>
+          </AdminPanelLayout>
+        </Route>
         <Route path="/">
           <Layout>
             <Switch>
               <Route path="/admin-panel">
-                <AdminPanelLayout>
-                  <Route path="/admin-panel/tags-and-categories">
-                    <TagsAndCategoriesPanel />
-                  </Route>
-                  <Route path="/admin-panel/food">
-                    <FoodAdminPanel />
-                  </Route>
-                  <Route path="/admin-panel/user-management">
-                    <UserManagementPanel />
-                  </Route>
-                  <Route path="/admin-panel/admin-management">
-                    <AdminManagementPanel />
-                  </Route>
-                </AdminPanelLayout>
               </Route>
               <Route path="/profile">
                 <Profile />
