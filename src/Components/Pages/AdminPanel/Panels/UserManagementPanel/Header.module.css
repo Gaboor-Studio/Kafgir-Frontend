@@ -1,0 +1,39 @@
+.headerContainer{
+    margin: auto;
+    margin-bottom: 2vh;
+    display: flex;
+    width: 95%;
+    border-bottom: 1px solid black;
+
+}
+
+.usersText{
+    margin-right: 1vw;
+    font-size: max(1.3vw,15px);
+    margin: 2.4vh 1vw;
+}
+
+.form{
+    display: inline-flex;
+    align-self: center;
+
+}
+
+.searchBar{
+    height: 5vh;
+    width: 23vw;
+    border-radius: 10px;
+    border: 1px;
+    margin-right: 7vw;
+    font-size: max(1.3vw,15px);
+    padding-right: 0.5vw;
+}
+
+.searchButton{
+    font-size: max(1.3vw,15px);
+    margin-right: 1vw;
+    padding: 0px 0.7vw;
+    border-radius: 10px;
+    border-width: 1px;
+
+}

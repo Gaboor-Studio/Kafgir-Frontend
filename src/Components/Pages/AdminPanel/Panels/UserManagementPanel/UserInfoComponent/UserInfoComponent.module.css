@@ -1,0 +1,128 @@
+.container{
+    display: flex;
+    background-color: rgba(128, 128, 128, 0.158);
+    margin: auto;
+    margin-bottom: 1vh;
+    padding: 0.5vw;
+    width: 95%;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    align-items: center;
+}
+
+.containerExpanded{
+    display: grid;
+    position: relative;
+    grid-template-columns: 120px 1fr 1fr 1fr;
+    grid-template-rows: 60px 60px 1fr 1fr;
+    height: 30vh;
+}
+
+.hide{
+    display: none;
+}
+
+.arrow{
+    margin-left: 0.5vw;
+    height: 21.5px;
+}
+
+.upsidedown{
+    position: absolute;
+    transform: scaleY(-1);
+    top: 0.5vw;
+    left: 0.5vw;
+}
+
+.profilePic{
+    grid-row-start: 1;
+    grid-row-end: 3;
+    height: 110px;
+    border-radius: 50%;
+}
+
+.username{
+    margin: 0px;
+    font-size: max(1.1vw,15px);
+    margin-top: 30px;
+    align-self: flex-start;
+    margin-right: 1vw;
+}
+
+.name{
+    margin: 0px;
+    font-size: max(1.1vw,15px);
+    align-self: center;
+    margin-right: 1vw;
+    grid-column-start: 2;
+}
+
+.email{
+    margin: 0px;
+    font-size: max(1.1vw,15px);
+    margin-right: 1vw;
+    grid-column-start: 2;
+    align-self: flex-start;
+}
+
+.access{
+    margin: 0px;
+    font-size: max(1.1vw,15px);
+    grid-column-start: 3;
+    align-self: flex-end;
+    grid-row-start: 1;
+}
+
+.lineViewText{
+    margin: 0px;
+    display: inline;
+    margin-left: auto;
+    font-size: max(1.1vw,15px);
+}
+
+.newPassword{
+    grid-column-start: 3;
+    grid-row-start: 2;
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+}
+
+.checkbox{
+    display: flex;
+    align-content: center;
+    font-size: max(1vw,10px);
+}
+
+.deactivateUserCheckbox{
+    align-self: center;
+}
+
+.deactivateUserText{
+    display: inline-flex;
+    align-self: center;
+    margin-right: 0.3vw;
+}
+
+.deleteProfilePicture{
+    font-size: max(1.2vw,10px);
+    padding: 0px 0.7vw;
+    border-radius: 10px;
+    border-width: 1px;
+    width: 10vw;
+    padding: 0.5vw;
+    grid-column-start: 4;
+    grid-row-start: 2;
+}
+
+.submit{
+    font-size: max(1.2vw,10px);
+    padding: 0px 0.7vw;
+    border-radius: 10px;
+    border-width: 1px;
+    width: 7vw;
+    padding: 0.5vw;
+    grid-column-start: 4;
+    grid-row-start: 4;
+    justify-self: flex-end;
+}
