@@ -94,6 +94,10 @@
     font-size: max(1vw,10px);
 }
 
+.deactivateUser{
+    grid-column-start: 3;
+}
+
 .deactivateUserCheckbox{
     align-self: center;
 }
@@ -125,4 +129,35 @@
     grid-column-start: 4;
     grid-row-start: 4;
     justify-self: flex-end;
+}
+
+.usernameInput{
+    grid-column-start: 2;
+    grid-row-start: 1;
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    margin-top: 30px;
+    align-self: flex-start;
+    margin-right: 1vw;
+}
+
+.nameInput{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    align-self: center;
+    margin-right: 1vw;
+}
+
+.emailInput{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    align-self: flex-start;
+    margin-right: 1vw;
 }
