@@ -11,6 +11,7 @@ const UserManagementPanel = () => {
     return (
         <div className={classes.container}>
             <Header onSearch={search} />
+            <div className={classes.underline} />
             <UserInfoComponent username="kianosh" name="کیانوش آرین" isDeactivated={false} access="admin" email="kianosharian3@gmail.com" profilePic={defaultProfilePic}></UserInfoComponent>
         </div>
     );

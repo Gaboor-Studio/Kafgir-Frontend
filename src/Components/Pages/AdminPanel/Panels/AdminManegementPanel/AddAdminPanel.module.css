@@ -1,0 +1,60 @@
+.container{
+    display: grid;
+    padding: 0px 2vw;
+    margin-bottom: 2vh;
+}
+
+.hide{
+    display: none;
+}
+
+.expandButton{
+    font-size: max(1.2vw,10px);
+    padding: 0px 0.7vw;
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 0.5vw;
+    margin-bottom: 1vh;
+    margin-left: auto;
+}
+
+.addAdminForm{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.username{
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    margin-top: 30px;
+    margin-right: 1vw;
+}
+
+.email{
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    margin-top: 30px;
+    margin-right: 1vw;
+}
+
+.password{
+    width: 10vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    margin-top: 30px;
+    margin-right: 1vw;
+}
+
+.submit{
+    font-size: max(1.2vw,10px);
+    padding: 0px 0.7vw;
+    border-radius: 10px;
+    border-width: 1px;
+    padding: 0.5vw;
+    margin-bottom: 1vh;
+    margin-right: auto;
+    grid-row-start: 2;
+    grid-column-start: 4;
+}
