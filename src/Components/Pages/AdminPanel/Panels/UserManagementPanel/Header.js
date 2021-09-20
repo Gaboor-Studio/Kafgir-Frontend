@@ -9,9 +9,9 @@ const Header = (props) => {
     }
     return (
         <div className={classes.headerContainer}>
-            <p className={classes.usersText}>کاربران</p>
+            <p className={classes.usersText}>{props.title}</p>
             <form className={classes.form} onSubmit={submitSearch}>
-                <input type="text" value={searchText} className={classes.searchBar} onChange={(event) => setSearchText(event.target.value)} placeholder="جستجوی کاربر"></input>
+                <input type="text" value={searchText} className={classes.searchBar} onChange={(event) => setSearchText(event.target.value)} placeholder={"جستجو در " + props.title}></input>
                 <button type="submit" className={classes.searchButton}>جستجو</button>
             </form>
         </div>
