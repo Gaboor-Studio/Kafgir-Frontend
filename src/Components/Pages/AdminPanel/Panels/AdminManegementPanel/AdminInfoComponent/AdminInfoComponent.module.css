@@ -1,5 +1,6 @@
 .container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 25% 25% 35% 15%;
     background-color: rgba(128, 128, 128, 0.158);
     margin: auto;
     margin-top: 1vh;
@@ -15,7 +16,26 @@
     font-size: max(1.2vw,15px);
 }
 
-.email{
+.newPasswordContainer{
+    margin-left: auto;
+}
+
+.newPassword{
+    width: 8vw;
+    height: 3vh;
+    font-size: max(1.2vw,14px);
+    margin-left: 1vw;
+}
+
+.newPasswordSubmitButton{
+    font-size: max(1.2vw,14px);
+    border-radius: 10px;
+    border-width: 1px;
+    width: 4vw;
+    padding: 0.3vw;
+}
+
+.name{
     margin: 0px;
     margin-left: auto;
     font-size: max(1.2vw,15px);
@@ -23,9 +43,9 @@
 
 .deleteButton{
     margin-right: auto;
-    font-size: max(1vw,10px);
+    font-size: max(1.2vw,14px);
     border-radius: 10px;
     border-width: 1px;
-    width: 5vw;
-    padding: 0.5vw;
+    width: 6vw;
+    padding: 0.3vw;
 }

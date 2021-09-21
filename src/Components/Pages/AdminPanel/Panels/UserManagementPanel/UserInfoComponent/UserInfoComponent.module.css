@@ -1,5 +1,6 @@
 .container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 20% 25% 35% 15% 5%;
     background-color: rgba(128, 128, 128, 0.158);
     margin: auto;
     margin-top: 1vh;
@@ -24,6 +25,7 @@
 
 .arrow{
     margin-left: 0.5vw;
+    margin-right: auto;
     height: 21.5px;
 }
 
