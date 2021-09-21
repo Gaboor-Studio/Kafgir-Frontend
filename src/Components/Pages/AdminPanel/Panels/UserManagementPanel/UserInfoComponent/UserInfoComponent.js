@@ -13,6 +13,7 @@ const UserInfoComponent = (props) => {
     const [newEmail, setNewEmail] = useState('');
     const [submitModal, setSubmitModal] = useState(false);
     const [deleteProfilePicModal, setDeleteProfilePicModal] = useState(false);
+    const [deactivateUser, setDeactivateUser] = useState(false);
 
     const resetChanges = () => {
         setEditUsername(false);
@@ -54,11 +55,11 @@ const UserInfoComponent = (props) => {
             <p className={isExpanded ? editUsername ? classes.hide : classes.username : classes.lineViewText} onClick={() => setEditUsername(true)}>نام کاربری: {props.username}</p>
             <p className={isExpanded ? editName ? classes.hide : classes.name : classes.lineViewText} onClick={() => setEditName(true)}>نام و نام خانوادگی: {props.name}</p>
             <p className={isExpanded ? editEmail ? classes.hide : classes.email : classes.lineViewText} onClick={() => setEditEmail(true)}>ایمیل: {props.email}</p>
-            <p className={isExpanded ? classes.access : classes.lineViewText}>نوع دسترسی: {props.access}</p>
+            <p className={isExpanded ? classes.access : classes.lineViewText}>نوع کاربر: {props.access}</p>
             <img src={arrow} className={isExpanded ? [classes.arrow, classes.upsidedown].join(' ') : classes.arrow} onClick={toggleExpand} />
             <input className={isExpanded ? classes.newPassword : classes.hide} placeholder="رمز جدید" />
             <div className={isExpanded ? classes.deactivateUser : classes.hide}>
-                <input type="checkbox" className={classes.deactivateUserCheckbox} defaultChecked={props.isDeactivated} />
+                <input type="checkbox" className={classes.deactivateUserCheckbox} defaultChecked={props.isDeactivated} onChange={(event)=>setDeactivateUser(event.target.checked)} />
                 <p className={classes.deactivateUserText}>غیر فعال کردن کاربر</p>
             </div>
             <button className={isExpanded ? classes.deleteProfilePicture : classes.hide} onClick={deleteProfileAsk}>حذف عکس پروفایل</button>
