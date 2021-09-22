@@ -12,7 +12,7 @@ import SearchPanel from "./SearchPanel/SearchPanel";
  */
 const Search = (props) => {
   // this state decides whether to show history or result panel
-  const [hasResult, setHasResult] = useState(true)
+  const [hasResult, setHasResult] = useState(false)
 
   return (
     <div className={classes.Search}>
