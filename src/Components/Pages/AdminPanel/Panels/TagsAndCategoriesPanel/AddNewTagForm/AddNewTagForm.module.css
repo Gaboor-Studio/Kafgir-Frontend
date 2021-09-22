@@ -1,0 +1,22 @@
+.AddNewTagForm {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.AddNewTagRow {
+    width: 95%;
+    margin: 4px 0;
+    padding: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.AddNewTagRow input {
+    width: 60%;
+    border-radius: 0.2rem;
+}
