@@ -56,11 +56,11 @@ const ResultsPanel = (props) => {
       <hr />
       <div className={classes.ResultsPanelList}>
         {
-          results && results.length > 0 ?
+          props.results && props.results.length > 0 ?
           <ul>
-              {results.map(result => <ResultItem key={result.id} item={result}/>)}
+              {props.results.map(result => <ResultItem key={result.id} item={result}/>)}
           </ul> :
-          <p>no previous results</p>
+          <p>no results</p>
         }
       </div>
     </div>

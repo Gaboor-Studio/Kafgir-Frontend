@@ -16,6 +16,7 @@ const MainInput = (props) => {
     <div className={classes.MainInput}>
       <Input
         id="food_name"
+        required
         bright
         large
         type="text"

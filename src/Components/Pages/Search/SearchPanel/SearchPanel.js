@@ -233,6 +233,11 @@ const SearchPanel = React.memo((props) => {
     setCategory(null);
   };
 
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+    props.onRequest(foodName, category, ingredients.saved, level, duration)
+  }
+
   return (
     <div className={classes.SearchPanel}>
       <div className={classes.SearchPanelTitle}>
@@ -242,7 +247,7 @@ const SearchPanel = React.memo((props) => {
         </div>
         <hr />
       </div>
-      <div className={classes.SearchPanelForm}>
+      <form className={classes.SearchPanelForm} method="POST" onSubmit={onFormSubmit}>
         <MainInput
           foodName={foodName}
           onFoodNameChange={onFoodChangeHandler}
@@ -272,9 +277,9 @@ const SearchPanel = React.memo((props) => {
           <RateInput onSetLevel={onSetLevelHandler} level={level} />
         </div>
         <div style={{ width: "100%" }}>
-          <Button>بگرد</Button>
+          <Button >بگرد</Button>
         </div>
-      </div>
+      </form>
     </div>
   );
 });
