@@ -39,6 +39,7 @@ const Login = (props) => {
           console.log(data);
           if (res.ok) {
             console.log("request sent[login]");
+            localStorage.setItem('token', data.token)
             history.push("/");
           } else {
             setError({
@@ -77,8 +78,8 @@ const Login = (props) => {
             ltr={loginInfo.username ? true : false}
             id="username"
             required
-            type="text"
-            placeholder="نام کاربری"
+            type="email"
+            placeholder="ایمیل"
             value={loginInfo.username}
             onType={onInputChangeHandler}
           />

@@ -24,10 +24,12 @@ const Search = (props) => {
 
   const searchRequest = (title, category, ingredient_list, level, cooking_time) => {
 
+    const token = `Token ${localStorage.getItem('token') ? localStorage.getItem('token') : 'cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'}`
+
     const config = {
       headers: {
           "content-type": "application/json",
-          Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01',
+          Authorization: token,
       }
   }
 
