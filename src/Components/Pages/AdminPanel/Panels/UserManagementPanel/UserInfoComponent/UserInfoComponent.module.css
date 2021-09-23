@@ -147,11 +147,21 @@
 .nameInput{
     grid-column-start: 2;
     grid-row-start: 2;
-    width: 10vw;
+    width: 8vw;
     height: 3.2vh;
     font-size: max(1.2vw,13px);
     align-self: center;
     margin-right: 1vw;
+}
+
+.lastNameInput{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    width: 8vw;
+    height: 3.2vh;
+    font-size: max(1.2vw,13px);
+    align-self: center;
+    margin-right: 10vw;
 }
 
 .emailInput{

@@ -30,14 +30,14 @@ const AdminInfoComponent = (props) => {
 
     const deleteAdmin = () => {
         setSubmitModal(false);
-        axios.delete(["http://84.241.22.193:8000/api/admin/admin-management/",(props.id).toString()].join(''), config)
+        axios.delete([`http://84.241.22.193:8000/api/admin/admin-management/${props.id}`], config)
             .then(res => props.update())
             .catch(err => console.error(err));
     }
 
     const submitNewPassword = () => {
         setNewPasswordModal(false);
-        axios.put(("http://84.241.22.193:8000/api/admin/admin-management/"+(props.id).toString()+"/set-password/"), {
+        axios.put((`http://84.241.22.193:8000/api/admin/admin-management/${props.id}/set-password`), {
             "new_password": newPassword,
             "new_password_repeat": newPasswordRepeat
         }, config)

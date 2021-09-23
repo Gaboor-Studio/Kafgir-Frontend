@@ -42,7 +42,7 @@
 
 .infoSection{
     display: grid;
-    grid-template-rows: 1.2fr 10fr;
+    grid-template-rows: 11vh 89vh;
 }
 
 .pageHeader{

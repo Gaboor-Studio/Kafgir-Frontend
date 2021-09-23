@@ -22,7 +22,7 @@ const AdminManagementPanel = () => {
 
     useEffect(() => {
         axios.get("http://84.241.22.193:8000/api/admin/admin-management/", config)
-            .then(res => setAdmins(res.data))
+            .then(res => setAdmins(res.data.data))
             .catch(err => console.error(err));
     }, [updatePage])
 
