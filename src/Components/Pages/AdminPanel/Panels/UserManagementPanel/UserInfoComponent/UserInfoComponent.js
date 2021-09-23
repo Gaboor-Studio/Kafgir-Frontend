@@ -81,7 +81,7 @@ const UserInfoComponent = (props) => {
         <div className={isExpanded ? [classes.container, classes.containerExpanded].join(' ') : classes.container}>
             <img src={props.profilePic} className={isExpanded ? classes.profilePic : classes.hide} />
             <p className={isExpanded ? editUsername ? classes.hide : classes.username : classes.lineViewText} onClick={() => setEditUsername(true)}>نام کاربری: {props.username}</p>
-            <p className={isExpanded ? editName ? classes.hide : classes.name : classes.lineViewText} onClick={() => setEditName(true)}>نام و نام خانوادگی: {props.name + ' ' + props.lastName}</p>
+            <p className={isExpanded ? editName ? classes.hide : classes.name : classes.lineViewText} onClick={() => setEditName(true)}>نام و نام خانوادگی: {[props.name,props.lastName].join(' ')}</p>
             <p className={isExpanded ? editEmail ? classes.hide : classes.email : classes.lineViewText} onClick={() => setEditEmail(true)}>ایمیل: {props.email}</p>
             <p className={isExpanded ? classes.access : classes.lineViewText}>نوع کاربر: {props.access}</p>
             <img src={arrow} className={isExpanded ? [classes.arrow, classes.upsidedown].join(' ') : classes.arrow} onClick={toggleExpand} />
