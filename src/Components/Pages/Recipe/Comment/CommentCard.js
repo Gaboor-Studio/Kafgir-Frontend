@@ -12,9 +12,9 @@ const CommentCard = (props) => {
           alt="profpic"
         />
         <h1 className={classes.profname}>{props.comment.profilename}</h1>
-        <h1 className={classes.date}>{props.comment.date}</h1>
-        <div className={classes.rate}>
-        <Rating rate={props.comment.rate} />
+        <div className={classes.deta}>
+          <Rating rate={props.comment.rate} />
+          <h1 className={classes.date}>{props.comment.date}</h1>
         </div>
       </div>
       <div className={classes.commentbox}>

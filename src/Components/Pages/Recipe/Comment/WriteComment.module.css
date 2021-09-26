@@ -1,82 +1,71 @@
-.my{
-    background-color: #FFC5BA;
-    width: 90%;
-    margin-left: 5%;
-    border-radius: 10px;
-    height: 280px;
-    margin-top: 20px;
+.my {
+  background-color: #ffc5ba;
+  width: 300px;
+  border-radius: 10px;
+  height: 320px;
+  margin-top: 20px;
 }
-.rate{
-    display: flex;
-    margin-top: 60px;
-    margin-left: 20%;
+.rate {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  margin-top: 60px;
 }
-.btn{
-    width: 15px;
-    height: 15px;
-    padding-top: 4px;
-    padding-right: 10px;
-    padding-left: 10px;
+.btn {
+  width: 15px;
+  height: 15px;
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .profpic {
-    width: 50px;
-    border-radius: 30px;
-    float: right;
-    margin-right: 10px;
-    margin-top: 20px;
+  width: 50px;
+  border-radius: 30px;
+  float: right;
+  margin-right: 10px;
+  margin-top: 20px;
 }
-  .profname {
-    font-size: 16px;
-    color: #502e29;
-    float: right;
-    margin-right: 10px;
-    margin-top: 10px;
+.profname {
+  font-size: 16px;
+  color: #502e29;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+.textarea {
+  float: right;
+  width: 80%;
+  direction: rtl;
+  height: 100px;
+  font-size: 16px;
+  font-family: IranSans;
+  border-radius: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+  margin-right: 5%;
+  background-color: #ffeeec;
+  border: none;
+  outline: none;
+  resize: none;
+  color: #502e29;
+  margin-top: 20px;
+}
+.button {
+  float: left;
+  border: none;
+  border-radius: 5px;
+  background-color: #ff8877;
+  font-family: IranSans;
+  color: #ffeeec;
+  width: 70px;
+  height: 30px;
+  margin-left: 10%;
+  margin-top: 10px;
+}
+@media (min-width: 480px) {
+  .my {
+    width: 450px;
   }
-  .textarea{
-      float: right;
-      width: 80%;
-      direction: rtl;
-      height: 100px;
-      font-size: 16px;
-      font-family: IranSans;
-      border-radius: 10px;
-      padding-right: 10px;
-      padding-left: 10px;
-      margin-right: 5%;
-      background-color: #FFEEEC;
-      border: none;
-      outline: none;
-      resize: none;
-      color: #502e29;
-      margin-top: 20px;
-  }
-
-  @media (min-width:480px){
-      .rate{
-          margin-left: 25%;
-      }
-  }
-  
-  @media (min-width:800px){
-    .rate{
-        margin-left: 40%;
-    }
-    .my{
-        width: 60%;
-        margin-left: 20%;
-        height: 400px;
-    }
-    .textarea{
-        height: 200px;
-        width: 90%;
-        margin-right:2% ;
-    }
-    .profpic{
-        width: 80px;
-        border-radius: 70px;
-    }
-    .profname{
-        font-size: 24px;
-    }
 }

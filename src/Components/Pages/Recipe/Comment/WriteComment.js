@@ -5,7 +5,16 @@ import minus from "..//..//..//..//assets//planner-remove.png";
 import plus from "..//..//..//..//assets//planner-add.png";
 const WriteComment = (props) => {
   const [rate, setRate] = useState(0);
-
+  function minus_rate(){
+    if(rate>0){
+      setRate(rate-0.5)
+    }
+  }
+  function plus_rate(){
+    if(rate<5){
+      setRate(rate+0.5)
+    }
+  }
   return (
     <div className={classes.my}>
       <img
@@ -15,21 +24,24 @@ const WriteComment = (props) => {
       />
       <h1 className={classes.profname}>{props.comment.profilename}</h1>
       <br />
+      
       <div className={classes.rate}>
         <img
           src={minus}
           className={classes.btn}
-          onClick={() => setRate(rate - 0.5)}
+          onClick={() =>  minus_rate()}
         />
         <Rating rate={rate} size={window.innerWidth<=480 ?"20":"30"} />
 
         <img
           src={plus}
           className={classes.btn}
-          onClick={() => setRate(rate + 0.5)}
+          onClick={() => plus_rate()}
         />
       </div>
-      <textarea className={classes.textarea} maxLength="200" />
+      
+      <textarea className={classes.textarea} placeholder="نظر خود را وارد کنید ..." maxLength="200" />
+      <button className={classes.button}>ثبت نظر</button>
     </div>
   );
 };

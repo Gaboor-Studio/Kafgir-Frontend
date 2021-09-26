@@ -1,5 +1,6 @@
 import React from "react";
-import {useState} from "react";
+import { useState } from "react";
+import { useParams } from "react-router";
 import classes from "./Recipe.module.css";
 import Card from "./Card.js";
 import RecipeCard from "./RecipeCard";
@@ -10,7 +11,6 @@ import commentlogo from "..//..//..//assets/comment.svg";
 import CommentCard from "./Comment/CommentCard";
 import WriteComment from "./Comment/WriteComment";
 import axios from "axios";
-
 
 const comment = {
   profilename: "علی انصاری",
@@ -29,7 +29,8 @@ const Recipe = (props) => {
     ingredients: [],
     recipe: [],
   });
-  const url = "http://84.241.22.193:8000/api/member/food/2/";
+  let {slug} = useParams();
+  const url = "http://84.241.22.193:8000/api/member/food/"+String({slug});
   function axiosTest() {
     axios.get(url).then((response) => setData(response.data));
   }
@@ -57,15 +58,6 @@ const Recipe = (props) => {
 
       <div className={classes.writecomment}>
         <WriteComment comment={comment} />
-      </div>
-
-      <div className={classes.mycomment}>
-        <p className={classes.titlemy}>نظر من</p>
-        <span/>
-        <div className={classes.line} />
-        <div className={classes.mycom}>
-          <CommentCard comment={comment} />
-        </div>
       </div>
 
       <br className={classes.break} />

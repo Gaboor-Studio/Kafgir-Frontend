@@ -11,7 +11,9 @@ const Layout = (props) => {
       <br />
       <div className={classes.name}>{props.name}</div>
       <br />
-      <button className={classes.recipebtn}>دستور</button>
+      <Link to="/recipe/2">
+        <button className={classes.recipebtn}>دستور</button>
+      </Link>
       <br />
       <div className={classes.hardness}>
         <Hardness hardness={props.hardness} />
