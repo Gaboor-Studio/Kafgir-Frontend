@@ -64,7 +64,12 @@ body {
   .Recipe {
     display: block;
   }
-
+  .sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+  
   .card {
     width: 90%;
     margin-left: 5%;

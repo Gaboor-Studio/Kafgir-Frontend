@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
 import { Route, Switch } from "react-router-dom";
 import Categories from "./Components/Pages/Categories/Categories";
@@ -84,7 +84,7 @@ function App() {
               <Route path="/planner">
                 <Planner />
               </Route>
-              <Route path="/recipe">
+              <Route path="/recipe/:id" >
                 <Recipe />
               </Route>
               <Route path="/contact-us">

@@ -12,14 +12,6 @@ import CommentCard from "./Comment/CommentCard";
 import WriteComment from "./Comment/WriteComment";
 import axios from "axios";
 
-const comment = {
-  profilename: "علی انصاری",
-  profilepic: profpic,
-  rate: 3.5,
-  comment:
-    "این غذا عالی بود و بالاتر از انتظارات من طعمش به وقوع پیوست مرسی از سایت کفگیر که الان اسمش عوض شده! این غذا عالی بود و بالاتر از انتظارات من طعمش به وقوع پیوست مرسی از سایت کفگیر که الان اسمش عوض شده!",
-  date: new Date().toLocaleDateString("fa-IR"),
-};
 const Recipe = (props) => {
   const [Data, setData] = useState({
     title: "",
@@ -28,16 +20,17 @@ const Recipe = (props) => {
     level: 0,
     ingredients: [],
     recipe: [],
+    comments: [],
+    my_comment: null,
   });
-  let { slug } = useParams();
+  let slug = useParams();
   useEffect(() => {
-    const url = "http://84.241.22.193:8000/api/member/food/" + String({ slug });
+    const url = "http://84.241.22.193:8000/api/member/food/" + String(slug.id);
     function axiosTest() {
       axios.get(url).then((response) => setData(response.data));
     }
     axiosTest();
-    console.log(Data);
-  },[]);
+  }, []);
   return (
     <div className={classes.Recipe}>
       <div className={classes.card}>
@@ -46,7 +39,7 @@ const Recipe = (props) => {
           name={Data.title}
           rate={Data.rating}
           hardness={Data.level}
-          time={Data.coocking_time}
+          time={Data.cooking_time}
         />
       </div>
 
@@ -58,18 +51,25 @@ const Recipe = (props) => {
         <RecipeSteps recipe={Data.recipe} />
       </div>
 
-      <div className={classes.writecomment}>
-        <WriteComment comment={comment} />
+      <div className={classes.writecomment} id="myHeader">
+        {Data.my_comment === null ? (
+          <p>برای نظر دادن وارد شوید</p>
+        ) : (
+          <WriteComment comment={Data.my_comment} />
+        )}
       </div>
       <div className={classes.comment}>
         <img className={classes.logo} src={commentlogo} alt="comment" />
         <p className={classes.title}>نظرات</p>
+
         <div className={classes.scroll}>
-          <CommentCard comment={comment} />
-          <CommentCard comment={comment} />
-          <CommentCard comment={comment} />
-          <CommentCard comment={comment} />
-          <CommentCard comment={comment} />
+          {Data.comments.length === 0 ? (
+            <p>نظری ثبت نشده است</p>
+          ) : (
+            Data.comments.map((comment, index) => (
+              <CommentCard comment={comment} />
+            ))
+          )}
         </div>
       </div>
     </div>

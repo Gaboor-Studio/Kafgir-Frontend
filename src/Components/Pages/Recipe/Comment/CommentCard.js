@@ -8,17 +8,17 @@ const CommentCard = (props) => {
       <div className={classes.commentdetail}>
         <img
           className={classes.profpic}
-          src={props.comment.profilepic}
+          src={props.comment.user_pic}
           alt="profpic"
         />
-        <h1 className={classes.profname}>{props.comment.profilename}</h1>
+        <h1 className={classes.profname}>{props.comment.username}</h1>
         <div className={classes.deta}>
-          <Rating rate={props.comment.rate} />
-          <h1 className={classes.date}>{props.comment.date}</h1>
+          <Rating rate={props.comment.rating} />
+          <h1 className={classes.date}>{props.comment.date_time}</h1>
         </div>
       </div>
       <div className={classes.commentbox}>
-        <p>{props.comment.comment}</p>
+        <p>{props.comment.text}</p>
       </div>
     </div>
   );
