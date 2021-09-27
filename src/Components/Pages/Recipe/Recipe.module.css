@@ -73,17 +73,18 @@ body {
   }
 
   .RecipeCard {
-    width: 35%;
+    width: 30%;
     margin-top: 0px;
     padding-top: 0px;
-    margin-left: 5%;
-    float: left;
+    margin-right: 5%;
+    float: right;
   }
   .Recipesteps {
     width: 40%;
     padding-top: 20px;
     margin-top: 30px;
-    margin-left: 40%;
+    margin-left: 0px;
+    float: left;
   }
   .addpln {
     float: right;
@@ -95,7 +96,7 @@ body {
     margin-top: 360%;
   }
   .comment {
-    margin-top: 0px;
+    margin-top: 40px;
     height: auto;
     width: 55%;
     margin-bottom: 20px;
@@ -105,12 +106,6 @@ body {
     width: 35%;
     float: right;
     margin-right: 2.5%;
-  }
-  .break {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding-top: 20px;
-    padding-bottom: 20px;
   }
   .scroll {
     display: block;

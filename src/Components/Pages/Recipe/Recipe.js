@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import classes from "./Recipe.module.css";
 import Card from "./Card.js";
@@ -29,13 +29,15 @@ const Recipe = (props) => {
     ingredients: [],
     recipe: [],
   });
-  let {slug} = useParams();
-  const url = "http://84.241.22.193:8000/api/member/food/"+String({slug});
-  function axiosTest() {
-    axios.get(url).then((response) => setData(response.data));
-  }
-  axiosTest();
-  console.log(Data);
+  let { slug } = useParams();
+  useEffect(() => {
+    const url = "http://84.241.22.193:8000/api/member/food/" + String({ slug });
+    function axiosTest() {
+      axios.get(url).then((response) => setData(response.data));
+    }
+    axiosTest();
+    console.log(Data);
+  },[]);
   return (
     <div className={classes.Recipe}>
       <div className={classes.card}>
@@ -59,8 +61,6 @@ const Recipe = (props) => {
       <div className={classes.writecomment}>
         <WriteComment comment={comment} />
       </div>
-
-      <br className={classes.break} />
       <div className={classes.comment}>
         <img className={classes.logo} src={commentlogo} alt="comment" />
         <p className={classes.title}>نظرات</p>

@@ -46,9 +46,9 @@
 .date {
   padding-top: 0;
   margin-top: 0;
-  width: 100px;
+  float: right;
+  margin-right: 20px;
   font-size: 14px;
-  margin-right: 0;
   color: #502e29;
 }
 
