@@ -5,7 +5,7 @@ export const handleResponse = (response) => {
   if (response.status !== 200) {
     if ([401, 403].indexOf(response.status) !== -1) {
       authenticationService.logout();
-      location.reload(true);
+      window.location.reload()
     }
     const error = (data && data.message) || response.statusText;
     return Promise.reject(error);
