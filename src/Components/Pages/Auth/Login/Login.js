@@ -28,30 +28,6 @@ const Login = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    // const options = {
-    //   method: "POST",
-    //   headers: new Headers({ "content-type": "application/json; utf-8" }),
-    //   body: JSON.stringify(loginInfo),
-    // };
-
-    // fetch("http://84.241.22.193:8000/api/auth/login/", options)
-    //   .then((res) => {
-    //     console.log(res);
-    //     Promise.resolve(res.json()).then((data) => {
-    //       console.log(data);
-    //       if (res.ok) {
-    //         console.log("request sent[login]");
-    //         localStorage.setItem('token', data.token)
-    //         history.push("/");
-    //       } else {
-    //         setError({
-    //           open: true,
-    //           err: JSON.stringify(data),
-    //         });
-    //       }
-    //     });
-    //   })
-
     authenticationService.login(loginInfo.username, loginInfo.password)
       .then(res => history.push("/"))
       .catch((err) => {

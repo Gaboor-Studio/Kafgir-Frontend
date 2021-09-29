@@ -37,6 +37,32 @@ function login(username, password) {
         });
 }
 
+const sendConfirm = (email) => {
+
+    const requestBody = JSON.stringify({email})
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        validateStatus: (status) => status === 200
+    }
+
+    return axios.post(PRE_END + 'send-confirmation/', requestBody, requestOptions)  
+}
+
+const confirmEmail = (confirmData) => {
+
+    const requestBody = JSON.stringify(confirmData)
+
+    const requestOptions = {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        validateStatus: (status) => status === 200
+    }
+
+    return axios.post(PRE_END + 'confirm-email/', requestBody, requestOptions)  
+}
+
 function logout() {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
@@ -45,6 +71,8 @@ function logout() {
 export const authenticationService = {
     register,
     login,
+    sendConfirm,
+    confirmEmail,
     logout,
     currentUser
 };

@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useCallback } from "react";
 import { useLocation, useHistory } from "react-router-dom";
 
+import { authenticationService } from "../../../../services/auth.service";
+
 import Button from "../../../UI/Button/Button";
 import ConfirmCodeInput from "../../../UI/ConfirmCodeInput/ConfirmCodeInput";
 import InlineButton from "../../../UI/InlineButton/InlineButton";
@@ -35,56 +37,43 @@ const ConfirmEmail = (props) => {
   }, [location]);
 
   const sendEmail = (email) => {
-    const options = {
-      method: "POST",
-      headers: new Headers({ "content-type": "application/json; utf-8" }),
-      body: JSON.stringify({ email: email }),
-    };
+    authenticationService.sendConfirm(email)
+      .then((response) => {
+        console.log("request sent");
+        setModalOpen(true);
+      })
+      .catch((err) => {
+        let errorMessage = "something went wrong";
 
-    fetch("http://84.241.22.193:8000/api/auth/send-confirmation/", options).then(
-      (res) => {
-        console.log(res);
-        Promise.resolve(res.json()).then((data) => {
-          console.log(data);
-          if (res.ok) {
-            console.log("request sent");
-            setModalOpen(true);
-          } else {
-            setError({
-              open: true,
-              err: JSON.stringify(data),
-            });
-          }
+        if (err.response) {
+          errorMessage = err.response.data;
+        }
+
+        setError({
+          open: true,
+          err: JSON.stringify(errorMessage),
         });
-      }
-    );
+      });
   };
 
   const onSubmit = (event) => {
     event.preventDefault();
 
-    const options = {
-      method: "POST",
-      headers: new Headers({ "content-type": "application/json; utf-8" }),
-      body: JSON.stringify({ email: email, confirm_code: code.join('') }),
-    };
+    authenticationService.confirmEmail({ email: email, confirm_code: code.join("") })
+      .then((response) => {
+        history.push("/auth/login/");
+      }).catch(err => {
+        let errorMessage = "something went wrong";
 
-    fetch("http://84.241.22.193:8000/api/auth/confirm-email/", options)
-      .then((res) => {
-        console.log(res);
-        Promise.resolve(res.json()).then((data) => {
-          console.log(data);
-          if (res.ok) {
-            console.log("request sent");
-            history.push("/auth/login/");
-          } else {
-            setError({
-              open: true,
-              err: JSON.stringify(data),
-            });
-          }
-        });
-      })
+        if (err.response) {
+          errorMessage = err.response.data;
+        }
+
+        setError({
+          open: true,
+          err: JSON.stringify(errorMessage),
+        });        
+      });
   };
 
   const onInputChangeHandler = useCallback((index, value) => {
