@@ -54,7 +54,7 @@ const TagsAndCategoriesPanel = () => {
 }
 
   const fetchData = () => {
-    axios.get("http://84.241.22.193:8000/api/admin/tag/tags/", config)
+    axios.get("http://84.241.22.193:8000/api/admin/tag/", config)
         .then(res => setTags(res.data))
         .catch(err => console.error(err));
   }
