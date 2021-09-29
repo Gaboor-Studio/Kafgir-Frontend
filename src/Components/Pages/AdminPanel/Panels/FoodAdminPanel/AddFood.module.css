@@ -26,6 +26,7 @@
     margin-bottom: 3vh;
     grid-row-start: 2;
     margin-left: 3vw;
+    padding-right: 0.3vw;
 }
 
 .difficultyTitle{
@@ -77,4 +78,13 @@
     border-radius: 10px;
     border: black solid 1px;
     margin-right: 1vw;
+}
+
+.submitFood{
+    width: 7vw;
+    height: 4vh;
+    font-size: large;
+    justify-self: flex-end;
+    border-radius: 10px;
+    border: 1px solid black;
 }

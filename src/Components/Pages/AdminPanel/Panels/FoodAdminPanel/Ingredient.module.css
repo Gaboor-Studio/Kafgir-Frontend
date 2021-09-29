@@ -1,0 +1,29 @@
+.container{
+    display: flex;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
+}
+
+.ingredientName{
+    height: 3vh;
+    width: 10vw;
+    margin-right: 1vw;
+    font-size: 1.1vw;
+    padding-right: 0.3vw;
+}
+
+.ingredientAmount{
+    height: 3vh;
+    width: 5vw;
+    margin-right: 1vw;
+    font-size: 1.1vw;
+    padding-right: 0.3vw;
+}
+
+.amountUnit{
+    height: 3vh;
+    width: 5vw;
+    margin-right: 1vw;
+    font-size: 1.1vw;
+    padding-right: 0.3vw;
+}
