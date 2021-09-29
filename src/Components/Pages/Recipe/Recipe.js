@@ -3,13 +3,14 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import classes from "./Recipe.module.css";
 import Card from "./Card.js";
+import { Link } from "react-router-dom";
 import RecipeCard from "./RecipeCard";
 import RecipeSteps from "./RecipeSteps";
 import ghorme from "..//..//..//assets/ghorme.jpg";
-import profpic from "..//..//..//assets/ali.jpg";
 import commentlogo from "..//..//..//assets/comment.svg";
 import CommentCard from "./Comment/CommentCard";
 import WriteComment from "./Comment/WriteComment";
+import nocomment from "..//..//..//assets//No comment.svg"
 import axios from "axios";
 
 const Recipe = (props) => {
@@ -53,7 +54,12 @@ const Recipe = (props) => {
 
       <div className={classes.writecomment} id="myHeader">
         {Data.my_comment === null ? (
-          <p>برای نظر دادن وارد شوید</p>
+          <div className={classes.writeoff}>
+            برای نظر دادن وارد شوید
+            <Link to="/auth/login">
+              <p className={classes.texxt}>ورود</p>
+            </Link>
+          </div>
         ) : (
           <WriteComment comment={Data.my_comment} />
         )}
@@ -64,7 +70,10 @@ const Recipe = (props) => {
 
         <div className={classes.scroll}>
           {Data.comments.length === 0 ? (
-            <p>نظری ثبت نشده است</p>
+            <div className={classes.nocomment}>
+              <p>اولین نظر این غذا را ثبت کنید!</p>
+              <img src={nocomment} alt="no comment"/>
+            </div>
           ) : (
             Data.comments.map((comment, index) => (
               <CommentCard comment={comment} />
