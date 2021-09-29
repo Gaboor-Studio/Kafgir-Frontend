@@ -1,0 +1,80 @@
+.container{
+    display: grid;
+    padding: 1vh 1vw;
+}
+
+.dataContainer{
+    display: grid;
+    justify-content: flex-start;
+}
+
+.title{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 5vh;
+    text-align: start;
+    font-size: 1.5vw;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.nameInput{
+    height: 3.5vh;
+    width: 10vw;
+    font-size: 1.3vw;
+    margin-left: auto;
+    margin-bottom: 3vh;
+    grid-row-start: 2;
+    margin-left: 3vw;
+}
+
+.difficultyTitle{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 1vh;
+    text-align: start;
+    font-size: 1vw;
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.difficultyRange{
+    margin-bottom: 1vh;
+    grid-row-start: 4;
+    width: 11vw;
+}
+
+.difficultyText{
+    padding: 0px;
+    margin: 0px;
+    grid-row-start: 4;
+    justify-self: flex-start;
+    margin-bottom: 1vh;
+}
+
+.ingredientsTitle{
+    padding: 0px;
+    margin: 0px;
+    margin: 2vh 0px ;
+    text-align: start;
+    font-size: 1.3vw;
+}
+
+.recipeTitle{
+    padding: 0px;
+    margin: 0px;
+    margin: 2vh 0px ;
+    text-align: start;
+    font-size: 1.3vw;
+}
+
+.addStep{
+    width: 6vw;
+    height: 4.5vh;
+    margin-top: 3vh;
+    font-size: 1vw;
+    border-radius: 10px;
+    border: black solid 1px;
+    margin-right: 1vw;
+}

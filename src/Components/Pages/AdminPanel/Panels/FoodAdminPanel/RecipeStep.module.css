@@ -1,0 +1,14 @@
+.container{
+    display: flex;
+    font-size: 1.2vw;
+    justify-content: flex-start;
+    margin-right: 1vw;
+    margin-bottom: 2vh;
+}
+
+.stepInput{
+    margin-right: 2.5vw;
+    width: 30vw;
+    height: 3.3vh;
+    font-size: 1.1vw;
+}
