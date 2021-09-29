@@ -3,34 +3,12 @@ import axios from "axios";
 
 import classes from "./TagsAndCategoriesPanel.module.css";
 
+import {adminTagService} from '../../../../../services/admin-tag.service'
+
 import Header from "./Header";
 import ManageTagRow from "./ManageTagRow/ManageTagRow";
 import ConfirmModal from "../../../../UI/Modal/ConfirmModal/ConfirmModal";
 import AddNewTagForm from "./AddNewTagForm/AddNewTagForm";
-
-const dummyTags = [
-  {
-    id: 1,
-    title: "فریزری",
-    is_main: false,
-    is_primary: false,
-    display_order: 1,
-  },
-  {
-    id: 2,
-    title: "دانشجویی",
-    is_main: true,
-    is_primary: false,
-    display_order: 3,
-  },
-  {
-    id: 3,
-    title: "خورشت",
-    is_main: true,
-    is_primary: true,
-    display_order: 1,
-  },
-];
 
 const TagsAndCategoriesPanel = () => {
   const [tags, setTags] = useState([]);
@@ -46,33 +24,26 @@ const TagsAndCategoriesPanel = () => {
     fetchData()
   }, []);
 
-  const config = {
-    headers: {
-        "content-type": "application/json",
-        Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'
-    }
-}
-
   const fetchData = () => {
-    axios.get("http://84.241.22.193:8000/api/admin/tag/tags/", config)
+    adminTagService.fetchTags()
         .then(res => setTags(res.data))
         .catch(err => console.error(err));
   }
 
   const addTag = (data) => {
-    return axios.post("http://84.241.22.193:8000/api/admin/tag/", JSON.stringify(data) , config)
-        .then(res => {console.log(res); fetchData(); return res;})
-        .catch(err => console.error(err));
+    adminTagService.postTag(data)
+        .then(res => {console.log(res); onTagFormClearHandler(); onCloseTagForm(); fetchData();})
+        .catch(err => console.error(err.response));
   }
 
   const editTag = (id, data) => {
-    return axios.put(`http://84.241.22.193:8000/api/admin/tag/${id}/`, JSON.stringify(data), config)
+    return adminTagService.editTag(id, data)
         .then(res => {console.log(res); fetchData(); return res;})
         .catch(err => console.error(err))
   }
 
   const removeTag = (id) => {
-      return axios.delete(`http://84.241.22.193:8000/api/admin/tag/${id}/`, config)
+      return adminTagService.removeTag(id)
         .then(res => {console.log(res); fetchData(); return res;})
         .catch(err => console.error(err))
   }
@@ -121,7 +92,7 @@ const TagsAndCategoriesPanel = () => {
       setNewTagForm({
         title: "",
         is_main: false,
-        isPrimary: false,
+        is_primary: false,
         display_order: 0,
       })
   }
@@ -148,13 +119,7 @@ const TagsAndCategoriesPanel = () => {
     <div className={classes.TagsAndCategoriesPanel}>
       <ConfirmModal
         show={newTagModalOpen}
-        proceed={() => {
-          Promise.resolve(addTag(newTagForm)).then(res => {
-              onCloseTagForm()
-          }).catch(err => {
-              console.error(err)
-          })
-        }}
+        proceed={() => addTag(newTagForm)}
         modalClosed={onCloseTagForm}
         message={newTagModal}
       />

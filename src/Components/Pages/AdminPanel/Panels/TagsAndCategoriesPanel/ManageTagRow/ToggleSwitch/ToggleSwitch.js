@@ -11,6 +11,10 @@ const ToggleSwitch = (props) => {
     if (defaultChecked) {
       setToggle(defaultChecked);
     }
+  }, []);
+
+  useEffect(() => {
+      setToggle(defaultChecked);
   }, [defaultChecked]);
 
   const triggerToggle = () => {

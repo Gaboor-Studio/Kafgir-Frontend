@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import {authenticationService} from '../../../../services/auth.service'
+
 import Button from "../../../UI/Button/Button";
 import InlineLink from "../../../UI/InlineLink/InlineLink";
 import Input from "../../../UI/Input/Input";
@@ -26,29 +28,21 @@ const Login = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    const options = {
-      method: "POST",
-      headers: new Headers({ "content-type": "application/json; utf-8" }),
-      body: JSON.stringify(loginInfo),
-    };
+    authenticationService.login(loginInfo.username, loginInfo.password)
+      .then(res => history.push("/"))
+      .catch((err) => {
+        let errorMessage = "something went wrong";
 
-    fetch("http://84.241.22.193:8000/api/auth/login/", options)
-      .then((res) => {
-        console.log(res);
-        Promise.resolve(res.json()).then((data) => {
-          console.log(data);
-          if (res.ok) {
-            console.log("request sent[login]");
-            localStorage.setItem('token', data.token)
-            history.push("/");
-          } else {
-            setError({
-              open: true,
-              err: JSON.stringify(data),
-            });
-          }
+        if (err.response) {
+          errorMessage = err.response.data;
+        }
+
+        setError({
+          open: true,
+          err: JSON.stringify(errorMessage),
         });
-      })
+      });
+
   };
 
   const onInputChangeHandler = (event) => {

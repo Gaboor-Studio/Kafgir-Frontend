@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
+import { authenticationService } from "../../../../services/auth.service";
+
 import Input from "../../../UI/Input/Input";
 import Button from "../../../UI/Button/Button";
 import InlineLink from "../../../UI/InlineLink/InlineLink";
@@ -47,33 +49,29 @@ const Signup = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    const options = {
-      method: "POST",
-      headers: new Headers({ "content-type": "application/json; utf-8" }),
-      body: JSON.stringify(credentials),
-    };
-
-    fetch("http://84.241.22.193:8000/api/auth/register/", options)
+    authenticationService
+      .register(credentials)
       .then((res) => {
-        console.log(res)
-        Promise.resolve(res.json()).then(data => {
-          console.log(data);
-          if (res.ok){
-            history.push({
-              pathname: "/auth/confirmation",
-              state: {
-                email: credentials.email,
-                phone_number: credentials.phone_number,
-              },
-            });
-          } else {
-            setError({
-              open: true,
-              err: JSON.stringify(data),
-            });
-          }
-        })
+        history.push({
+          pathname: "/auth/confirmation",
+          state: {
+            email: credentials.email,
+            phone_number: credentials.phone_number,
+          },
+        });
       })
+      .catch((err) => {
+        let errorMessage = "something went wrong";
+
+        if (err.response) {
+          errorMessage = err.response.data;
+        }
+
+        setError({
+          open: true,
+          err: JSON.stringify(errorMessage),
+        });
+      });
   };
 
   return (
