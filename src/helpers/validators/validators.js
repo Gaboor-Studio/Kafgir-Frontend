@@ -6,8 +6,8 @@ import { isEmail, isStrongPassword, isMobilePhone } from "validator";
 const required = (value) => {
   if (!value) {
     return (
-      <div className="alert alert-danger" role="alert">
-        This field is required!
+      <div className={classes.Alert} role="alert">
+        این فیلد اجباریست
       </div>
     );
   }
@@ -16,8 +16,8 @@ const required = (value) => {
 const email = (value) => {
   if (!isEmail(value)) {
     return (
-      <div className="alert alert-danger" role="alert">
-        This is not a valid email.
+      <div className={classes.Alert} role="alert">
+        ایمیل حسابی بده
       </div>
     );
   }
@@ -26,8 +26,8 @@ const email = (value) => {
 const phone = (value) => {
   if (!isMobilePhone(value)) {
     return (
-      <div className="alert alert-danger" role="alert">
-        This is not a phone number.
+      <div className={classes.Alert} role="alert">
+        شماره آدمیزاد وارد کن
       </div>
     );
   }

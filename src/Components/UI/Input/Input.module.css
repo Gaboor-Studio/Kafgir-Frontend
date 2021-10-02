@@ -10,6 +10,10 @@
     font-family: IranSans;
 }
 
+.PublicInput:focus {
+    outline: none;
+}
+
 .LargeInput {
     width: 90%;
     /* padding: 10px; */
@@ -20,10 +24,6 @@
 
 .Bright {
     background-color: whitesmoke;
-}
-
-.PublicInput:focus {
-    outline: none;
 }
 
 .SmallInput {

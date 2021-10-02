@@ -8,8 +8,6 @@ import CheckButton from "react-validation/build/button";
 import { authenticationService } from "../../../../services/auth.service";
 import { Validators } from "../../../../helpers/validators/validators";
 
-// import Input from "../../../UI/Input/Input";
-import InputClasses from "../../../UI/Input/Input.module.css";
 import Button from "../../../UI/Button/Button";
 import InlineLink from "../../../UI/InlineLink/InlineLink";
 import ErrorModal from "../../../UI/Modal/ErrorModal/ErrorModal";
@@ -103,7 +101,7 @@ const Signup = (props) => {
         </div>
         <Form className={classes.SignUpForm} onSubmit={onSubmit} ref={c => {FormRef = c;}}>
           <Input
-            className={`${InputClasses.PublicInput} ${InputClasses.SmallInput}`}
+            className={`${classes.PublicInput} ${classes.SmallInput}`}
             id="last_name"
             type="text"
             placeholder="نام خانوادگی(دلخواه)"
@@ -112,17 +110,24 @@ const Signup = (props) => {
           />
 
           <Input
-            className={`${InputClasses.PublicInput} ${InputClasses.SmallInput}`}
+            className={`${classes.PublicInput} ${classes.SmallInput}`}
             id="name"
             type="text"
             placeholder="نام(دلخواه)"
             value={credentials.name}
             onChange={onInputChangeHandler}
           />
+            <Input
+              className={`${classes.PublicInput} ${credentials.username ? classes.LeftToRight : ""}`}
+              id="username"
+              type="text"
+              placeholder="نام کاربری"
+              value={credentials.username}
+              onChange={onInputChangeHandler}
+              validations={[Validators.required]}
+            />
           <Input
-            className={`${InputClasses.PublicInput} ${
-              InputClasses.SmallInput
-            } ${credentials.phone_number ? InputClasses.LeftToRight : ""}`}
+            className={`${classes.PublicInput} ${credentials.phone_number ? classes.LeftToRight : ""}`}
             id="phone_number"
             type="tel"
             placeholder="شماره همراه"
@@ -131,19 +136,8 @@ const Signup = (props) => {
             validations={[Validators.required, Validators.phone]}
           />
           <Input
-            className={`${InputClasses.PublicInput} ${
-              InputClasses.SmallInput
-            } ${credentials.username ? InputClasses.LeftToRight : ""}`}
-            id="username"
-            type="text"
-            placeholder="نام کاربری"
-            value={credentials.username}
-            onChange={onInputChangeHandler}
-            validations={[Validators.required]}
-          />
-          <Input
-            className={`${InputClasses.PublicInput} ${
-              credentials.email ? InputClasses.LeftToRight : ""
+            className={`${classes.PublicInput} ${
+              credentials.email ? classes.LeftToRight : ""
             }`}
             id="email"
             type="email"
@@ -153,8 +147,8 @@ const Signup = (props) => {
             validations={[Validators.required, Validators.email]}
           />
           <Input
-            className={`${InputClasses.PublicInput} ${
-              credentials.password ? InputClasses.LeftToRight : ""
+            className={`${classes.PublicInput} ${
+              credentials.password ? classes.LeftToRight : ""
             }`}
             id="password"
             type="password"
@@ -164,8 +158,8 @@ const Signup = (props) => {
             validations={[Validators.required]}
           />
           <Input
-            className={`${InputClasses.PublicInput} ${
-              credentials.password_rep ? InputClasses.LeftToRight : ""
+            className={`${classes.PublicInput} ${
+              credentials.password_rep ? classes.LeftToRight : ""
             }`}
             id="password_rep"
             type="password"

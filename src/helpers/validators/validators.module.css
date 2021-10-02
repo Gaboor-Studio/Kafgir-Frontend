@@ -1,0 +1,10 @@
+.Alert{
+    position: relative;
+    background-color: #7d1313c7;
+    color: #FFCCCC;
+    margin: 0 auto;
+    padding: 2px;
+    width: 75%;
+    font-size: x-small;
+    border-radius: 1rem;
+}
