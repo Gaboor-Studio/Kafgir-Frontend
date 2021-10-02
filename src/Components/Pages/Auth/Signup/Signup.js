@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import { useHistory } from "react-router-dom";
 
-import { authenticationService } from "../../../../services/auth.service";
+import Form from "react-validation/build/form";
+import Input from "react-validation/build/input";
+import CheckButton from "react-validation/build/button";
 
-import Input from "../../../UI/Input/Input";
+import { authenticationService } from "../../../../services/auth.service";
+import { Validators } from "../../../../helpers/validators/validators";
+
 import Button from "../../../UI/Button/Button";
 import InlineLink from "../../../UI/InlineLink/InlineLink";
 import ErrorModal from "../../../UI/Modal/ErrorModal/ErrorModal";
@@ -11,6 +15,11 @@ import ErrorModal from "../../../UI/Modal/ErrorModal/ErrorModal";
 import classes from "./Signup.module.css";
 
 const Signup = (props) => {
+  // const CheckRef = useRef();
+  // const FormRef = useRef();
+  let CheckRef;
+  let FormRef;
+
   const [credentials, setCredentials] = useState({
     username: "",
     name: "",
@@ -49,29 +58,33 @@ const Signup = (props) => {
   const onSubmit = (event) => {
     event.preventDefault();
 
-    authenticationService
-      .register(credentials)
-      .then((res) => {
-        history.push({
-          pathname: "/auth/confirmation",
-          state: {
-            email: credentials.email,
-            phone_number: credentials.phone_number,
-          },
-        });
-      })
-      .catch((err) => {
-        let errorMessage = "something went wrong";
+    FormRef.validateAll()
 
-        if (err.response) {
-          errorMessage = err.response.data;
-        }
+    if (CheckRef.context._errors.length === 0) {
+      authenticationService
+        .register(credentials)
+        .then((res) => {
+          history.push({
+            pathname: "/auth/confirmation",
+            state: {
+              email: credentials.email,
+              phone_number: credentials.phone_number,
+            },
+          });
+        })
+        .catch((err) => {
+          let errorMessage = "something went wrong";
 
-        setError({
-          open: true,
-          err: JSON.stringify(errorMessage),
+          if (err.response) {
+            errorMessage = err.response.data;
+          }
+
+          setError({
+            open: true,
+            err: JSON.stringify(errorMessage),
+          });
         });
-      });
+    }
   };
 
   return (
@@ -86,76 +99,82 @@ const Signup = (props) => {
         <div className={classes.SignUpTitle}>
           <h2>ثبت نام</h2>
         </div>
-        <form className={classes.SignUpForm} onSubmit={onSubmit}>
+        <Form className={classes.SignUpForm} onSubmit={onSubmit} ref={c => {FormRef = c;}}>
           <Input
-            small
+            className={`${classes.PublicInput} ${classes.SmallInput}`}
             id="last_name"
             type="text"
             placeholder="نام خانوادگی(دلخواه)"
             value={credentials.last_name}
-            onType={onInputChangeHandler}
+            onChange={onInputChangeHandler}
           />
+
           <Input
-            small
+            className={`${classes.PublicInput} ${classes.SmallInput}`}
             id="name"
             type="text"
             placeholder="نام(دلخواه)"
             value={credentials.name}
-            onType={onInputChangeHandler}
+            onChange={onInputChangeHandler}
           />
+            <Input
+              className={`${classes.PublicInput} ${credentials.username ? classes.LeftToRight : ""}`}
+              id="username"
+              type="text"
+              placeholder="نام کاربری"
+              value={credentials.username}
+              onChange={onInputChangeHandler}
+              validations={[Validators.required]}
+            />
           <Input
-            small
-            ltr={credentials.phone_number ? true : false}
+            className={`${classes.PublicInput} ${credentials.phone_number ? classes.LeftToRight : ""}`}
             id="phone_number"
-            required
             type="tel"
             placeholder="شماره همراه"
             value={credentials.phone_number}
-            onType={onInputChangeHandler}
+            onChange={onInputChangeHandler}
+            validations={[Validators.required, Validators.phone]}
           />
           <Input
-            small
-            ltr={credentials.username ? true : false}
-            id="username"
-            required
-            type="text"
-            placeholder="نام کاربری"
-            value={credentials.username}
-            onType={onInputChangeHandler}
-          />
-          <Input
-            ltr={credentials.email ? true : false}
+            className={`${classes.PublicInput} ${
+              credentials.email ? classes.LeftToRight : ""
+            }`}
             id="email"
-            required
             type="email"
             placeholder="ایمیل"
             value={credentials.email}
-            onType={onInputChangeHandler}
+            onChange={onInputChangeHandler}
+            validations={[Validators.required, Validators.email]}
           />
           <Input
-            ltr={credentials.password ? true : false}
+            className={`${classes.PublicInput} ${
+              credentials.password ? classes.LeftToRight : ""
+            }`}
             id="password"
-            required
             type="password"
             placeholder="رمز عبور"
             value={credentials.password}
-            onType={onInputChangeHandler}
+            onChange={onInputChangeHandler}
+            validations={[Validators.required]}
           />
           <Input
-            ltr={credentials.password_rep ? true : false}
+            className={`${classes.PublicInput} ${
+              credentials.password_rep ? classes.LeftToRight : ""
+            }`}
             id="password_rep"
-            required
             type="password"
             placeholder="تکرار رمز عبور"
             value={credentials.password_rep}
-            onType={onInputChangeHandler}
+            onChange={onInputChangeHandler}
+            validations={[Validators.required]}
           />
           <div className={classes.AlreadySignedUp}>
             <InlineLink link="/auth/login" text="وارد شوید" />
             <p>از قبل اکانت دارید ؟</p>
           </div>
           <Button>ثبت نام</Button>
-        </form>
+          <CheckButton style={{ display: "none" }} ref={c => {CheckRef = c;}} />
+        </Form>
       </div>
     </React.Fragment>
   );

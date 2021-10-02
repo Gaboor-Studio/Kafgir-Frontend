@@ -1,13 +1,17 @@
 .SignUp {
   display: block;
-  width: 312px;
+  width: 336px;
   margin: 0 auto;
   font-family: IranSans;
 }
 
 .SignUpTitle {
-    color: #FF8877;
-    margin-bottom: 3rem;
+  color: #ff8877;
+  margin-bottom: 3rem;
+}
+
+.SignUpTitle h2 {
+  margin: 0;
 }
 
 .SignUpForm {
@@ -16,6 +20,7 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  gap: 8px 12px;
 }
 
 .AlreadySignedUp {
@@ -25,18 +30,73 @@
 }
 
 .AlreadySignedUp p {
-    font-size: small;
-    color: #DE5C4B;
+  font-size: small;
+  color: #de5c4b;
+}
+
+.PublicInput {
+  color: #8e807f;
+  background-color: rgba(255, 197, 186, 0.6);
+  border-radius: 0.2rem;
+  box-sizing: border-box;
+  margin: 5px auto;
+  border: none;
+  width: 300px;
+  padding: 10px 8px;
+  direction: rtl;
+  font-family: IranSans;
+}
+
+.PublicInput:focus {
+  outline: none;
+}
+
+.SmallInput {
+  width: 144px;
+}
+
+.LeftToRight {
+  direction: ltr;
 }
 
 @media (min-width: 480px) {
   .SignUp {
-    width: 65%;
+    width: 70%;
+  }
+
+  .PublicInput {
+    width: 62.5vw;
+  }
+
+  .SmallInput {
+    width: 30vw;
+    margin: 5px 1px;
+  }
+}
+
+@media (min-width: 600px) {
+  .SmallInput{
+    margin: 5px 2px;
+  }
+}
+
+@media (min-width: 700px){
+  .SmallInput{
+    margin: 5px 3px;
   }
 }
 
 @media (min-width: 800px) {
   .SignUp {
-    width: 520px;
+    width: 560px;
+  }
+
+  .PublicInput {
+    width: 500px;
+  }
+
+  .SmallInput {
+    width: 240px;
+    margin: 5px 4px;
   }
 }
