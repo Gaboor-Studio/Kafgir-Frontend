@@ -15,7 +15,8 @@ const AddTag = () => {
     }
 
     const addToTags = () => {
-            setAddedTags(oldTags => [...oldTags, [selectedTag,tags.find(item=>item.id===selectedTag).title]]);
+        if (!(addedTags.find(item => item[0] === selectedTag)))
+            setAddedTags(oldTags => [...oldTags, [selectedTag, tags.find(item => item.id === selectedTag).title]]);
     }
 
     useEffect(() => {
@@ -24,7 +25,7 @@ const AddTag = () => {
             .catch(err => console.error(err));
     }, [])
 
-    const makeTagsList=(res)=>{
+    const makeTagsList = (res) => {
         setTags(res.data);
         setSelectedTag(res.data[0].id);
     }
@@ -36,7 +37,7 @@ const AddTag = () => {
                     {tags.map(tag => <option key={tag.id} value={tag.id}>{tag.title}</option>)}
                 </select>
                 <button className={classes.addTagButton} onClick={addToTags}>افزودن تگ</button>
-                {addedTags.map(addedTag=><p key={addedTag[0]} className={classes.tagBox}>{addedTag[1]}</p>)}
+                {addedTags.map(addedTag => <p key={addedTag[0]} className={classes.tagBox}>{addedTag[1]}</p>)}
             </div>
         </div>
     );

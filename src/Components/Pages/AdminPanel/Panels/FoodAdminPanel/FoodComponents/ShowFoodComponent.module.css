@@ -1,0 +1,24 @@
+.foodLink{
+    text-decoration: none;
+    color: black;
+}
+
+.foodRow{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    background-color: rgba(128, 128, 128, 0.158);
+    margin: auto;
+    margin-top: 1vh;
+    padding: 0.5vw;
+    width: 95%;
+    border-radius: 7px;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    align-items: center;
+}
+
+.foodTitle{
+    margin: 0px;
+    padding: 0px;
+    margin-left: auto;
+    margin-right: 1vw;
+}
