@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import classes from "./AddFood.module.css"
 import RecipeStep from "./RecipeStep"
 import Ingredient from "./Ingredient"
+import AddTag from "./AddTag"
 
 const AddFood = () => {
     const [foodName, setFoodName] = useState('');
@@ -47,8 +48,9 @@ const AddFood = () => {
             <p className={classes.recipeTitle}>دستور غذا</p>
             {recipeInput.map(input => <RecipeStep key={input.id} id={input.id} updateInput={updateRecipeHandler}></RecipeStep>)}
             <button type="button" className={classes.addStep} onClick={addRecipeRow}>افزودن مرحله</button>
-            <button type="button" className={classes.submitFood} onClick={submitFood}>ثبت غذا</button>
-
+            <p className={classes.recipeTitle}>تگ ها</p>
+            <AddTag />
+                <button type="button" className={classes.submitFood} onClick={submitFood}>ثبت غذا</button>
         </div>
     );
 }
