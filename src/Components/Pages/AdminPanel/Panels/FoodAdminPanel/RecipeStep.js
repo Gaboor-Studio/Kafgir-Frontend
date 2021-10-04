@@ -13,7 +13,7 @@ const RecipeStep = (props) => {
     return (
         <div className={classes.container}>
             مرحله {props.id + 1}:
-            <input className={classes.stepInput} value={instruction} onChange={(event) => instructionChangeHandler(event.target.value)} placeholder="توضیح مرحله" />
+            <input className={classes.stepInput} value={instruction} onChange={(event) => instructionChangeHandler(event.target.value)} placeholder="توضیح مرحله" maxLength="254" />
         </div>
     );
 }

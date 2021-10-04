@@ -9,6 +9,8 @@ const FoodAdminPanel = () => {
     const [foods, setFoods] = useState([]);
     const [showAddFood, setShowAddfood] = useState(false);
 
+    const [updatePage, setUpdatePage] = useState(false);
+
     const config = {
         headers: {
             "content-type": "application/json",
@@ -20,16 +22,16 @@ const FoodAdminPanel = () => {
         axios.get("http://84.241.22.193:8000/api/admin/food/", config)
             .then(res => setFoods(res.data.data))
             .catch(err => console.error(err));
-    }, [])
-    console.log(foods);
+    }, [updatePage])
+
     return (
         <div className={classes.container}>
-            <Header title="غذا ها" />
-            <div className={classes.uiContainer}>
+            <div className={classes.headerContainer}>
+                <p className={classes.pageTitle}>غذا ها</p>
                 <button className={classes.addFoodButton} onClick={() => setShowAddfood(prev => !prev)}>افزودن غذا</button>
             </div>
             <div className={showAddFood ? classes.addFoodContainer : classes.hide}>
-                <AddFood />
+                <AddFood updatePage={setUpdatePage} />
             </div>
             <div className={classes.line} />
             {foods.map(food => <ShowFoodComponent food={food} key={food.id} />)}

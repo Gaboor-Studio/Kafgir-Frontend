@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import classes from "./AddTag.module.css"
 import axios from "axios"
 
-const AddTag = () => {
+const AddTag = (props) => {
     const [tags, setTags] = useState([]);
     const [addedTags, setAddedTags] = useState([]);
     const [selectedTag, setSelectedTag] = useState(0);
@@ -15,8 +15,10 @@ const AddTag = () => {
     }
 
     const addToTags = () => {
-        if (!(addedTags.find(item => item[0] === selectedTag)))
+        if (!(addedTags.find(item => item[0] === selectedTag))){
             setAddedTags(oldTags => [...oldTags, [selectedTag, tags.find(item => item.id === selectedTag).title]]);
+            props.updateTags(selectedTag);
+        }
     }
 
     useEffect(() => {
