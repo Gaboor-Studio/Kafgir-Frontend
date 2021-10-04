@@ -1,0 +1,68 @@
+.image {
+    width: 90px;
+    height: 90px;
+    border-radius: 15px;
+    float: right;
+    z-index: 0;
+  }
+  .name {
+    float: right;
+    margin-top: 0px;
+    margin-right: 10px;
+    width: 75px;
+    height: 30px;
+    font-family: IRANSans;
+    font-size: 18px;
+    color: #3b1913;
+  }
+  .details{
+    width: 80px;
+  }
+  .card {
+    background: #FFC5BA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 0px 7px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+    padding-right: 10px;
+    padding-left: 10px;
+    height: 100px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  .card:hover {
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5), 0px 7px 10px rgba(0, 0, 0, 0.01);
+  }
+  
+  .recipebtn {
+    float: right;
+    font-family: IranSans;
+    background-color: #ff8877;
+    margin-top: 0px;
+    margin-right: 20px;
+    color: #ffffff;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    height: 30px;
+  }
+  .recipebtn:hover {
+    background-color: #ff644d;
+  }
+  .hardness {
+    margin-top: 0px;
+    margin-top: 5px;
+    float: left;
+  }
+  .time {
+    margin-top: 0px;
+    margin-top: 0px;
+    float: left;
+  }
+  .rate {
+    margin-top: 0px;
+    margin-top: 5px;
+    float: left;
+  }
+  

@@ -61,7 +61,7 @@
   .outerBar {
     display: flex;
     box-sizing: border-box;
-    width: 55%;
+    width: 50%;
     font-family: IranSans;
     height: 30px;
     border-radius: 15px 15px 0px 0px;
@@ -69,7 +69,7 @@
     font-size: 60%;
     font-weight: bold;
     margin-left: 5%;
-    margin-top: 20px;
+    margin-top: 10px;
   }
   .extendButton {
     display: none;
@@ -80,7 +80,7 @@
     font-family: IranSans;
     text-align: right;
     height: auto;
-    width: 55%;
+    width: 50%;
     padding-top: 20px;
     border-radius: 0px 0px 15px 15px;
     transition: height 0.4s;
