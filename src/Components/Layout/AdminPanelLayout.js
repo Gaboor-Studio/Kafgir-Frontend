@@ -29,7 +29,9 @@ const AdminPanelLayout = (props) => {
             </div>
             <div className={classes.infoSection}>
                 <div className={classes.pageHeader}><p className={classes.header}>{pageHeader}</p></div>
-                {props.children}
+                <div className={classes.dataSection}>
+                    {props.children}
+                </div>
             </div>
         </div>
     );
