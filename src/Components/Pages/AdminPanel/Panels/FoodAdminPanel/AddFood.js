@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
+import { adminFoodService } from "../.././../../../services/admin-food.service"
 import classes from "./AddFood.module.css"
 import RecipeStep from "./RecipeStep"
 import Ingredient from "./Ingredient"
 import AddTag from "./AddTag"
-import axios from "axios"
 
 const AddFood = (props) => {
     const [foodName, setFoodName] = useState('');
@@ -50,24 +50,11 @@ const AddFood = (props) => {
         if (foodName === '' || foodTime === '')
             alert("همه ی فیلد ها را پر کنید")
         else {
-            axios.post([`http://84.241.22.193:8000/api/admin/food/`], {
-                "title": foodName,
-                "level": parseInt(foodDifficulty),
-                "cooking_time": foodTime.toString(),
-                "ingredients": cleanIngredient,
-                "recipe": cleanRecipe,
-                "tags": tags
-            }, config)
+            adminFoodService.postFood(foodName, parseInt(foodDifficulty), foodTime.toString(), cleanIngredient, cleanRecipe, tags)
                 .then(props.updatePage(prev => !prev))
                 .catch(err => console.error(err));
-                setTags([]);
-                setRecipeInput([{ "text": '', "id": 0 }]);
-                setIngredientInput([{ "ingredientName": '', "ingredientAmount": '', "amountUnit": '', "id": 0 }]);
-                setFoodName('');
-                setFoodTime('');
-                setFoodDifficulty(1);
-                setTags([]);
-            }
+            window.location.reload(false);
+        }
     }
 
     const makeOutputLists = () => {

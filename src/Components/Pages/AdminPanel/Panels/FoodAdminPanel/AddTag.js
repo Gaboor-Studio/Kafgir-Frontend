@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
+import { adminFoodService } from "../.././../../../services/admin-food.service"
 import classes from "./AddTag.module.css"
-import axios from "axios"
 
 const AddTag = (props) => {
     const [tags, setTags] = useState([]);
@@ -22,7 +22,7 @@ const AddTag = (props) => {
     }
 
     useEffect(() => {
-        axios.get("http://84.241.22.193:8000/api/admin/tag/", config)
+        adminFoodService.fetchTags()
             .then(res => makeTagsList(res))
             .catch(err => console.error(err));
     }, [])

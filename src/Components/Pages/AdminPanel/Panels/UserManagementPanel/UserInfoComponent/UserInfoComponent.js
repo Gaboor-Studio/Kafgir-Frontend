@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { adminUserService } from "../../../../../../services/admin-user.service"
 import classes from "./UserInfoComponent.module.css"
 import arrow from "../../../../../../assets/admin-panel/down-arrow.png"
 import ConfirmModal from "../../../../../UI/Modal/ConfirmModal/ConfirmModal"
@@ -53,19 +54,16 @@ const UserInfoComponent = (props) => {
 
     const submitChanges = () => {
         setSubmitModal(false);
-        let reqData={};
-        if (newUsername !== '')  reqData.username = newUsername;
+        let reqData = {};
+        if (newUsername !== '') reqData.username = newUsername;
         if (newName !== '') reqData.name = newName;
         if (newLastName !== '') reqData.last_name = newLastName;
         reqData.is_active = (!deactivateUser);
-        console.log(reqData)
-        axios.put([`http://84.241.22.193:8000/api/admin/user-management/${props.id}/`], reqData, config)
+        adminUserService.editUser(reqData, props.id)
             .then(res => props.update())
             .catch(err => console.error(err));
         if (newPassword !== '') {
-            axios.post([`http://84.241.22.193:8000/api/admin/user-management/${props.id}/set-password/`], {
-                "new_password": newPassword
-            }, config)
+            adminUserService.changePassword(newPassword, props.id)
                 .then(res => props.update())
                 .catch(err => console.error(err));
         }

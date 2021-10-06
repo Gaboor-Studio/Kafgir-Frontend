@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { adminAdminsService } from "../../../../../../services/admin-admins.service"
 import classes from "./AdminInfoComponent.module.css"
 import ConfirmModal from "../../../../../UI/Modal/ConfirmModal/ConfirmModal"
 import axios from "axios"
@@ -8,13 +9,6 @@ const AdminInfoComponent = (props) => {
     const [newPasswordModal, setNewPasswordModal] = useState(false);
     const [newPassword, setNewPassword] = useState('');
     const [newPasswordRepeat, setNewPasswordRepeat] = useState('');
-
-    const config = {
-        headers: {
-            "content-type": "application/json",
-            Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'
-        }
-    }
 
     const askDelete = () => {
         setSubmitModal(true);
@@ -30,17 +24,14 @@ const AdminInfoComponent = (props) => {
 
     const deleteAdmin = () => {
         setSubmitModal(false);
-        axios.delete([`http://84.241.22.193:8000/api/admin/admin-management/${props.id}`], config)
+        adminAdminsService.deleteAdmin(props.id)
             .then(res => props.update())
             .catch(err => console.error(err));
     }
 
     const submitNewPassword = () => {
         setNewPasswordModal(false);
-        axios.put((`http://84.241.22.193:8000/api/admin/admin-management/${props.id}/set-password`), {
-            "new_password": newPassword,
-            "new_password_repeat": newPasswordRepeat
-        }, config)
+        adminAdminsService.changePassword(newPassword,newPasswordRepeat,props.id)
             .then(res => alert("رمز عبور با موفقیت تغییر یافت"))
             .catch(err => console.error(err));
         setNewPassword('');

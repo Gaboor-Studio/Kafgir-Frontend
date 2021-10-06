@@ -1,7 +1,7 @@
 import React, { useState } from "react"
+import { adminAdminsService } from "../../../../../services/admin-admins.service"
 import classes from "./AddAdminPanel.module.css"
 import ConfirmModal from "../../../../UI/Modal/ConfirmModal/ConfirmModal"
-import axios from "axios"
 
 const AddAdminPanel = (props) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -13,13 +13,6 @@ const AddAdminPanel = (props) => {
     const [lastName, setLastName] = useState('');
     const [isSuperUser, setIsSuperUser] = useState(false);
     const [submitModal, setSubmitModal] = useState(false);
-
-    const config = {
-        headers: {
-            "content-type": "application/json",
-            Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'
-        }
-    }
 
     const toggleExpand = () => {
         isExpanded === true ? setIsExpanded(false) : setIsExpanded(true);
@@ -47,15 +40,7 @@ const AddAdminPanel = (props) => {
         else if (password != passwordRepeat)
             alert("پسورد و تکرار آن یکسان نیستند")
         else {
-            axios.post("http://84.241.22.193:8000/api/admin/admin-management/", {
-                "username": username,
-                "email": email,
-                "name": name,
-                "last_name": lastName,
-                "password": password,
-                "password_repeat": passwordRepeat,
-                "is_superuser": isSuperUser
-            }, config)
+            adminAdminsService.postAdmin(username, email, name, lastName, password, passwordRepeat, isSuperUser)
                 .then(res => props.update())
                 .catch(err => console.error(err));
             resetFields();

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react"
+import { adminFoodService } from "../.././../../../services/admin-food.service"
 import classes from "./FoodAdminPanel.module.css"
 import AddFood from "./AddFood"
-import axios from "axios"
 import Header from "../UserManagementPanel/Header"
 import ShowFoodComponent from "./FoodComponents/ShowFoodComponent"
 
@@ -11,15 +11,8 @@ const FoodAdminPanel = () => {
 
     const [updatePage, setUpdatePage] = useState(false);
 
-    const config = {
-        headers: {
-            "content-type": "application/json",
-            Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'
-        }
-    }
-
     useEffect(() => {
-        axios.get("http://84.241.22.193:8000/api/admin/food/", config)
+        adminFoodService.fetchFoods()
             .then(res => setFoods(res.data.data))
             .catch(err => console.error(err));
     }, [updatePage])

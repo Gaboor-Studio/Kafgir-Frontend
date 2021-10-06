@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
+import { adminUserService } from "../../../../../services/admin-user.service"
 import UserInfoComponent from "./UserInfoComponent/UserInfoComponent"
 import Header from "./Header"
 import classes from "./UserManagementPanel.module.css"
 import defaultProfilePic from "../../../../../assets/profile/default-profile-pic.jpg"
-import axios from "axios"
 
 const UserManagementPanel = () => {
     const [users, setUsers] = useState([]);
@@ -13,15 +13,8 @@ const UserManagementPanel = () => {
         setUpdatePage(prev => !prev);
     }
 
-    const config = {
-        headers: {
-            "content-type": "application/json",
-            Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'
-        }
-    }
-
     useEffect(() => {
-        axios.get("http://84.241.22.193:8000/api/admin/user-management/", config)
+        adminUserService.fetchUsers()
             .then(res => setUsers(res.data))
             .catch(err => console.error(err));
     }, [updatePage])

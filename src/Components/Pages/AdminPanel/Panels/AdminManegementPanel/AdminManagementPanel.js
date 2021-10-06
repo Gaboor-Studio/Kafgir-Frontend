@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react"
+import { adminAdminsService } from "../../../../../services/admin-admins.service"
 import Header from "../UserManagementPanel/Header"
 import AddAdminPanel from "./AddAdminPanel"
 import classes from "./AdminManagementPanel.module.css"
 import AdminInfoComponent from "./AdminInfoComponent/AdminInfoComponent"
-import axios from "axios"
 
 const AdminManagementPanel = () => {
     const [admins, setAdmins] = useState([]);
@@ -13,15 +13,8 @@ const AdminManagementPanel = () => {
         setUpdatePage(prev => !prev);
     }
 
-    const config = {
-        headers: {
-            "content-type": "application/json",
-            Authorization: 'Token cdafd70c8f23c1a654abbd7af0f0440d7bc78a01'
-        }
-    }
-
     useEffect(() => {
-        axios.get("http://84.241.22.193:8000/api/admin/admin-management/", config)
+        adminAdminsService.fetchAdmins()
             .then(res => setAdmins(res.data.data))
             .catch(err => console.error(err));
     }, [updatePage])
