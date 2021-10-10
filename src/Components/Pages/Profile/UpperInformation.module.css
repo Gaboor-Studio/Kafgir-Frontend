@@ -75,13 +75,14 @@
 }
 
 .inputName{
-    font-size: max(2.5vw,25px);
+    font-size: max(2.5vw,18px);
     font-weight: bold;
     background-color: #FFEEEC;
-    width: 35vw;
+    width: 20vw;
     border-top-width: 0px;
     border-right-width: 0px;
     border-left-width: 0px;
+    margin-left: 1vw;
 }
 
 .submitButton{
@@ -136,13 +137,14 @@
     }
 
     .inputName{
-        font-size: max(2.5vw,30px);
+        font-size: max(2.2vw,25px);
         font-weight: bold;
         background-color: #FFEEEC;
-        width: 25vw;
+        width: 15vw;
         border-top-width: 0px;
         border-right-width: 0px;
         border-left-width: 0px;
+        margin-left: 1vw;
     }
     
     .submitButton{

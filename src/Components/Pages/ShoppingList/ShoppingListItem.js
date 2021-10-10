@@ -11,7 +11,7 @@ const ShoppingListItem = (props) => {
             <div className={classes.line} />
             <div dir="rtl" className={classes.ingredientContainer}>
                 <p className={props.checked ? [classes.name, classes.checked].join(' ') : classes.name}>{props.name}</p>
-                <p className={props.checked ? [classes.amount, classes.checked].join(' ') : classes.amount}>{props.amount + ' ' + props.unit}</p>
+                <p className={props.checked ? [classes.amount, classes.checked].join(' ') : classes.amount}>{props.amount}</p>
                 <Icons checked={props.checked} />
             </div>
         </div>

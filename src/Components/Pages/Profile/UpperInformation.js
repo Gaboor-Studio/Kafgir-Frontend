@@ -2,6 +2,7 @@
 //upper information component for showing profile picture, showing and editing the username and ImageEdit component
 
 import React, { useState } from "react";
+import { profileService } from "../../../services/profile.service";
 import defaultProfilePic from "../../../assets/profile/default-profile-pic.jpg"
 import newPhoto from "../../../assets/profile/new_photo.svg"
 import deletePhoto from "../../../assets/profile/delete_photo.svg"
@@ -14,7 +15,9 @@ import ImageEdit from "./ImageEdit"
 import Button from "../../UI/Button/Button"
 
 const UpperInformation = (props) => {
-    const [usernameInput, setUsernameInput] = useState('');
+    const [nameInput, setNameInput] = useState('');
+    const [lastNameInput, setLastNameInput] = useState('');
+    const profilePic = (props.picture === "no-image" ? defaultProfilePic : props.picture)
     //enable edit username input
     const edit = () => {
         props.setEditState(true);
@@ -22,16 +25,18 @@ const UpperInformation = (props) => {
     //check new username validity and submit
     const editSubmit = (event) => {
         event.preventDefault();
-        if (usernameInput.length >= 4) {
+        if (nameInput.length >= 4 && lastNameInput.length >= 4) {
             props.setEditState(false);
-            setUsernameInput('');
+            profileService.editProfile(nameInput, lastNameInput)
+                .then(alert('نام و نام خانوادگی با موفقیت تغییر یافت'))
+                .catch(err => console.error(err));
+            setNameInput('');
+            setLastNameInput('');
         }
         else
-            alert("نام کاربری باید حداقل 4 حرف باشد")
+            alert("نام و نام خانوادگی باید حداقل 3 حرف باشد")
     }
-    const inputChangeHandler = (event) => {
-        setUsernameInput(event.target.value);
-    }
+
     return (
         <div>
             <div className={classes.upperPart} dir="rtl">
@@ -46,9 +51,10 @@ const UpperInformation = (props) => {
                 </div>
                 <img src={more} alt="more" className={classes.more}></img>
                 <div className={classes.nameComponent}>
-                    <p className={props.editState ? classes.editState : classes.username}>نام نام خانوادگی</p>
+                    <p className={props.editState ? classes.editState : classes.username}>{props.name}</p>
                     <form className={props.editState ? [] : classes.editState}>
-                        <input value={usernameInput} type="text" maxLength="20" name="username" onChange={inputChangeHandler} required className={props.editState ? classes.inputName : classes.editState}></input>
+                        <input value={nameInput} type="text" maxLength="20" name="username" onChange={(event) => setNameInput(event.target.value)} required className={props.editState ? classes.inputName : classes.editState} placeholder="نام"></input>
+                        <input value={lastNameInput} type="text" maxLength="20" name="username" onChange={(event) => setLastNameInput(event.target.value)} required className={props.editState ? classes.inputName : classes.editState} placeholder="نام خانوادگی"></input>
                         <button type="submit" onClick={editSubmit} className={props.editState ? classes.submitButton : classes.editState}>تایید</button>
                     </form>
                     <img src={editName} alt="edit name" className={props.editState ? classes.editState : classes.editName} onClick={edit}></img>

@@ -1,6 +1,7 @@
 //edit image panel for uploading or deleting profile picture
 
 import React, { useState } from "react";
+import { profileService } from "../../../services/profile.service";
 import classes from "./ImageEdit.module.css"
 import ConfirmModal from "../../UI/Modal/ConfirmModal/ConfirmModal"
 
@@ -19,7 +20,9 @@ const ImageEdit = (props) => {
     }
     const deleteAvatar = () => {
         setModalOpen(false);
-        alert("avatar deleted");
+        profileService.deleteProfilePicture()
+            .then(alert('عکس پروفایل با موفقیت پاک شد'))
+            .catch(err => console.error(err));
     }
     return (
         <React.Fragment>
