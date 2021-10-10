@@ -38,39 +38,18 @@ const searchHistory = [
  */
 const HistoryPanel = (props) => {
 
-    // state to hold the dummy history for now
-    const [history, setHistory] = useState(searchHistory)
-
-    /**
-     * removes a single history record
-     * @param {*} h 
-     */
-    const onRemoveHistoryHandler = (h) => {
-        setHistory(prevHistory => {
-            const newHistory = prevHistory.filter(history => history.id !== h.id)
-            return newHistory
-        })
-    }
-
-    /**
-     * clears the whole search history
-     */
-    const onClearHistory = () => {
-        setHistory([])
-    }
-
     return (
         <div className={classes.HistoryPanel}>
             <div className={classes.HistoryPanelTitle}>
                 <h2>تاریخچه جستجو</h2>
-                <img src={deleteall} alt="delete" onClick={onClearHistory}/>
+                <img src={deleteall} alt="delete" onClick={props.onClear}/>
             </div>
             <hr/>
             <div className={classes.HistoryPanelList}>
                 {
-                    history && history.length > 0 ?
+                    props.history && props.history.length > 0 ?
                     <ul>
-                        {history.map(item => <HistoryItem text={item.title} key={item.id} onRemove={() => onRemoveHistoryHandler(item)}/>)}
+                        {props.history.map(item => <HistoryItem text={item.title} key={item.id} onRemove={() => props.onRemove(item.id)}/>)}
                     </ul> :
                     <p>no previous history</p>
                 }
