@@ -2,7 +2,9 @@
     /* position: absolute; */
     /* top: 56px; */
     text-align: center;
-    left: 0;
+    /* box-sizing: border-box; */
+    /* left: 0; */
+    margin: 0 auto;
     width: 100%;
     background-color: #FFC5BA;
     padding-bottom: 8px;
@@ -41,6 +43,8 @@
 }
 
 .SearchPanelForm {
+    box-sizing: border-box;
+    margin: 0 auto;
     margin-top: 32px;
     display: flex;
     flex-direction: row;
@@ -62,4 +66,16 @@
 
 .SearchPanelFormHidden {
     display: none;
+}
+
+@media (min-width: 760px){
+    .SearchPanelForm{
+        width: 720px;
+    }
+}
+
+@media (min-width: 1220px){
+    .SearchPanel{
+        width: 1200px;
+    }
 }
