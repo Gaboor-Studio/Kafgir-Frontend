@@ -3,39 +3,8 @@ import React, { useState } from "react";
 import classes from "./ResultsPanel.module.css";
 
 import settings from '../../../../assets/search_page/settings.png';
-import ghorme from '../../../../assets/search_page/ghorme.png';
 
 import ResultItem from "./ResultItem/ResultItem";
-
-/**
- * dummy results for a normal search
- */
-const searchResults = [
-  {
-    id: 1,
-    name: 'قرمه سبزی',
-    picture: ghorme,
-    hardness: 2,
-    rate: 5,
-    time: '45 دقیقه'
-  },
-  {
-    id: 2,
-    name: 'قرمه سبزی',
-    picture: ghorme,
-    hardness: 1,
-    rate: 4,
-    time: '30 دقیقه'
-  },
-  {
-    id: 3,
-    name: 'قرمه سبزی',
-    picture: ghorme,
-    hardness: 3,
-    rate: 4,
-    time: '60 دقیقه'
-  },
-]
 
 /**
  * functional component that manages the whole search results and shows them
@@ -43,9 +12,6 @@ const searchResults = [
  * @returns 
  */
 const ResultsPanel = (props) => {
-
-  // this variable holds the results to a search request(for now)
-  const [results, setResults] = useState(searchResults)
 
   return (
     <div className={classes.ResultsPanel}>
