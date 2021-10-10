@@ -12,7 +12,9 @@ import CommentCard from "./Comment/CommentCard";
 import WriteComment from "./Comment/WriteComment";
 import nocomment from "..//..//..//assets//No comment.svg"
 import axios from "axios";
-import SuggestLayout from "./Suggestions/SuggestLayout"
+import SuggestLayout from "./Suggestions/SuggestLayout";
+import {authenticationService} from ".//..//..//..//services//auth.service"
+import {foodService} from "..//..//..//services//recipe.service"
 
 const foods = [
   {
@@ -66,17 +68,18 @@ const Recipe = (props) => {
     level: 0,
     ingredients: [],
     recipe: [],
-    comments: [],
+    comments: {
+      data : [],
+      total_pages : 0,
+      current_page:0
+    },
     my_comment: null,
   });
   let slug = useParams();
   useEffect(() => {
-    const url = "http://84.241.22.193:8000/api/member/food/" + String(slug.id);
-    function axiosTest() {
-      axios.get(url).then((response) => setData(response.data));
-    }
-    axiosTest();
+    foodService.getFood(slug.id).then((response) => setData(response.data));
   }, []);
+  const currentuser = authenticationService.currentUser();
   return (
     <div className={classes.Recipe}>
       <div className={classes.card}>
@@ -100,7 +103,7 @@ const Recipe = (props) => {
       </div>
 
       <div className={classes.writecomment} id="myHeader">
-        {Data.my_comment === null ? (
+        {currentuser === null ? (
           <div className={classes.writeoff}>
             برای نظر دادن وارد شوید
             <Link to="/auth/login">
@@ -108,7 +111,7 @@ const Recipe = (props) => {
             </Link>
           </div>
         ) : (
-          <WriteComment comment={Data.my_comment} />
+          <WriteComment comment={currentuser} food_id={slug.id} />
         )}
       </div>
       <div className={classes.comment}>
@@ -116,13 +119,13 @@ const Recipe = (props) => {
         <p className={classes.title}>نظرات</p>
 
         <div className={classes.scroll}>
-          {Data.comments.length === 0 ? (
+          {Data.comments.data.length === 0 ? (
             <div className={classes.nocomment}>
               <p>اولین نظر این غذا را ثبت کنید!</p>
               <img src={nocomment} alt="no comment"/>
             </div>
           ) : (
-            Data.comments.map((comment, index) => (
+            Data.comments.data.map((comment, index) => (
               <CommentCard comment={comment} />
             ))
           )}

@@ -47,6 +47,7 @@
   padding-top: 0;
   margin-top: 0;
   float: right;
+  direction: rtl;
   margin-right: 20px;
   font-size: 14px;
   color: #502e29;

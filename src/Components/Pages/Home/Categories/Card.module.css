@@ -5,7 +5,7 @@
   float: right;
   z-index: -1;
 }
-.imagee:hover{
+.imagee:hover {
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5), 0px 7px 10px rgba(0, 0, 0, 0.1);
 }
 .naman {
@@ -20,7 +20,22 @@
   color: #3b1913;
   border-radius: 0px 0px 15px 15px;
 }
-.card{
+.card {
   margin-top: 20px;
   margin-left: 10px;
+}
+@media (min-width: 1200px) {
+  .imagee {
+    width: 150px;
+    height: 150px;
+    border-radius: 25px;
+  }
+  .naman {
+    width: 150px;
+    margin-top: 100px;
+    margin-right: -150px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 0px 0px 25px 25px;
+  }
 }

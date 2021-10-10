@@ -1,12 +1,14 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback,useRef } from "react";
 import classes from "./WriteComment.module.css";
 import Rating from "..//..//..//UI//Rating//Rating";
 import Modal from "..//..//..//UI//Modal//Modal";
 import minus from "..//..//..//..//assets//planner-remove.png";
 import plus from "..//..//..//..//assets//planner-add.png";
+import {foodService} from "..//..//..//..//services//recipe.service"
 const WriteComment = (props) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [rate, setRate] = useState(0);
+  const inputRef = useRef(null);
   function minus_rate() {
     if (rate > 0) {
       setRate(rate - 0.5);
@@ -19,6 +21,7 @@ const WriteComment = (props) => {
   }
   function confirm() {
     setModalOpen(true);
+    foodService.postComment(parseInt(rate*2),inputRef.current.value,props.food_id)
   }
   return (
     <div className={classes.my}>
@@ -41,6 +44,7 @@ const WriteComment = (props) => {
         className={classes.textarea}
         placeholder="نظر خود را وارد کنید ..."
         maxLength="200"
+        ref={inputRef}
       />
       <button className={classes.button} onClick={confirm}>
         ثبت نظر

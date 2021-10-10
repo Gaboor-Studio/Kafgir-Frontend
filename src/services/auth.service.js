@@ -1,5 +1,5 @@
-// import axios from "../axios";
-import { testInstance as axios } from "../axios";
+import axios from "../axios";
+//import { testInstance as axios } from "../axios";
 
 const PRE_END = 'auth/';
 
