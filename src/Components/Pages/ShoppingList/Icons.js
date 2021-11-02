@@ -11,9 +11,9 @@ const Icons = (props) => {
 
     return (
         <div className={classes.iconContainer} dir="ltr">
-            <img src={deleteItem} alt="delete item button" className={classes.icon} />
-            <img src={props.checked ? checked : check} alt="check button" className={classes.icon} />
-            <img src={edit} alt="edit button" className={classes.icon} />
+            <img src={deleteItem} alt="delete item button" className={classes.icon} onClick={() => props.deleteItem(props.itemId)} />
+            <img src={props.checked ? checked : check} alt="check button" className={classes.icon} onClick={() => props.checkItem(props.itemId)} />
+            <img src={edit} alt="edit button" className={classes.icon} onClick={() => props.enableEdit(props.itemId)} />
         </div>
     );
 }

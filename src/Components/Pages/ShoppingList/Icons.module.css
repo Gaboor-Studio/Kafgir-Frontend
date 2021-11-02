@@ -9,6 +9,11 @@
     margin-left: 3vw;
 }
 
+.icon:hover {
+    background-color: rgba(255, 191, 181, 40%);
+    border-radius: 20%;
+}
+
 @media (min-width: 480px){
     .iconContainer{
         display: flex;
