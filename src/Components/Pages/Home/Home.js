@@ -2,6 +2,7 @@ import React from "react";
 import classes from "./Home.module.css";
 import Planner from "../Home/Planner/Planner";
 import Categories from "./Categories/Categories";
+import SlideShow from "./SlideShow/SlideShow";
 import Card from "./Card/Card";
 const foods = [
   {
@@ -57,7 +58,12 @@ const Home = () => {
   return (
     <div className={classes.Home}>
         <Planner />
+        <div className={classes.cat1}>
         <Categories />
+        </div>
+        <div className={classes.cat2}>
+        <SlideShow />
+        </div>
       <div className={classes.layout}>
         <Card details={foods} title="برترین غذاهای ماه" />
       </div>

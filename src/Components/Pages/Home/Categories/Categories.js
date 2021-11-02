@@ -39,7 +39,7 @@ const Categories = (props) => {
   return (
     <div className={classes.cate}>
       <img className={classes.logo} src={logo} alt="logo" />
-      <h className={classes.logo}>دسته بندی ها</h>
+      <h className={classes.logotxt}>دسته بندی ها</h>
       <Link to="categories" className={classes.allbtn}>مشاهده همه</Link>
       <br className={classes.break} />
       <div className={classes.categories}>

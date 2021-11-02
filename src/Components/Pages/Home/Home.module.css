@@ -1,3 +1,17 @@
 .layout{
     width: 100%;
 }
+.cat1{
+
+}
+.cat2{
+    display: none;
+}
+@media (min-width: 800px){
+    .cat1{
+        display: none;
+    }
+    .cat2{
+        display: block;
+    }
+}

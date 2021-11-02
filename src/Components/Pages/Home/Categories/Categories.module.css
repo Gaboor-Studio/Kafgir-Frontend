@@ -3,6 +3,11 @@
   color: #3c1913;
   margin: 5px;
 }
+.logotxt{
+  float: right;
+  color: #3c1913;
+  margin: 5px;
+}
 .break {
   margin-top: 20px;
 }
@@ -38,19 +43,8 @@
     margin-top: 50px;
     margin-right: 20px;
   }
-}
-@media (min-width: 800px) {
-  .categories {
-    display: flex;
-    width: 50%;
-    padding-bottom: 20px;
-  }
-  .allbtn {
-    float: right;
-    margin-right: 35%;
-    margin-top: 50px;
-  }
-  .logo {
+  
+  .logotxt{
     margin-top: 50px;
     margin-right: 20px;
   }

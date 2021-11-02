@@ -1,0 +1,59 @@
+.slideshow {
+  margin: 0 auto;
+  overflow: hidden;
+  float: left;
+  margin-left: 5%;
+  width: 40%;
+  margin-top: -360px;
+}
+
+.slideshowSlider {
+  white-space: nowrap;
+  transition: ease 1000ms;
+  direction: rtl;
+}
+.image{
+  height: 320px;
+  width: 100%;
+  border-radius: 30px;
+}
+.slide {
+  display: inline-block;
+  height: 320px;
+  width: 100%;
+  border-radius: 30px;
+}
+
+/* Buttons */
+.allbtn {
+  float: left;
+  color: #3c1913;
+  margin: 15px 7px 0px;
+  text-decoration: none;
+}
+
+.slideshowDots {
+  text-align: center;
+}
+
+.slideshowDot {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  float: right;
+  background-color: #ff8877;
+}
+
+.slideshowDotactive {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 15px 7px 0px;
+  float: right;
+  background-color: #3c1913;
+}

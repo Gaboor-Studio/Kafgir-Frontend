@@ -39,25 +39,25 @@
     padding-top: 150px;
 }
 
-@media (min-width : 700px){
+@media (min-width : 800px){
     .main{
-        width: 40%;
-        margin-left: 30%;
+        width: 35%;
+        margin-left: 58%;
     }
     .header{
-        width: 20%;
-        margin-left: 40%;
+        width: 15%;
+        margin-left: 68%;
     }
     .leftarrow{
         float: left;
         padding-top: 150px;
-        margin-left: 20%;
+        margin-left: 55%;
     }
     
     .rightarrow{
         float:right;
         padding-top: 150px;
-        margin-right: 20%;
+        margin-right: 3%;
     }
     
 }
